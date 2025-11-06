@@ -494,7 +494,14 @@ ninja.data = [{
         title: 'Instagram',
         section: 'Socials',
         handler: () => {
-          window.open("https://instagram.com/17841453116803133", "_blank");
+          window.open("https://instagram.com/zhaodong_liuu", "_blank");
+        },
+      },{
+        id: 'social-linkedin',
+        title: 'LinkedIn',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.linkedin.com/in/Zhaodong Liu", "_blank");
         },
       },{
       id: 'light-theme',
