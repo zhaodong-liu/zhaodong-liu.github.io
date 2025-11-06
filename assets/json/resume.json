@@ -1,11 +1,11 @@
 {
   "basics": {
     "name": "Zhaodong Liu",
-    "label": "Undergraduate Researcher",
+    "label": "Undergraduate Student",
     "email": "zl4789@nyu.edu",
     "phone": "+86 131-5629-6623",
     "url": "https://zhaodong-liu.github.io/",
-    "summary": "A Computer Science and Mathematics double major student at New York University Shanghai with research experience in generative retrieval, language models, and optimization.",
+    "summary": "A Computer Science and Mathematics double major student at New York University Shanghai with research experience in generative retrieval and large language models.",
     "location": {
       "city": "Shanghai",
       "region": "China"
@@ -20,21 +20,8 @@
       "studyType": "Bachelor of Science",
       "startDate": "2022-09-01",
       "endDate": "2026-05-01",
-      "score": "3.811/4.0 (Overall GPA); CS 3.941; Math 3.926",
-      "courses": [
-        "Multivariable Calculus (A)",
-        "Honors Linear Algebra (A)",
-        "Probability & Statistics (A)",
-        "Honors Numerical Analysis (A-)",
-        "Discrete Mathematics (A)",
-        "Analysis (A)",
-        "Introduction to Computer Science & Data Science (A)",
-        "Data Structures (A)",
-        "Basic Algorithms (A-)",
-        "Introduction to Databases (A)",
-        "Natural Language Processing (A)",
-        "Java and Web Design (A)"
-      ],
+      "score": "3.811/4.0 (Overall GPA); 3.941 (CS Major); 3.926 (Math Major)",
+
       "highlights": [
         "Study-away Experience: NYU New York (Fall 2024, Spring 2025)",
         "Dean’s List: 2022-2023, 2023-2024, 2024-2025"
@@ -44,7 +31,6 @@
   "work": [
     {
       "name": "New York University Shanghai",
-      "position": "Research Assistant",
       "startDate": "2025-05-01",
       "summary": "Conducted research on Generative Retrieval for Recommendation Systems under Prof. Hongyi Wen.",
       "highlights": [
@@ -54,21 +40,9 @@
         "Adapted model architecture for multi-modal representation learning."
       ]
     },
-    {
-      "name": "New York University",
-      "position": "Research Assistant",
-      "startDate": "2024-09-01",
-      "endDate": "2024-12-01",
-      "summary": "Finetuned pretrained language models for retrosynthesis of chemical reactions under Prof. He He.",
-      "highlights": [
-        "Developed prediction models using SMILES notation for chemical reactions.",
-        "Applied LLMs for dataset reconstruction, improving Top-1 Accuracy from 58.8% to 74.2%.",
-        "Implemented fine-tuning strategies (frozen layers, MLP adapters, LoRA) to optimize efficiency."
-      ]
-    },
+
     {
       "name": "New York University Shanghai",
-      "position": "Research Assistant",
       "startDate": "2024-05-01",
       "endDate": "2024-08-01",
       "summary": "Worked on driving route optimization considering traffic light timings under Prof. Zhibin Chen.",
