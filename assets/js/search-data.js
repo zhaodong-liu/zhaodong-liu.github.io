@@ -205,17 +205,6 @@ ninja.data = [{
             window.location.href = "/blog/2023/tikzjax/";
           
         },
-      },{id: "post-a-post-with-bibliography",
-        
-          title: "a post with bibliography",
-        
-        description: "an example of a blog post with bibliography",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2023/post-bibliography/";
-          
-        },
       },{id: "post-a-post-with-jupyter-notebook",
         
           title: "a post with jupyter notebook",
@@ -414,67 +403,48 @@ ninja.data = [{
             window.location.href = "/blog/2015/formatting-and-links/";
           
         },
-      },{id: "books-the-godfather",
-          title: 'The Godfather',
+      },{id: "news-received-certificate-of-achievement-in-the-mathematical-contest-in-modeling-mcm-for-work-on-predictive-modeling-and-bayesian-regression",
+          title: 'Received Certificate of Achievement in the Mathematical Contest in Modeling (MCM) for work...',
           description: "",
-          section: "Books",handler: () => {
-              window.location.href = "/books/the_godfather/";
-            },},{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
+          section: "News",},{id: "news-named-to-dean-s-list-for-academic-year-2022-2023-in-recognition-of-academic-excellence",
+          title: 'Named to Dean’s List for Academic Year 2022-2023 in recognition of academic excellence....',
           description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
+          section: "News",},{id: "news-named-to-dean-s-list-for-academic-year-2023-2024-for-outstanding-academic-performance",
+          title: 'Named to Dean’s List for Academic Year 2023-2024 for outstanding academic performance.',
           description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/announcement_2/";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
+          section: "News",},{id: "news-successfully-completed-summer-research-project-on-traffic-aware-route-optimization-under-prof-zhibin-chen",
+          title: 'Successfully completed summer research project on traffic-aware route optimization under Prof. Zhibin Chen....',
           description: "",
-          section: "News",},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
+          section: "News",},{id: "news-began-study-away-at-nyu-new-york-and-started-research-on-fine-tuning-pretrained-language-models-for-chemical-retrosynthesis-at-the-center-for-data-science",
+          title: 'Began study-away at NYU New York and started research on fine-tuning pretrained language...',
+          description: "",
+          section: "News",},{id: "news-completed-research-project-on-llm-based-chemical-retrosynthesis-with-prof-he-he-achieving-15-4-improvement-in-prediction-accuracy-through-innovative-data-augmentation",
+          title: 'Completed research project on LLM-based chemical retrosynthesis with Prof. He He, achieving 15.4%...',
+          description: "",
+          section: "News",},{id: "news-achieved-a-perfect-4-0-gpa-in-fall-2024-semester-at-nyu-new-york-taking-graduate-level-courses-including-natural-language-processing-with-representation-learning",
+          title: 'Achieved a perfect 4.0 GPA in Fall 2024 semester at NYU New York,...',
+          description: "",
+          section: "News",},{id: "news-started-research-on-generative-retrieval-for-recommendation-systems-under-prof-hongyi-wen-at-nyu-shanghai",
+          title: 'Started research on Generative Retrieval for Recommendation Systems under Prof. Hongyi Wen at...',
+          description: "",
+          section: "News",},{id: "news-named-to-dean-s-list-for-academic-year-2024-2025-for-the-third-consecutive-year",
+          title: 'Named to Dean’s List for Academic Year 2024-2025 for the third consecutive year!...',
+          description: "",
+          section: "News",},{id: "projects-llm-based-chemical-retrosynthesis",
+          title: 'LLM-based Chemical Retrosynthesis',
+          description: "Fine-tuning pretrained language models for predicting chemical reaction pathways",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/1_project/";
-            },},{id: "projects-project-2",
-          title: 'project 2',
-          description: "a project with a background image and giscus comments",
+              window.location.href = "/projects/chemical_retrosynthesis/";
+            },},{id: "projects-generative-retrieval-for-recommendation-system",
+          title: 'Generative Retrieval for Recommendation System',
+          description: "Multimodal user behavior prediction using advanced tokenization methods",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/2_project/";
-            },},{id: "projects-project-3-with-very-long-name",
-          title: 'project 3 with very long name',
-          description: "a project that redirects to another website",
+              window.location.href = "/projects/recommendation_system/";
+            },},{id: "projects-traffic-aware-route-optimization",
+          title: 'Traffic-Aware Route Optimization',
+          description: "Optimizing driving routes considering real-time traffic light timings",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/3_project/";
-            },},{id: "projects-project-4",
-          title: 'project 4',
-          description: "another without an image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/4_project/";
-            },},{id: "projects-project-5",
-          title: 'project 5',
-          description: "a project with a background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/5_project/";
-            },},{id: "projects-project-6",
-          title: 'project 6',
-          description: "a project with no image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/6_project/";
-            },},{id: "projects-project-7",
-          title: 'project 7',
-          description: "with background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/7_project/";
-            },},{id: "projects-project-8",
-          title: 'project 8',
-          description: "an other project with a background image and giscus comments",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/8_project/";
-            },},{id: "projects-project-9",
-          title: 'project 9',
-          description: "another project with an image 🎉",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/9_project/";
+              window.location.href = "/projects/route_optimization/";
             },},{
         id: 'social-email',
         title: 'email',
@@ -497,11 +467,11 @@ ninja.data = [{
           window.open("https://instagram.com/zhaodong_liuu", "_blank");
         },
       },{
-        id: 'social-linkedin',
-        title: 'LinkedIn',
+        id: 'social-whatsapp',
+        title: 'whatsapp',
         section: 'Socials',
         handler: () => {
-          window.open("https://www.linkedin.com/in/Zhaodong Liu", "_blank");
+          window.open("https://wa.me/8613156296623", "_blank");
         },
       },{
       id: 'light-theme',
