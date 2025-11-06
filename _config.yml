@@ -201,6 +201,7 @@ exclude:
   - _projects/7_project.md
   - _projects/8_project.md
   - _projects/9_project.md
+  - _posts/2023-07-12-post-bibliography.md
 keep_files:
   - CNAME
   - .nojekyll
