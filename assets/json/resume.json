@@ -31,7 +31,6 @@
   "work": [
     {
       "name": "New York University Shanghai",
-      "position": "Research Assistant",
       "location": "Shanghai, China",
       "startDate": "2025-05-01",
       "summary": "Generative Retrieval for Recommendation System",
@@ -43,23 +42,9 @@
         "Adapted the model architecture to support multi-modal representation learning"
       ]
     },
-    {
-      "name": "New York University",
-      "position": "Research Assistant",
-      "location": "New York, NY",
-      "startDate": "2024-09-01",
-      "endDate": "2024-12-01",
-      "summary": "Finetuning on Pretrained LM to Efficiently Perform Retrosynthesis of Chemical Reactions",
-      "highlights": [
-        "Advisor: Prof. He He (Center of Data Science, New York University)",
-        "Developed models to predict retrosynthesis of chemical reactions with SMILES notation",
-        "Applied an LLM on dataset reconstruction and augmentation, improving Top-1 Accuracy by 15.4% (from 58.8% to 74.2%) while reducing reliance on costly lab data",
-        "Applied fine-tuning strategies (frozen layers, MLP adapters, LoRA) to optimize training efficiency"
-      ]
-    },
+
     {
       "name": "New York University Shanghai",
-      "position": "Research Assistant",
       "location": "Shanghai, China",
       "startDate": "2024-05-01",
       "endDate": "2024-08-01",
