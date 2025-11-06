@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(pandoc:*)"
+      "Bash(pandoc:*)",
+      "Bash(bundle exec jekyll build:*)",
+      "Bash(bundle update:*)"
     ],
     "deny": [],
     "ask": []

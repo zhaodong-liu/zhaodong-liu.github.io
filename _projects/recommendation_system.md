@@ -2,7 +2,6 @@
 layout: page
 title: Generative Retrieval for Recommendation System
 description: Multimodal user behavior prediction using advanced tokenization methods
-img: assets/img/recommendation_preview.jpg
 importance: 1
 category: research
 ---
