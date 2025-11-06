@@ -24,7 +24,7 @@ instagram_id: zhaodong_liuu # your instagram id
 # lastfm_id: # your lastfm id
 # lattes_id: # your ID on Lattes (Brazilian Lattes CV)
 # leetcode_id: # your LeetCode id
-# linkedin_username: zhaodong-liu-51a8a2272 # your LinkedIn user name
+# linkedin_username: # your LinkedIn user name
 # mastodon_username: # your mastodon instance+username in the format instance.tld/@username
 # medium_username: # your Medium username
 # orcid_id: # your ORCID ID
@@ -52,7 +52,4 @@ instagram_id: zhaodong_liuu # your instagram id
 # zotero_username: # your zotero username
 
 
-# custom_social: # can be any name here other than the ones already defined above
-#   logo: https://www.alberteinstein.com/wp-content/uploads/2024/03/cropped-favicon-192x192.png # can be png, svg, jpg
-#   title: Custom Social
-#   url: https://www.alberteinstein.com/
+whatsapp_number: 8613156296623 # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
