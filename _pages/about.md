@@ -2,16 +2,16 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='https://shanghai.nyu.edu/'>New York University Shanghai</a>
+subtitle: <a href='https://shanghai.nyu.edu/'>New York University Shanghai · Co2026 CS & Math</a>
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>B.S. Computer Science & Mathematics</p>
-    <p>New York University Shanghai</p>
-    <p>Expected Graduation: May 2026</p>
+    <p>NYU Shanghai | NYU New York</p>
+    <p>Contact: zl4789@nyu.edu</p>
+    <p>Phone: +86 131-5629-6623</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -27,10 +27,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am Zhaodong Liu (刘兆东), a Computer Science and Mathematics double major student at New York University Shanghai, with a cumulative GPA of 3.811/4.0. My research interests lie at the intersection of **Machine Learning**, **Natural Language Processing**, and **Recommendation Systems**.
+My name is 刘兆东 (Zhaodong Liu), currently a senior student at New York University Shanghai, double majoring in Computer Science and Mathematics with a cumulative GPA of 3.811/4.0. My research interests lie at the intersection of **machine learning**, **natural language processing**, and **recommendation systems**. I am particularly fascinated by how large language models can understand and predict human behavior patterns, and how they can be applied to solve complex problems across diverse domains.
 
-I am passionate about leveraging data-driven approaches to solve complex problems. Currently, I am working as a Research Assistant under [Prof. Hongyi Wen](https://shanghai.nyu.edu/academics/faculty/directory/hongyi-wen) on generative retrieval for recommendation systems, where I am developing models to predict user behavior patterns using multimodal data. Previously, I worked with [Prof. He He](https://hhexiy.github.io/) at NYU's Center for Data Science on fine-tuning language models for chemical retrosynthesis, achieving a 15.4% improvement in prediction accuracy.
+I had the privilege of conducting research under [Prof. Hongyi Wen](https://shanghai.nyu.edu/academics/faculty/directory/hongyi-wen) on generative retrieval for recommendation systems, where I developed multimodal models that integrate visual and textual information to predict user preferences. During my study-away at NYU New York, I worked with [Prof. He He](https://hhexiy.github.io/) at the Center for Data Science, applying language models to chemical retrosynthesis—an exciting application of AI for Science (AI4S). Through innovative data augmentation techniques, we achieved a 15.4% improvement in prediction accuracy, demonstrating the transformative potential of LLMs in scientific discovery.
 
-During my study-away semesters at NYU New York (Fall 2024 and Spring 2025), I took graduate-level courses including Natural Language Processing with Representation Learning, which deepened my understanding of Large Language Models and their applications. I have been recognized on the Dean's List for three consecutive academic years (2022-2023, 2023-2024, 2024-2025).
-
-Beyond research, I am active in the NYU Shanghai community as the Trombone Section Leader in the Chamber Orchestra and previously served as Treasurer of the PEER-Pal Club, where I organized educational volunteering activities.
+Beyond research, I am deeply passionate about music. As the Trombone Section Leader of the NYU Shanghai Chamber Orchestra since 2022, I've learned that ensemble performance and research share a common thread—both require harmony between individual creativity and collective goals. It was actually through a machine learning project on music style transfer that I first witnessed the elegance of neural networks transforming raw audio into creative variations, sparking my journey into AI research. This intersection of art and science continues to inspire my work, reminding me that the most powerful algorithms are those that capture the nuances of human expression and behavior.
