@@ -32,7 +32,7 @@ ninja.data = [{
           },
         },{id: "nav-cv",
           title: "cv",
-          description: "This is a description of the page. You can modify it in &#39;_pages/cv.md&#39;. You can also change or remove the top pdf download button.",
+          description: "Curriculum Vitae of Zhaodong Liu",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
@@ -389,10 +389,7 @@ ninja.data = [{
             window.location.href = "/blog/2015/formatting-and-links/";
           
         },
-      },{id: "news-received-certificate-of-achievement-in-the-mathematical-contest-in-modeling-mcm-for-work-on-predictive-modeling-and-bayesian-regression",
-          title: 'Received Certificate of Achievement in the Mathematical Contest in Modeling (MCM) for work...',
-          description: "",
-          section: "News",},{id: "news-successfully-completed-summer-research-project-on-traffic-aware-route-optimization-under-prof-zhibin-chen",
+      },{id: "news-successfully-completed-summer-research-project-on-traffic-aware-route-optimization-under-prof-zhibin-chen",
           title: 'Successfully completed summer research project on traffic-aware route optimization under Prof. Zhibin Chen....',
           description: "",
           section: "News",},{id: "news-started-research-on-generative-retrieval-for-recommendation-systems-under-prof-hongyi-wen-at-nyu-shanghai",
