@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "projects",
-          description: "A growing collection of your cool projects.",
+          description: "My research projects",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
@@ -48,6 +48,16 @@ ninja.data = [{
           description: "Fine-tuning pretrained language models for predicting chemical reaction pathways",
           section: "Projects",handler: () => {
               window.location.href = "/projects/chemical_retrosynthesis/";
+            },},{id: "projects-collaborative-java-swing-piano-application",
+          title: 'Collaborative Java Swing Piano Application',
+          description: "A networked real-time piano application with recording, playback, and chat features",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/collaborative_piano/";
+            },},{id: "projects-fantasy-sports-league-management-system",
+          title: 'Fantasy Sports League Management System',
+          description: "A comprehensive database system for managing fantasy sports leagues with real-time tracking",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/fantasy_sports_database/";
             },},{id: "projects-generative-retrieval-for-recommendation-system",
           title: 'Generative Retrieval for Recommendation System',
           description: "Multimodal user behavior prediction using advanced tokenization methods",
