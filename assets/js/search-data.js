@@ -32,7 +32,7 @@ ninja.data = [{
           },
         },{id: "nav-cv",
           title: "cv",
-          description: "Curriculum Vitae of Zhaodong Liu",
+          description: "My Curriculum Vitae",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
