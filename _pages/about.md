@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='https://shanghai.nyu.edu/'>New York University Shanghai · Co2026 CS & Math</a>
+subtitle: <a href='https://shanghai.nyu.edu/'>New York University Shanghai</a>
 
 profile:
   align: right
@@ -27,5 +27,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-My name is 刘兆东 (Zhaodong Liu), currently a senior student at New York University Shanghai, double majoring in **Computer Science** and **Mathematics**. My research interests lie at the intersection of **machine learning**, **natural language processing**, **recommendation systems**, and **multimodal learning**. I am particularly fascinated by how large language models can understand and predict human behavior patterns, and how they can be applied to solve complex problems across diverse domains.
+My name is 刘兆东 (Zhaodong Liu), a senior student at New York University Shanghai, double majoring in **Computer Science** and **Mathematics**. 
+
+My research interests lie at the intersection of **machine learning**, **natural language processing**, **recommendation systems**, and **multimodal learning**. I am particularly fascinated by how large language models can understand and predict human behavior patterns, and how they can be applied to solve complex problems across diverse domains.
 
