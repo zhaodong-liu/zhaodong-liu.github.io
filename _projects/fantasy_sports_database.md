@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Fantasy Sports League Management System
+title: Fantasy Sports League
 description: A comprehensive database system for managing fantasy sports leagues with real-time tracking
-img:
+img: assets/img/fantasy_sports_er_diagram.png
 importance: 2
 category: course project
 related_publications: false
@@ -13,9 +13,16 @@ related_publications: false
 A fully-featured database management system designed for fantasy sports leagues, enabling users to create and manage leagues, draft players, track game statistics, and execute trades. This project demonstrates advanced database design principles, complex relational schemas, and real-world data management for sports analytics applications.
 
 **Course:** Introduction to Databases (Fall 2024)
-**Team:** DB Lovers
-**Team Members:** Zhaodong Liu, Yilei Weng, Xinyan Ge, Dong Zhang
+
+**Institution:** NYU Tandon School of Engineering 
+
+**Advisor:** [Prof. Salim Arfaoui](https://engineering.nyu.edu/faculty/salim-arfaoui)
+
+**Team:** DB Lovers (Zhaodong Liu, Yilei Weng, Xinyan Ge, Dong Zhang)
+
 **Database Platform:** Local MySQL Server
+
+**Presentation:** [Project Presentation (PDF)](/assets/pdf/Fantasy_Sports_Database_Presentation.pdf)
 
 ## Project Scope
 
@@ -35,26 +42,35 @@ The system manages all aspects of fantasy sports league operations:
 
 The system comprises 13 interconnected tables modeling the complete fantasy sports ecosystem:
 
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/fantasy_sports_er_diagram.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+<div class="caption">
+    Entity-Relationship Diagram showing the complete database schema with 13 interconnected tables
+</div>
+
 **Core Entities:**
-- **User** (25 records): Platform users with authentication and profile settings
-- **League** (25 records): Fantasy leagues with various configurations (Football, Basketball, Soccer)
-- **Team** (25 records): User-owned fantasy teams with rankings and points
-- **Player** (60 records): Real sports players with positions, teams, and fantasy stats
+- **User**: Platform users with authentication and profile settings
+- **League**: Fantasy leagues with various configurations (Football, Basketball, Soccer)
+- **Team**: User-owned fantasy teams with rankings and points
+- **Player**: Real sports players with positions, teams, and fantasy stats
 
 **Relational Tables:**
-- **Draft** (25 records): Draft scheduling and player selection tracking
-- **MatchDetail** (12 records): Game results with dates, scores, and winners
-- **MatchTeam** (24 records): Team participation in matches (home/away)
-- **PlayerStats** (25 records): Individual player performance metrics
-- **MatchEvent** (25 records): In-game events (touchdowns, goals, assists, etc.)
+- **Draft**: Draft scheduling and player selection tracking
+- **MatchDetail**: Game results with dates, scores, and winners
+- **MatchTeam**: Team participation in matches (home/away)
+- **PlayerStats**: Individual player performance metrics
+- **MatchEvent**: In-game events (touchdowns, goals, assists, etc.)
 
 **Transaction Tables:**
-- **Trade** (25 records): Trade transaction records with timestamps
-- **PlayerTrade** (30 records): Player movements between teams
-- **TeamTrade** (24 records): Multi-player team-to-team transactions
-- **Waiver** (11 records): Waiver wire claims for free agents
+- **Trade**: Trade transaction records with timestamps
+- **PlayerTrade**: Player movements between teams
+- **TeamTrade**: Multi-player team-to-team transactions
+- **Waiver**: Waiver wire claims for free agents
 
-### Database Schema Highlights
+### Database Schema
 
 #### Complex Relationships
 
@@ -90,118 +106,6 @@ The system comprises 13 interconnected tables modeling the complete fantasy spor
    - Team status: Active/Inactive
    - Player availability: Available/Traded/Injured
    - Waiver status: Pending/Approved/Denied
-
-## Technical Implementation
-
-### SQL & Database Operations
-
-#### Non-Advanced SQL Commands
-
-**DDL (Data Definition Language):**
-```sql
-CREATE TABLE Player (
-    PlayerID INT PRIMARY KEY,
-    FullName VARCHAR(100),
-    Sport VARCHAR(50),
-    Position VARCHAR(50),
-    RealTeam VARCHAR(100),
-    FantasyPoints INT DEFAULT 0,
-    AvaiStatus VARCHAR(50) DEFAULT 'Available',
-    TeamID INT,
-    FOREIGN KEY (TeamID) REFERENCES Team(TeamID)
-);
-```
-
-**DML (Data Manipulation Language):**
-- INSERT: User registration, player drafting, match recording
-- SELECT: Complex queries with joins for league standings, player stats
-- UPDATE: Score updates, roster changes, trade execution
-- DELETE: Transaction cleanup, inactive user removal
-
-#### Advanced PL/SQL Features
-
-**1. Triggers for Automatic Updates**
-
-Implemented triggers to maintain data integrity:
-
-```sql
--- Automatically update team total points when a player is added
-CREATE TRIGGER UpdateTeamPoints
-AFTER INSERT ON Player
-FOR EACH ROW
-BEGIN
-    UPDATE Team
-    SET TotalPoints = TotalPoints + NEW.FantasyPoints
-    WHERE TeamID = NEW.TeamID;
-END;
-```
-
-**2. Stored Procedures for Complex Operations**
-
-**User Registration:**
-```sql
-CREATE PROCEDURE RegisterNewUser(
-    IN p_FullName VARCHAR(100),
-    IN p_Email VARCHAR(100),
-    IN p_UserName VARCHAR(50),
-    IN p_Password VARCHAR(100)
-)
-BEGIN
-    INSERT INTO User (FullName, Email, UserName, Pwd, ProfileSetting)
-    VALUES (p_FullName, p_Email, p_UserName, p_Password, 'Public');
-END;
-```
-
-**Trade Execution:**
-```sql
-CREATE PROCEDURE ExecuteTrade(
-    IN p_PlayerID INT,
-    IN p_FromTeam INT,
-    IN p_ToTeam INT
-)
-BEGIN
-    -- Create trade record
-    INSERT INTO Trade (TradeDate) VALUES (CURDATE());
-
-    -- Record player movement
-    INSERT INTO PlayerTrade (TradeID, PlayerID, FromOrTo)
-    VALUES (LAST_INSERT_ID(), p_PlayerID, 'From'),
-           (LAST_INSERT_ID(), p_PlayerID, 'To');
-
-    -- Update player's team
-    UPDATE Player SET TeamID = p_ToTeam WHERE PlayerID = p_PlayerID;
-
-    -- Update fantasy points for both teams
-    UPDATE Team SET TotalPoints = TotalPoints -
-        (SELECT FantasyPoints FROM Player WHERE PlayerID = p_PlayerID)
-    WHERE TeamID = p_FromTeam;
-
-    UPDATE Team SET TotalPoints = TotalPoints +
-        (SELECT FantasyPoints FROM Player WHERE PlayerID = p_PlayerID)
-    WHERE TeamID = p_ToTeam;
-END;
-```
-
-## Sample Data & Testing
-
-### Data Population
-
-The database contains comprehensive sample data for testing:
-
-- **25 Users:** Diverse profiles with public/private settings
-- **25 Leagues:** Multiple sports (Football, Basketball, Soccer) with varying configurations
-- **60 Players:** Real player names across different sports and positions
-- **12 Matches:** Complete game records with scores and events
-- **25 Trades:** Player movements demonstrating transaction system
-
-### Data Quality Assurance
-
-Each table contains **at least 10 rows** of realistic data:
-- User profiles with valid email formats and secure passwords
-- Leagues spanning multiple sports with proper commissioner assignments
-- Teams with realistic names and point totals
-- Player stats reflecting actual game performance patterns
-- Trade history with proper date sequencing
 
 ## Key Features & Functionality
 

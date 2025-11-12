@@ -3,20 +3,25 @@ layout: page
 title: LLM-based Chemical Retrosynthesis
 description: Fine-tuning pretrained language models for predicting chemical reaction pathways
 importance: 2
-category: research
+category: course project
 ---
 
 ## Overview
 
 This project applies Large Language Models to the critical challenge of chemical retrosynthesis prediction—determining the reactants needed to synthesize a target molecule. This work sits at the intersection of AI and chemistry, representing a significant application of AI for Science (AI4S).
 
-**Duration:** September 2024 - December 2024
-**Course:** DS-GA-1011 NLP with Representation Learning (Fall 2024)
-**Institution:** New York University (Center for Data Science)
-**Instructor:** Prof. He He
+**Course:** DS-GA-1011 NLP with Representation Learning (Grad Level)(Fall 2024)
+
+**Institution:** New York University Center of Data Science
+
+**Advisor:** [Prof. He He](https://hhexiy.github.io)
+
 **Team Members:** Hongjia Huang, Zhaodong Liu, Haoqi (Kevin) Zhang
+
 **Repository:** [GitHub - NLP_project](https://github.com/scaliaven/NLP_project)
-**Dataset:** [HuggingFace - USPTO-50K_γ](https://huggingface.co/datasets/scaliaven/Ustop50k)
+
+**Dataset:** [HuggingFace - USPTO-50K](https://huggingface.co/datasets/scaliaven/Ustop50k)
+
 **Report:** [Final Report (PDF)](/assets/pdf/DS_GA_1011_Final_Report.pdf)
 
 ## Problem Statement

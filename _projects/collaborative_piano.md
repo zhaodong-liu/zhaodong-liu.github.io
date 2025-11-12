@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Collaborative Java Swing Piano Application
+title: Collaborative Piano
 description: A networked real-time piano application with recording, playback, and chat features
 img:
 importance: 1
@@ -12,14 +12,20 @@ related_publications: false
 
 A sophisticated networked piano application built entirely in Java that enables two users to play piano and chat together in real-time, with full recording and playback capabilities. This project demonstrates advanced software engineering principles by integrating four core computer science topics: thread concurrency with synchronization, file I/O, socket networking, and GUI graphics programming.
 
-**Course:** Java Web Design
-**Duration:** Spring 2025
+**Course:** Java and Web Design (Spring 2025)
+
+**Institution:** NYU Tandon School of Engineering 
+
+**Advisor:** [Prof. Daniel Katz-Braunschweig](https://engineering.nyu.edu/faculty/daniel-katz-braunschweig)
+
 **Repository:** [GitHub - Cooperating-Piano](https://github.com/zhaodong-liu/Cooperating-Piano)
+
 **Report:** [Project Report (PDF)](/assets/pdf/Java_Piano_Project_Report.pdf)
 
 ## Key Features
 
 ### 🎹 Real-Time Collaborative Performance
+
 - Multi-user piano playing over TCP sockets
 - Synchronized audio playback across connected clients
 - Built-in chat functionality for communication between players
@@ -83,16 +89,7 @@ A sophisticated networked piano application built entirely in Java that enables 
   - Preloaded .wav files cached in memory for low-latency playback
   - Resource management for multiple audio files
 
-### Waveform Synthesis
 
-Electronic timbres generated using mathematical formulas:
-
-| Waveform | Formula |
-|----------|---------|
-| **Sine** | `Math.sin(phase)` |
-| **Square** | `Math.signum(Math.sin(phase))` |
-| **Triangle** | `(2.0 / Math.PI) * Math.asin(Math.sin(phase))` |
-| **Sawtooth** | `(2.0 * (phase / (2.0 * Math.PI))) - 1.0` |
 
 ## Technical Challenges Solved
 

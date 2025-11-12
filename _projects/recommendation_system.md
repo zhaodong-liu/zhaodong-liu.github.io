@@ -11,8 +11,10 @@ category: research
 This project focuses on developing advanced generative retrieval models for recommendation systems, with a particular emphasis on predicting user click sequences in e-commerce environments. The research explores how Natural Language Processing techniques can be adapted to understand and predict human behavior patterns.
 
 **Duration:** May 2025 - Present
+
 **Institution:** New York University Shanghai
-**Advisor:** Prof. Hongyi Wen
+
+**Advisor:** [Prof. Hongyi Wen](https://whongyi.github.io)
 
 ## Research Goals
 

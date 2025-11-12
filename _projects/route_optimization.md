@@ -11,8 +11,10 @@ category: research
 This project develops an intelligent routing system that optimizes driving routes by considering traffic light timings and patterns. Unlike traditional navigation systems that primarily focus on distance, this approach incorporates real-world traffic signal constraints to minimize actual travel time.
 
 **Duration:** May 2024 - August 2024
+
 **Institution:** New York University Shanghai
-**Advisor:** Prof. Zhibin Chen
+
+**Advisor:** [Prof. Zhibin Chen](https://shanghai.nyu.edu/academics/faculty/directory/zhibin-chen)
 
 ## Motivation
 
