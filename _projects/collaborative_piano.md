@@ -15,6 +15,7 @@ A sophisticated networked piano application built entirely in Java that enables 
 **Course:** Java Web Design
 **Duration:** Spring 2025
 **Repository:** [GitHub - Cooperating-Piano](https://github.com/zhaodong-liu/Cooperating-Piano)
+**Report:** [Project Report (PDF)](/assets/pdf/Java_Piano_Project_Report.pdf)
 
 ## Key Features
 
