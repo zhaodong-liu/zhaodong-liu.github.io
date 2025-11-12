@@ -435,13 +435,6 @@ ninja.data = [{
           window.open("https://instagram.com/zhaodong_liuu", "_blank");
         },
       },{
-        id: 'social-whatsapp',
-        title: 'whatsapp',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://wa.me/8613156296623", "_blank");
-        },
-      },{
       id: 'light-theme',
       title: 'Change theme to light',
       description: 'Change the theme of the site to Light',
