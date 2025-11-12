@@ -3,7 +3,7 @@ layout: page
 title: LLM-based Chemical Retrosynthesis
 description: Fine-tuning pretrained language models for predicting chemical reaction pathways
 importance: 2
-category: course project
+category: research
 ---
 
 ## Overview
@@ -13,6 +13,7 @@ This project applies Large Language Models to the critical challenge of chemical
 **Duration:** September 2024 - December 2024
 **Institution:** New York University (Center for Data Science)
 **Advisor:** Prof. He He
+**Repository:** [GitHub - NLP_project](https://github.com/scaliaven/NLP_project)
 
 ## Problem Statement
 
