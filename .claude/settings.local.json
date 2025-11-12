@@ -4,7 +4,9 @@
       "Bash(pandoc:*)",
       "Bash(bundle exec jekyll build:*)",
       "Bash(bundle update:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(gh run list:*)",
+      "Bash(done)"
     ],
     "deny": [],
     "ask": []
