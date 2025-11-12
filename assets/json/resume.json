@@ -28,7 +28,7 @@
       ]
     }
   ],
-  "work": [
+  "Research Experiences": [
     {
       "name": "New York University Shanghai",
       "location": "Shanghai, China",
@@ -57,7 +57,7 @@
       ]
     }
   ],
-  "volunteer": [
+  "Leadership & Activities": [
     {
       "organization": "PEER-Pal Club, New York University Shanghai",
       "position": "Treasurer",
@@ -78,7 +78,7 @@
   ],
   "awards": [
     {
-      "title": "Dean’s List (2022–2023, 2023–2024, 2024–2025)",
+      "title": "Dean's List (2022–2023, 2023–2024, 2024–2025)",
       "awarder": "New York University Shanghai",
       "summary": "Recognized for outstanding academic performance (GPA ≥ 3.7)."
     },
@@ -87,6 +87,12 @@
       "awarder": "COMAP",
       "date": "2023-05-01",
       "summary": "Built predictive models and performed Bayesian regression for market analysis after data preprocessing."
+    },
+    {
+      "title": "Bloomberg Trading Challenge",
+      "awarder": "Bloomberg L.P.",
+      "date": "2022-11-01",
+      "summary": "Ranked 1st at NYU and 5th in Asia. Chose potential stocks through group discussion and operated the Bloomberg terminal to trade stocks on the US stock market (Sep 2022 - Nov 2022)."
     }
   ],
   "skills": [
