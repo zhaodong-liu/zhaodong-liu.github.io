@@ -22,6 +22,8 @@ A sophisticated networked piano application built entirely in Java that enables 
 
 **Report:** [Project Report (PDF)](/assets/pdf/Java_Piano_Project_Report.pdf)
 
+**User Guide:** [User Guide (PDF)](/assets/pdf/Cooperating Piano User Guide.pdf)
+
 ## Key Features
 
 ### 🎹 Real-Time Collaborative Performance
