@@ -22,6 +22,8 @@ A fully-featured database management system designed for fantasy sports leagues,
 
 **Database Platform:** Local MySQL Server
 
+**Repository:** [GitHub - DB_Final_Project](https://github.com/ShadderD/DB_Final_Project)
+
 **Presentation:** [Project Presentation (PDF)](/assets/pdf/Fantasy_Sports_Database_Presentation.pdf)
 
 ## Project Scope
