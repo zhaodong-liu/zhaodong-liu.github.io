@@ -4,7 +4,8 @@ github_users:
 repo_description_lines_max: 2
 
 github_repos:
-  - zhaodong-liu/Cooperating-Piano
   - scaliaven/NLP_project
+  - zhaodong-liu/Cooperating-Piano
+  - zhaodong-liu/Fantasy_Sports_League
 
 
