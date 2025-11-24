@@ -2,7 +2,7 @@
 layout: page
 title: Collaborative Piano
 description: A networked real-time piano application with recording, playback, and chat features
-img: assets/img/projects/collaborative_piano.jpg
+img: assets/img/PianoAppDemo.png
 importance: 1
 category: course project
 related_publications: false
@@ -23,6 +23,14 @@ A sophisticated networked piano application built entirely in Java that enables 
 **Report:** [Project Report (PDF)](/assets/pdf/Java_Piano_Project_Report.pdf)
 
 **User Guide:** [User Guide (PDF)](/assets/pdf/Cooperating Piano User Guide.pdf)
+
+## Interface
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/PianoAppDemo.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
 
 ## Key Features
 
