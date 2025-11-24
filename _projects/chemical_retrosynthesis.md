@@ -19,7 +19,7 @@ This project applies Large Language Models to the critical challenge of chemical
 
 **Team Members:** Hongjia Huang, Zhaodong Liu, Haoqi (Kevin) Zhang
 
-**Repository:** [GitHub - NLP_project](https://github.com/scaliaven/NLP_project)
+**Repository:** [GitHub - NLP_project](https://github.com/zhaodong-liu/Chemical-Retrosynthesis)
 
 **Dataset:** [HuggingFace - USPTO-50K](https://huggingface.co/datasets/scaliaven/Ustop50k)
 
