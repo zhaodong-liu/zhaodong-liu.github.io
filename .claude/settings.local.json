@@ -8,7 +8,8 @@
       "Bash(gh run list:*)",
       "Bash(done)",
       "Bash(mkdir:*)",
-      "Bash(cp:*)"
+      "Bash(cp:*)",
+      "Bash(xargs -I {} sh -c 'echo \"\"\"\"===== {} =====\"\"\"\"; head -10 {} | grep -E \"\"\"\"^(title:|category:)\"\"\"\"')"
     ],
     "deny": [],
     "ask": []

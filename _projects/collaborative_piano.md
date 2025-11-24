@@ -4,7 +4,7 @@ title: Collaborative Piano
 description: A networked real-time piano application with recording, playback, and chat features
 img: assets/img/PianoAppDemo.png
 importance: 1
-category: course project
+category: selected projects
 related_publications: false
 ---
 

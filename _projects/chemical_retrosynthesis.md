@@ -4,7 +4,7 @@ title: LLM-based Chemical Retrosynthesis
 description: Fine-tuning pretrained language models for predicting chemical reaction pathways
 img: assets/img/projects/chemical_retrosynthesis.jpg
 importance: 2
-category: course project
+category: selected projects
 ---
 
 ## Overview
