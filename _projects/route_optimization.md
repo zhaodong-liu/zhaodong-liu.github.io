@@ -9,7 +9,7 @@ category: research projects
 
 ## Overview
 
-This project develops a traffic-aware routing optimization system using SUMO (Simulation of Urban MObility) that considers both travel time and energy efficiency. By simulating real-world traffic conditions and traffic light timings, the system optimizes driving routes to minimize travel time and improve energy efficiency. The project features distinct modeling approaches for two vehicle types: traditional gasoline vehicles (with coasting) and electric vehicles (with regenerative braking).
+This project develops a traffic-aware routing optimization system using SUMO (Simulation of Urban MObility) that considers both travel time and energy efficiency. By simulating real-world traffic conditions and traffic light timings, the system optimizes driving routes to minimize travel time and improve energy efficiency. The project features distinct modeling approaches for two vehicle types: traditional gasoline vehicles (with LICO -- lifting and coasting) and electric vehicles (with regenerative braking).
 
 **Duration:** May 2024 - August 2024
 
@@ -25,7 +25,7 @@ Traditional routing systems optimize primarily for distance or travel time, negl
 
 - **Traffic Light Impact**: Frequent stops at red lights increase fuel consumption and reduce efficiency
 - **Vehicle-Specific Dynamics**: Gasoline and electric vehicles have fundamentally different energy profiles
-  - **Gasoline Vehicles**: Benefit from coasting to reduce fuel consumption before stops
+  - **Gasoline Vehicles**: Benefit from LICO --  lifting and coasting to reduce fuel consumption before stops
   - **Electric Vehicles**: Utilize regenerative braking to recover energy during deceleration
 - **Energy Optimization**: Route planning should consider both travel time and energy efficiency
 - **Real-World Constraints**: Traffic signal timings create time-dependent optimization opportunities
@@ -40,7 +40,7 @@ Built a comprehensive traffic simulation environment with vehicle-specific model
 - **Road Network**: Real-world road network with intersection topology
 - **Traffic Signals**: Configured realistic traffic light timings and synchronization patterns
 - **Vehicle Models**: Implemented two distinct vehicle types in SUMO:
-  - **Gasoline Vehicle Model**: Parameters for coasting behavior, fuel consumption during idle/acceleration
+  - **Gasoline Vehicle Model**: Parameters for LICO behavior, fuel consumption during idle/acceleration
   - **Electric Vehicle Model**: Regenerative braking efficiency, battery discharge/charge rates
 - **Traffic Patterns**: Time-varying traffic flows affecting vehicle speeds and stops
 
@@ -49,7 +49,7 @@ Built a comprehensive traffic simulation environment with vehicle-specific model
 Formulated the route optimization as a multi-objective graph problem:
 - **Nodes**: Intersections with traffic signals and timing information
 - **Edges**: Road segments with vehicle-type-specific cost functions
-  - **Gasoline Vehicle Costs**: Travel time + fuel consumption (accounting for coasting opportunities)
+  - **Gasoline Vehicle Costs**: Travel time + fuel consumption (accounting for LICO opportunities)
   - **Electric Vehicle Costs**: Travel time + net energy consumption (including regenerative braking recovery)
 - **Constraints**: Traffic light timings, signal phase predictions, vehicle dynamics
 
@@ -57,10 +57,10 @@ Formulated the route optimization as a multi-objective graph problem:
 
 #### Core Implementation: Vehicle-Aware Routing Algorithm
 
-Extended Dijkstra's algorithm with vehicle-specific energy modeling:
+Extended **Dijkstra**'s algorithm with vehicle-specific energy modeling:
 
 **For Gasoline Vehicles:**
-- Detects opportunities to coast before red lights (reducing fuel waste from braking)
+- Detects opportunities to LICO before red lights (reducing fuel waste from braking)
 - Calculates optimal deceleration points based on traffic signal timing
 - Minimizes idle time at intersections (high fuel consumption, zero distance)
 - Prefers routes with fewer stops even if slightly longer
@@ -85,7 +85,7 @@ Extended Dijkstra's algorithm with vehicle-specific energy modeling:
 - **OpenStreetMap (OSM)**: Road network topology and geometry
 - **Traffic Signal Data**: Traffic light timing, phase sequences, and synchronization patterns
 - **Vehicle Parameters**:
-  - Gasoline vehicle: Engine efficiency curves, idle fuel consumption, coasting deceleration rates
+  - Gasoline vehicle: Engine efficiency curves, idle fuel consumption, LICO deceleration rates
   - Electric vehicle: Motor efficiency, battery characteristics, regenerative braking coefficients
 - **Traffic Patterns**: Time-varying traffic flows affecting vehicle speeds
 
@@ -95,7 +95,7 @@ Implemented a complete SUMO-based simulation environment:
 - **Network Import**: Converted OSM data to SUMO road network format with elevation data
 - **Traffic Light Configuration**: Programmed realistic signal timing and phase patterns
 - **Vehicle Type Definitions**:
-  - **Gasoline Vehicle**: Custom vehicle class with fuel consumption model and coasting parameters
+  - **Gasoline Vehicle**: Custom vehicle class with fuel consumption model and LICO parameters
   - **Electric Vehicle**: Battery-electric vehicle with regenerative braking enabled
 - **Energy Tracking**: Integrated SUMO's energy consumption models for both vehicle types
 - **Scenario Testing**: Multiple test scenarios with varying traffic densities and signal timings
@@ -106,7 +106,7 @@ Compared routing strategies for both vehicle types:
 
 **Gasoline Vehicle Routes:**
 1. **Time-Optimal**: Fastest route ignoring energy
-2. **Coasting-Optimized**: Route maximizing coasting opportunities before red lights
+2. **LICO-Optimized**: Route maximizing LICO opportunities before red lights
 3. **Hybrid**: Balanced time and fuel efficiency
 
 **Electric Vehicle Routes:**
@@ -119,7 +119,7 @@ Compared routing strategies for both vehicle types:
 The vehicle-specific traffic-aware optimization demonstrated:
 
 **Gasoline Vehicles:**
-- **Fuel Savings**: Reduced fuel consumption through strategic coasting
+- **Fuel Savings**: Reduced fuel consumption through strategic LICO
 - **Idle Time Reduction**: Fewer stops at red lights decreased idle fuel waste
 - **Trade-offs**: Small increases in travel time (2-5%) achieved significant fuel savings (10-15%)
 
@@ -133,12 +133,53 @@ The vehicle-specific traffic-aware optimization demonstrated:
 - Traffic light timing integration crucial for both vehicle types
 - Energy-aware routing provides measurable benefits without major time penalties
 
+## Case Study: NYU Shanghai Shuttle Optimization
+
+### Background
+
+The NYU Shanghai shuttle service operates on the route connecting the campus in Pudong with the residential area. The shuttle fleet consists of diesel buses, making fuel efficiency a key concern for operational costs and environmental impact.
+
+### Simulation Setup
+
+**Route Analyzed:** NYU Shanghai Qiantan Campus → Jingyao Residence Hall
+
+**Key Parameters:**
+- Route distance: Approximately 3 km
+- Number of traffic lights: 7 major intersections
+- Peak hour operation: Morning (7:30-9:00 AM) and Evening (5:00-7:00 PM)
+- Average trip time: 15 minutes depending on traffic
+
+**SUMO Configuration:**
+- Imported actual road network of Pudong area from OpenStreetMap
+- Configured real traffic signal timings from major intersections
+- Modeled diesel shuttle bus with realistic fuel consumption parameters
+- Simulated morning rush hour traffic patterns
+
+### Optimization Results
+
+**Key Findings:**
+- The strategy does not show significant improvement on fuel efficiency due to rather short distance, and low number of traffic lights involved. However, it shows preliminary results of fuel saving, demonstrating its usefulness.
+
+### Implementation Considerations
+
+**Feasibility:**
+- Route modifications require minimal changes to existing schedule
+- Departure time adjustments of 2-3 minutes improve traffic light synchronization
+- LICO driving behavior can be implemented through driver training
+
+**Limitations:**
+- Passenger convenience must be balanced with energy efficiency
+- Real-time traffic variations not fully captured in simulation
+- Schedule reliability remains the primary constraint for actual implementation
+
+This case study demonstrates the practical applicability of traffic-aware, energy-efficient routing for real campus transportation systems, showing that modest schedule adjustments can yield significant operational and environmental benefits.
+
 ## Technical Challenges Addressed
 
 1. **Vehicle-Specific Modeling**: Accurately capturing different energy consumption patterns
 2. **Multi-Objective Optimization**: Balancing travel time and energy efficiency
 3. **Regenerative Braking Modeling**: Quantifying energy recovery in electric vehicles
-4. **Coasting Strategy**: Determining optimal deceleration points for gasoline vehicles
+4. **LICO Strategy**: Determining optimal deceleration points for gasoline vehicles
 5. **Real-time Constraints**: Efficient computation for practical route planning
 6. **SUMO Integration**: Coupling optimization algorithm with detailed traffic simulation
 
