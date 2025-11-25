@@ -1,10 +1,10 @@
 ---
 layout: page
-title: CLAIRO - Collaborative Learning with Action-aware Image-text Representation Optimization
+title: Generative Retrieval for Recommendation System
 description: A multimodal generative recommendation system that extends ActionPiece with visual features
 img: assets/img/projects/recommendation_system.jpg
 importance: 1
-category: research projects
+category: projects
 ---
 
 ## Overview

@@ -5,7 +5,7 @@ permalink: /projects/
 description: My projects
 nav: true
 nav_order: 3
-display_categories: [research projects, selected projects]
+display_categories: [projects]
 horizontal: false
 ---
 
