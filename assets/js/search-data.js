@@ -43,7 +43,12 @@ ninja.data = [{
           section: "News",},{id: "news-started-research-on-generative-retrieval-for-recommendation-systems-under-prof-hongyi-wen-at-nyu-shanghai",
           title: 'Started research on Generative Retrieval for Recommendation Systems under Prof. Hongyi Wen at...',
           description: "",
-          section: "News",},{id: "projects-llm-based-chemical-retrosynthesis",
+          section: "News",},{id: "projects-audio-classification-for-gender-recognition",
+          title: 'Audio Classification for Gender Recognition',
+          description: "Deep learning ensemble of ResNet34 models for classifying music snippets by singer gender",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/audio_classification/";
+            },},{id: "projects-llm-based-chemical-retrosynthesis",
           title: 'LLM-based Chemical Retrosynthesis',
           description: "Fine-tuning pretrained language models for predicting chemical reaction pathways",
           section: "Projects",handler: () => {
