@@ -43,9 +43,9 @@ ninja.data = [{
           section: "News",},{id: "news-started-research-on-generative-retrieval-for-recommendation-systems-under-prof-hongyi-wen-at-nyu-shanghai",
           title: 'Started research on Generative Retrieval for Recommendation Systems under Prof. Hongyi Wen at...',
           description: "",
-          section: "News",},{id: "projects-audio-classification-for-gender-recognition",
-          title: 'Audio Classification for Gender Recognition',
-          description: "Deep learning ensemble of ResNet34 models for classifying music snippets by singer gender",
+          section: "News",},{id: "projects-music-classification",
+          title: 'Music Classification',
+          description: "Ensemble of ResNet34 models for classifying music audio snippets by singer gender",
           section: "Projects",handler: () => {
               window.location.href = "/projects/audio_classification/";
             },},{id: "projects-llm-based-chemical-retrosynthesis",
@@ -63,8 +63,8 @@ ninja.data = [{
           description: "A comprehensive database system for managing fantasy sports leagues with real-time tracking",
           section: "Projects",handler: () => {
               window.location.href = "/projects/fantasy_sports_database/";
-            },},{id: "projects-generative-retrieval-for-recommendation-system",
-          title: 'Generative Retrieval for Recommendation System',
+            },},{id: "projects-generative-recommendation-system",
+          title: 'Generative Recommendation System',
           description: "A multimodal generative recommendation system that extends ActionPiece with visual features",
           section: "Projects",handler: () => {
               window.location.href = "/projects/recommendation_system/";
