@@ -21,9 +21,9 @@ To address these limitations, we propose **CLAIRO** (Collaborative Learning with
 
 **Team Members:**
 
-- Zhaodong Liu (zl4789@nyu.edu)
-- Yuquan Hu (yh4663@nyu.edu)
-- Tuoye Liu (tl3735@nyu.edu)
+- Zhaodong Liu 
+- Yuquan Hu
+- Tuoye Liu
 
 ## Research Goals
 
@@ -37,14 +37,19 @@ The primary objectives of **CLAIRO** are to:
 
 We conducted a comprehensive literature review and selected three state-of-the-art approaches as our baselines:
 
-### 1. LIGER
+### 1. [LIGER](/assets/pdf/LIGER.pdf)
+
 Implements a hybrid paradigm that unifies dense retrieval and generative retrieval based on the TIGER architecture. By introducing a semantic indexing mechanism and constrained beam search, LIGER achieves superior performance in sequential recommendation tasks. We use LIGER to evaluate RQ-VAE-based quantization approaches in text-only settings.
 
-### 2. MQL4GRec
-Proposes a multimodal quantitative language framework that extends TIGER-like methods with visual inputs. Their key innovation lies in using Residual-Quantized Variational AutoEncoder (RQ-VAE) to discretize visual features into quantitative tokens, enabling unified processing of text and images through a T5-based encoder-decoder.
+### 2.  [MQL4GRec](/assets/pdf/MQL4GREC.pdf)
 
-### 3. ActionPiece (Primary Baseline)
+Proposes a multimodal quantitative language framework that extends TIGER-like methods with visual inputs, achieving state-of-the-art results with multimodel inputs. Their key innovation lies in using Residual-Quantized Variational AutoEncoder (RQ-VAE) to discretize visual features into quantitative tokens, enabling unified processing of text and images through a T5-based encoder-decoder.
+
+### 3. [ActionPiece (Primary Baseline)](/assets/pdf/ActionPiece.pdf)
+
 Introduces a novel collaborative tokenization method that discovers latent behavior patterns through token merging, achieving state-of-the-art results with text-only inputs. Its ability to capture co-occurring user-item interactions through dynamic token clustering makes it an ideal foundation for multimodal extension. We chose ActionPiece as our primary baseline due to its recent superior performance and the potential to enhance it with multimodal capabilities.
+
+
 
 ## Methodology
 
