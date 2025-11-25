@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Generative Retrieval for Recommendation System
+title: Generative Recommendation System
 description: A multimodal generative recommendation system that extends ActionPiece with visual features
 img: assets/img/projects/recommendation_system.jpg
 importance: 1

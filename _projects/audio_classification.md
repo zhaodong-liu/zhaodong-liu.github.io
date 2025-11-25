@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Audio Classification for Gender Recognition
-description: Deep learning ensemble of ResNet34 models for classifying music snippets by singer gender
+title: Music Classification
+description: Ensemble of ResNet34 models for classifying music audio snippets by singer gender
 img: assets/img/projects/audio_classification.jpg
-importance: 3
+importance: 2
 category: projects
 ---
 
