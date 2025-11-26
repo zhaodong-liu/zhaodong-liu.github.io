@@ -3,7 +3,7 @@ layout: page
 title: Fantasy Sports League
 description: A comprehensive database system for managing fantasy sports leagues with real-time tracking
 img: assets/img/projects/fantasy_sports_database.jpg
-importance: 3
+importance: 5
 category: projects
 related_publications: false
 ---

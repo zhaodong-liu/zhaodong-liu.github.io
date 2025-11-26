@@ -3,7 +3,7 @@ layout: page
 title: Traffic-Aware Route Optimization
 description: Optimizing driving routes considering real-time traffic light timings
 img: assets/img/projects/route_optimization.jpg
-importance: 2
+importance: 3
 category: projects
 ---
 

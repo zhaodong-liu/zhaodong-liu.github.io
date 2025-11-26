@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Music Classification
+title: Music Snippet Classification
 description: Ensemble of ResNet34 models for classifying music audio snippets by singer gender
 img: assets/img/projects/audio_classification.jpg
-importance: 2
+importance: 3
 category: projects
 ---
 
