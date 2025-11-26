@@ -43,8 +43,8 @@ ninja.data = [{
           section: "News",},{id: "news-started-research-on-generative-retrieval-for-recommendation-systems-under-prof-hongyi-wen-at-nyu-shanghai",
           title: 'Started research on Generative Retrieval for Recommendation Systems under Prof. Hongyi Wen at...',
           description: "",
-          section: "News",},{id: "projects-music-classification",
-          title: 'Music Classification',
+          section: "News",},{id: "projects-music-snippet-classification",
+          title: 'Music Snippet Classification',
           description: "Ensemble of ResNet34 models for classifying music audio snippets by singer gender",
           section: "Projects",handler: () => {
               window.location.href = "/projects/audio_classification/";
