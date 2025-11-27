@@ -19,11 +19,7 @@ To address these limitations, we propose **CLAIRO** (Collaborative Learning with
 
 **Advisor:** [Prof. Hongyi Wen](https://whongyi.github.io)
 
-**Team Members:**
-
-- Zhaodong Liu 
-- Yuquan Hu
-- Tuoye Liu
+**Team Members:** Zhaodong Liu, Yuquan Hu, Tuoye Liu
 
 ## Research Goals
 
