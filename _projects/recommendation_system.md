@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Generative Recommendation System
-description: A multimodal generative recommendation system that extends ActionPiece with visual features
+title: CLAIRO - Multimodal Generative Recommendation
+description: Collaborative Learning with Action-aware Image-text Representation Optimization
 img: assets/img/projects/recommendation_system.jpg
 importance: 1
 category: projects
@@ -9,165 +9,180 @@ category: projects
 
 ## Overview
 
-We study how to build more effective recommendation systems using NLP techniques, with a focus on overcoming two long-standing challenges: **long-tail items** and **cold-start users**. Traditional recommendation systems typically follow a candidate-generation-plus-ranking pipeline, which tends to over-favor popular items and ignore long-tail items. They also struggle with cold-start problems, where user interaction histories are short, leading to unreliable candidate filtering and poor personalization in the early stages.
+Traditional recommendation systems struggle with two fundamental challenges: **long-tail items** (rarely seen products) and **cold-start users** (users with limited interaction history). These systems typically rely on candidate-ranking pipelines that favor popular items, failing to surface the vast majority of available content.
 
-To address these limitations, we propose **CLAIRO** (Collaborative Learning with Action-aware Image-text Representation Optimization), a system based on autoregressive sequence modeling. Building on the context-aware tokenization of ActionPiece, we extend multimodal capability for the model, using novel methods to combine visual and textual information. Our goal is to make advanced generative recommendation techniques both practical and scalable for real-world industry applications.
+We introduce **CLAIRO** (Collaborative Learning with Action-aware Image-text Representation Optimization), a multimodal generative recommendation system that reformulates recommendation as an autoregressive generation task. By extending ActionPiece's context-aware tokenization framework with visual features, CLAIRO learns to merge co-occurring textual and visual patterns, creating richer item representations that improve recommendation accuracy while maintaining computational efficiency.
 
-**Duration:** September 2024 - Present
-
+**Duration:** May 2025 - present
 **Institution:** New York University Shanghai
-
 **Advisor:** [Prof. Hongyi Wen](https://whongyi.github.io)
-
 **Team Members:** Zhaodong Liu, Yuquan Hu, Tuoye Liu
 
-## Research Goals
+**[View Full Report](/assets/pdf/CLAIRO_Final_Report.pdf)** for detailed methodology, comprehensive experimental results, and in-depth analysis.
 
-The primary objectives of **CLAIRO** are to:
-- Extend ActionPiece's collaborative tokenization framework with multimodal capabilities
-- Integrate visual and textual information through novel token merging mechanisms
-- Discover co-occurring patterns across text and vision modalities
-- Maintain computational efficiency while improving prediction accuracy
+## Key Innovation
 
-## Baseline Models
+CLAIRO's core innovation is **multimodal token merging** - extending ActionPiece's BPE-inspired algorithm to jointly learn from both visual and textual features. Unlike existing approaches that treat modalities separately, CLAIRO discovers cross-modal co-occurrence patterns during vocabulary construction, enabling the model to capture semantic relationships that emerge when visual patterns align with textual descriptions.
 
-We conducted a comprehensive literature review and selected three state-of-the-art approaches as our baselines:
+## Baselines
 
-### 1. [LIGER](/assets/pdf/LIGER.pdf)
+We compare CLAIRO against two categories of state-of-the-art models:
 
-Implements a hybrid paradigm that unifies dense retrieval and generative retrieval based on the TIGER architecture. By introducing a semantic indexing mechanism and constrained beam search, LIGER achieves superior performance in sequential recommendation tasks. We use LIGER to evaluate RQ-VAE-based quantization approaches in text-only settings.
+**Text-only Baseline:**
+- **[ActionPiece](/assets/pdf/ActionPiece.pdf)**: Context-aware tokenization using collaborative token merging for sequential recommendation
 
-### 2.  [MQL4GRec](/assets/pdf/MQL4GREC.pdf)
-
-Proposes a multimodal quantitative language framework that extends TIGER-like methods with visual inputs, achieving state-of-the-art results with multimodel inputs. Their key innovation lies in using Residual-Quantized Variational AutoEncoder (RQ-VAE) to discretize visual features into quantitative tokens, enabling unified processing of text and images through a T5-based encoder-decoder.
-
-### 3. [ActionPiece (Primary Baseline)](/assets/pdf/ActionPiece.pdf)
-
-Introduces a novel collaborative tokenization method that discovers latent behavior patterns through token merging, achieving state-of-the-art results with text-only inputs. Its ability to capture co-occurring user-item interactions through dynamic token clustering makes it an ideal foundation for multimodal extension. We chose ActionPiece as our primary baseline due to its recent superior performance and the potential to enhance it with multimodal capabilities.
+**Multimodal Baseline:**
+- **[MQL4GRec](/assets/pdf/MQL4GREC.pdf)**: Uses RQ-VAE to discretize multimodal features into separate token sequences
 
 
 
 ## Methodology
 
-### Research Motivation and Evolution
+### System Architecture
 
-The core question driving this research is: **how can we effectively learn unified representations of multimodal information (such as human behaviors combined with visual and textual cues) without suffering from codebook collapse or computational inefficiency?**
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/projects/clairo/pipeline.png" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    CLAIRO's multimodal fusion and tokenization pipeline
+</div>
 
-Recognizing that human decision-making often relies on visual cues, we developed a recommendation framework using collaborative tokenization to discover latent behavioral patterns across modalities.
+CLAIRO extends ActionPiece's tokenization framework through a streamlined pipeline:
 
-### Overcoming VQ-VAE Limitations
+**1. Multimodal Feature Extraction**
+- **Visual**: CLIP ViT-L/14 extracts image embeddings
+- **Textual**: SentenceT5 generates sentence embeddings
+- PCA compression unifies dimensionality (384-dim each → 768-dim fused)
 
-Our initial approach used a **Vector Quantized Variational Autoencoder (VQ-VAE)**, which maps continuous embeddings to nearest codebook vectors. However, this soon collapsed to a small subset of codes, failing to utilize most of the codebook and unable to deal with hierarchical structures—a common property in real-world decision-making processes.
+**2. Optimized Product Quantization (OPQ)**
+- FAISS-based quantization decomposes fused embeddings into discrete semantic codes
+- Key insight: Skipping final-stage PCA before OPQ yields **37-42% improvement** by preserving fine-grained retrieval information
 
-After systematic analysis, I recognized this as a structural issue: VQ-VAE's inherent single-quantized architecture lacked the ability to refine latent information progressively. This led us to explore **residual quantization**, optimizing the **Residual Quantized Variational Autoencoder (RQ-VAE)** which allows each level to refine the remaining semantic residuals, yielding much more interpretable discrete code hierarchies while improving codebook utilization.
+**3. Collaborative Token Merging**
 
-### Multimodal Token Merging Architecture
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/projects/clairo/clairo-merge.png" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    CLAIRO's multimodal token merging algorithm discovers co-occurring patterns across visual and textual modalities
+</div>
 
-Building upon ActionPiece's tokenization framework, we successfully extended its capability to incorporate visual features. To learn user behavioral patterns not only from single-item modality, but also from the similarity across textual and visual modalities, we implemented a **byte pair encoding (BPE)-inspired token reconstruction algorithm** that identifies and merges co-occurring multimodal behavioral patterns, effectively aligning latent codes with human-interpretable behavioral units. This improved sequence coherence and codebook utilization.
+Unlike traditional approaches that process modalities separately, CLAIRO's token merging algorithm jointly clusters visual and textual features based on co-occurrence frequency. This enables the vocabulary to capture cross-modal semantic patterns - for example, when album cover aesthetics consistently align with music genre descriptions.
 
-Our implementation integrates:
+### Dataset
 
-1. **Visual Encoder**: CLIP ViT-L/14 extracts image embeddings for product images
-2. **Multimodal Fusion with Dimensionality Reduction**:
-   - Visual embeddings from pretrained ViT are compressed via **Principal Component Analysis (PCA)**, preserving **95% of embedding information** while reducing computational overhead by **50%**
-   - Reduced visual vectors are concatenated with textual sentence embeddings from SentenceTransformer
-   - Optional second-stage PCA ensures the fused representation remains compact and well-conditioned
-   - **Learned attention mechanism** effectively integrates visual and textual features, letting the quantizer operate on aligned multimodal semantics rather than raw high-dimensional features
-3. **Joint Token Merging**: Modified ActionPiece's token merging mechanism to jointly consider both textual and visual tokens during clustering, discovering co-occurring patterns across modalities
-4. **FAISS-based Quantization**: Fused embeddings generate product-level semantic codes integrated into ActionPiece's feature tuple structure
+We evaluate on **Amazon Review Data (2018)** across four diverse categories:
+- Arts, Crafts and Sewing
+- CDs and Vinyl
+- Musical Instruments
+- Sports and Outdoors
 
-The resulting behavioral tokens encode both textual semantics and visual appearance, providing richer item representations for recommendation tasks.
+The dataset provides 233.1M reviews with rich multimodal information (product images, descriptions, user interaction histories).
 
-### Addressing High-Dimensional Challenges
+## Results
 
-Integrating multimodal data presented new challenges: high-dimensional embeddings overwhelmed the quantizers, making it difficult to form stable clusters in latent space and leading to overfitting in some dominant areas while significantly increasing computational overhead. The PCA compression and attention mechanism innovations enabled the model to operate reliably while maintaining both representation quality and efficiency.
+### Performance Highlights
 
-### Data Preprocessing
+CLAIRO achieves significant improvements over both text-only and multimodal baselines across multiple datasets:
 
-We constructed a new data preprocessing pipeline compatible with the Amazon Reviews 2018 dataset, which provides more valid visual and textual data for multimodal adaptation across multiple product categories.
+| Category | vs ActionPiece (text-only) | vs MQL4GRec (multimodal) |
+|----------|---------------------------|--------------------------|
+| **CDs and Vinyl** | +45.1% NDCG@5 | **+135.3% NDCG@5** |
+| **Sports** | +47.2% NDCG@5 | -22.5% NDCG@5 |
+| **Arts** | +2.2% NDCG@5 | +43.5% NDCG@5 |
+| **Instruments** | +1.7% NDCG@5 | +10.9% NDCG@5 |
 
-## Preliminary Results
+**[View Full Results](/assets/pdf/CLAIRO_Final_Report.pdf)** with detailed metrics (Recall@5/10, NDCG@5/10) and statistical analysis.
 
-We have successfully replicated baseline models and conducted extensive experiments. The performance aligns well with reported results in the original papers.
+### Why Performance Varies Across Categories
 
-### Baseline Performance
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/projects/clairo/category-photos.png" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Sample product images from different Amazon categories
+</div>
 
-**ActionPiece vs TIGER on Amazon Reviews:**
+Our analysis reveals that visual features contribute differently depending on product type:
 
-| Dataset | Model | R@5 | N@5 | R@10 | N@10 |
-|---------|-------|-----|-----|------|------|
-| Sports & Outdoors | ActionPiece | 0.0316 | 0.0205 | 0.0500 | 0.0264 |
-| Sports & Outdoors | TIGER | 0.0341 | 0.0221 | 0.0518 | 0.0279 |
-| Beauty | ActionPiece | 0.0511 | 0.0340 | 0.0775 | 0.0424 |
-| Beauty | TIGER | 0.0627 | 0.0418 | 0.0914 | 0.0511 |
+**🎵 CDs and Vinyl** (Highest gains: **+135.3%** over MQL4GRec)
 
-### CLAIRO Performance
+- Album covers contain semantically rich visual information (artistic style, genre cues, emotional tone)
+- Strong visual-textual correlation enables effective co-occurrence learning
+- Visual patterns provide highly complementary signals to text descriptions
 
-Due to the long preprocessing time for visual information, we have currently conducted experiments on the CDs and Vinyls dataset:
+**⚽ Sports and Outdoors** (Mixed results)
+- Complex contextual information (athletes, scenes, usage environments)
+- Rich visual diversity helps vs text-only baseline (+47.2%)
+- But misalignment with text descriptions harms vs multimodal baseline (-22.5%)
+- Highlights the importance of proper multimodal alignment
 
-| Model | R@5 | N@5 | R@10 | N@10 |
-|-------|-----|-----|------|------|
-| ActionPiece | 0.0544 | 0.0359 | 0.0830 | 0.0451 |
-| **CLAIRO** | **0.0561** | **0.0450** | **0.0713** | **0.0499** |
+**🎨 Arts and 🎸 Instruments** (Marginal gains: ~2-3%)
+- Visually heterogeneous products (raw materials, tools, plain backgrounds)
+- Visual features play complementary rather than dominant role
+- Demonstrates that adding visual data alone isn't sufficient
 
-**Key Findings:**
-- CLAIRO achieves consistent improvements over the text-only baseline across most metrics
-- **25.6% improvement in NDCG@5** (from 0.0359 to 0.0451) and **10.6% improvement in NDCG@10** (from 0.0451 to 0.0499) on the CDs and Vinyl dataset
-- Visual features provide complementary signals for item representation, particularly beneficial for products where visual cues play a significant role in user decisions
-- **Computational efficiency maintained**: 50% reduction in processing overhead through PCA compression while preserving 95% of embedding information
-- Performance across different Amazon Reviews categories varies significantly, so results are only comparable within the same category
+### Key Technical Insights
 
-### Important Insights
+**1. Skip Final-stage PCA** → +37-42% improvement
+- PCA's global dimensionality reduction discards fine-grained retrieval information
+- OPQ already optimizes for quantization error; additional PCA is detrimental
 
-From our preliminary experiments, we identified several challenges:
-- **Representation collapse**: Direct concatenation of embeddings from different modalities without proper regularization can cause the model to over-rely on one modality
-- **Shared vocabulary limitations**: The current shared token vocabulary struggles with separately encoding modality-specific patterns, motivating our investigation into discrete tokenization with separate codebooks
+**2. Visual Features are Complementary, Not Dominant**
+- Text-only variant performs similarly to full model
+- Visual-only variant fails due to limited embedding diversity
+- Best results come from proper alignment of both modalities
 
-## Contributions
+## Main Contributions
 
-Our work makes several contributions to the multimodal generative recommendation field:
+1. **Cross-modal Token Merging**: First work to extend ActionPiece's collaborative tokenization to jointly learn from visual and textual features, capturing co-occurrence patterns across modalities
 
-1. **First multimodal extension of ActionPiece**: We present the first multimodal extension of ActionPiece's collaborative tokenization framework, demonstrating its adaptability beyond text-only scenarios
+2. **Efficient Fusion Strategy**: Discovered that skipping final-stage PCA before OPQ improves performance by 37-42% while maintaining computational efficiency
 
-2. **Overcoming VQ-VAE limitations with RQ-VAE**: We systematically analyzed and addressed the codebook collapse issue in VQ-VAE by implementing residual quantization, enabling hierarchical representation learning that captures the multi-level structure of human decision-making processes
+3. **Category-specific Analysis**: Provided comprehensive empirical evidence showing how visual feature effectiveness varies by product type, with insights on when multimodal integration is most beneficial
 
-3. **BPE-inspired multimodal token reconstruction**: We introduce a novel byte pair encoding-inspired algorithm that identifies and merges co-occurring patterns across text and vision modalities, effectively aligning latent codes with human-interpretable behavioral units while improving sequence coherence and codebook utilization
+4. **State-of-the-art Results**: Achieved up to 135.3% improvement over existing multimodal baseline (MQL4GRec) on semantically rich visual categories
 
-4. **Efficient high-dimensional multimodal fusion**: We developed a learned attention mechanism combined with PCA compression that preserves 95% of embedding information while reducing computational overhead by 50%, enabling practical deployment of multimodal recommendation systems
+## Future Directions
 
-5. **Empirical evidence**: Our results demonstrate that proper multimodal integration can achieve **25.6% improvement in recommendation accuracy** while maintaining computational efficiency, providing strong evidence for the value of visual features in sequential recommendation tasks
+**1. Additional Modalities**
+- Incorporate video and audio features (especially promising for music and video game recommendations)
+- Leverage temporal dynamics and acoustic patterns to enrich item representations
 
-## Future Work
+**2. Adaptive Modality Weighting**
+- Dynamically adjust visual/textual contribution based on category characteristics
+- Emphasize informative modalities while suppressing noisy ones
 
-### 1. Advanced Multimodal Tokenization
-We are investigating different methods to efficiently merge textual and visual features while avoiding representation collapse. Drawing inspiration from MQL4GRec, we plan to implement **discrete multimodal tokenization using separate codebooks** for each modality:
-- Train independent quantizers (e.g., RQ-VAE) for textual and visual embeddings
-- Use distinct token prefixes such as `<A_i>` for textual tokens and `<a_j>` for visual tokens
-- Explore various quantization strategies including single-level vs multi-level codebooks, Optimized Product Quantization (OPQ), and Vector-Quantized Variational Encoder (VQ-VAE)
+**3. Enhanced Encoders**
+- Explore more powerful visual encoders beyond CLIP ViT-L/14
+- Investigate domain-specific fine-tuning to improve visual embedding discriminability
 
-### 2. Higher-Performance Encoders
-While our current implementation leverages CLIP ViT-L/14 as the visual encoder and SentenceT5, we plan to investigate more powerful architectures to enhance CLAIRO's representation quality and improve model performance.
+**4. Cross-domain Generalization**
+- Evaluate on diverse datasets: MovieLens (films), Steam (games), Yelp (restaurants)
+- Study how visual semantic richness affects cross-modal learning across different domains
 
-### 3. Cross-Attention Mechanisms
-To enable deeper multimodal interaction beyond simple concatenation or early fusion, we plan to investigate cross-attention architectures at different stages:
-- Implement fusion with cross-attention before the encoder (computationally efficient)
-- Explore decoder-stage late fusion if time allows
-- Investigate gating mechanisms to dynamically balance the contribution of different modalities
+**5. Dynamic Vocabulary Expansion**
+- Enable incremental learning of new token patterns without full retraining
+- Adapt to evolving user behaviors and item attributes over time
 
-### 4. Comprehensive Evaluation and Ablation Studies
-We plan to conduct extensive ablation studies using modality masking strategies:
-- Train variants with text-only, vision-only, and both modalities to quantify individual and joint contributions
-- Perform component ablation to assess the importance of specific architectural choices
-- Analyze attention patterns through visualization to understand cross-modal interactions
-- Validate our approach on the large-scale **Amazon Reviews 2023 dataset** (2M+ items, 33 categories)
-- Test hypothesis that visually-distinctive categories (e.g., Clothing, Home Decor) benefit more from visual features than text-heavy categories (e.g., Books)
+## Technical Skills
 
-## Skills Developed
+- **Deep Learning**: PyTorch implementation, transformer architectures
+- **Multimodal Learning**: Vision-language fusion, CLIP, ViT, SentenceT5
+- **Recommendation Systems**: Collaborative filtering, sequential recommendation, generative retrieval
+- **Quantization**: Product quantization (OPQ), vector quantization, FAISS
+- **Data Processing**: Large-scale dataset handling (233M reviews), feature extraction pipeline
+- **Research**: Baseline reproduction, ablation studies, performance analysis
 
-- Advanced PyTorch implementation
-- Multimodal representation learning
-- Tokenization algorithms and collaborative filtering
-- Vision Transformers and CLIP models
-- Variational Autoencoder architectures (RQ-VAE, VQ-VAE)
-- Large-scale dataset processing and experimentation
-- Research paper reproduction and baseline evaluation
+---
+
+📄 **Resources:**
+- [Full Technical Report](/assets/pdf/CLAIRO_Final_Report.pdf)
+- [ActionPiece Paper](/assets/pdf/ActionPiece.pdf)
+- [MQL4GRec Paper](/assets/pdf/MQL4GREC.pdf)
