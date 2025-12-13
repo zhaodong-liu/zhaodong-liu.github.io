@@ -1,7 +1,7 @@
 ---
 layout: page
-title: CLAIRO - Multimodal Generative Recommendation
-description: Collaborative Learning with Action-aware Image-text Representation Optimization
+title: Multimodal Generative Recommendation
+description: Collaborative Learning with Action-aware Image-text Representation Optimization (CLAIRO)
 img: assets/img/projects/recommendation_system.jpg
 importance: 1
 category: projects
@@ -14,8 +14,11 @@ Traditional recommendation systems struggle with two fundamental challenges: **l
 We introduce **CLAIRO** (Collaborative Learning with Action-aware Image-text Representation Optimization), a multimodal generative recommendation system that reformulates recommendation as an autoregressive generation task. By extending ActionPiece's context-aware tokenization framework with visual features, CLAIRO learns to merge co-occurring textual and visual patterns, creating richer item representations that improve recommendation accuracy while maintaining computational efficiency.
 
 **Duration:** May 2025 - present
+
 **Institution:** New York University Shanghai
+
 **Advisor:** [Prof. Hongyi Wen](https://whongyi.github.io)
+
 **Team Members:** Zhaodong Liu, Yuquan Hu, Tuoye Liu
 
 **[View Full Report](/assets/pdf/CLAIRO_Final_Report.pdf)** for detailed methodology, comprehensive experimental results, and in-depth analysis.
