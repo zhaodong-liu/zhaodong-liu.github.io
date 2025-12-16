@@ -56,8 +56,8 @@ ninja.data = [{
           description: "A comprehensive database system for managing fantasy sports leagues with real-time tracking",
           section: "Projects",handler: () => {
               window.location.href = "/projects/fantasy_sports_database/";
-            },},{id: "projects-multimodal-generative-recommendation",
-          title: 'Multimodal Generative Recommendation',
+            },},{id: "projects-multimodal-gen-rec",
+          title: 'Multimodal Gen Rec',
           description: "Collaborative Learning with Action-aware Image-text Representation Optimization (CLAIRO)",
           section: "Projects",handler: () => {
               window.location.href = "/projects/recommendation_system/";
