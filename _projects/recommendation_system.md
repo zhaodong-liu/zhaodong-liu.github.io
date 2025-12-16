@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Multimodal Generative Recommendation
+title: Multimodal Gen Rec
 description: Collaborative Learning with Action-aware Image-text Representation Optimization (CLAIRO)
 img: assets/img/projects/recommendation_system.jpg
 importance: 1
