@@ -667,10 +667,14 @@ jekyll_get_json:
 
 jsonresume:
   - basics
-  - education
-  - research
   - work
-  - leadership
+  - education
+  - publications
+  - projects
+  - volunteer
   - awards
+  - certificates
   - skills
   - languages
+  - interests
+  - references

@@ -4,10 +4,10 @@
     "label": "Undergraduate Student",
     "email": "zl4789@nyu.edu",
     "phone": "+86 131-5629-6623",
-    "url": "https://zhaodong-liu.github.io/",
     "summary": "A Computer Science and Mathematics double major student at New York University Shanghai with research experience in generative retrieval and large language models.",
     "location": {
       "city": "Shanghai",
+      "countryCode": "CN",
       "region": "China"
     }
   },
@@ -19,16 +19,11 @@
       "area": "Computer Science and Mathematics",
       "studyType": "Bachelor of Science",
       "startDate": "2022-09-01",
-      "endDate": "2026-05-01",
-      "score": "3.811/4.0 (Overall GPA); 3.941 (CS Major); 3.926 (Math Major)",
-
-      "highlights": [
-        "Study-away Experience: NYU New York (Fall 2024, Spring 2025)",
-        "Dean’s List: 2022-2023, 2023-2024, 2024-2025"
-      ]
+      "endDate": "2026-05-31",
+      "score": "3.811/4.0 (Overall GPA); 3.941 (CS Major); 3.926 (Math Major)"
     }
   ],
-  "research": [
+  "projects": [
     {
       "name": "New York University Shanghai",
       "location": "Shanghai, China",
@@ -72,7 +67,7 @@
       ]
     }
   ],
-  "leadership": [
+  "volunteer": [
     {
       "name": "PEER-Pal Club, New York University Shanghai",
       "position": "Treasurer",
