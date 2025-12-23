@@ -13,11 +13,10 @@
   contents:
     - title: Bachelor of Science (Double Major in Computer Science and Mathematics)
       institution: New York University Shanghai, Shanghai, China
-      year: 2022 - 2026
+      year: 2022 - 2026(expected)
       description:
         - "Cumulative GPA: 3.811/4.0 | CS GPA: 3.941/4.0 | Math GPA: 3.926/4.0"
         - "Study-away Experience: NYU New York (Fall 2024 and Spring 2025)"
-        - Dean's List Honors (Academic Years 2022-2025)
         - title: Relevant Coursework
           contents:
             - Machine Learning, Natural Language Processing, Operating Systems
@@ -26,9 +25,10 @@
 
 - title: Research Experience
   type: time_table
+  contents:
     - title: Research Assistant - Generative Retrieval for Recommendation System
       institution: New York University Shanghai (Advisor Prof. Hongyi Wen)
-      year: 2024 - Present
+      year: May 2025 - Present
       description:
         - Developed a multimodal framework to predict user behavioral patterns on Amazon datasets
         - Designed and evaluated model architectures with quantization methods (VQ-VAE, RQ-VAE, OPQ), achieving 47.2% performance improvement
@@ -47,7 +47,7 @@
   contents:
     - title: Data Engineer
       institution: Data Strategy Department, McDonald's China
-      year: 2024 - Present
+      year: Dec 2025 - Present
       description:
         - Developed and validated scalable database schemas and enterprise-level data maps
         - Designed a similarity recommendation algorithm based on menu composition and user historical interactions
