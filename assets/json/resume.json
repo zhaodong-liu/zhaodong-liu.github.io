@@ -28,7 +28,7 @@
       ]
     }
   ],
-  "research experiences": [
+  "research": [
     {
       "name": "New York University Shanghai",
       "location": "Shanghai, China",
@@ -56,7 +56,7 @@
       ]
     }
   ],
-  "work experiences": [
+  "work": [
     {
       "name": "Data Engineer, Data Strategy Department, McDonald's China ",
       "location": "Shanghai, China",
@@ -70,7 +70,7 @@
       ]
     }
   ],
-  "leadership & activities": [
+  "leadership": [
     {
       "organization": "PEER-Pal Club, New York University Shanghai",
       "position": "Treasurer",
