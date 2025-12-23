@@ -3,95 +3,89 @@
   contents:
     - name: Full Name
       value: Zhaodong Liu
-    - name: Date of Birth
-      value: 14th March 1879
+    - name: Email
+      value: zl4789@nyu.edu
     - name: Languages
-      value: English, German
+      value: Chinese (Mandarin), English
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Bachelor of Science (Double Major in Computer Science and Mathematics)
+      institution: New York University Shanghai, Shanghai, China
+      year: 2022 - 2026
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
+        - "Cumulative GPA: 3.811/4.0 | CS GPA: 3.941/4.0 | Math GPA: 3.926/4.0"
+        - "Study-away Experience: NYU New York (Fall 2024 and Spring 2025)"
+        - Dean's List Honors (Academic Years 2022-2025)
+        - title: Relevant Coursework
           contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
-      description:
-        - Description 1.
-        - Description 2.
+            - Machine Learning, Natural Language Processing, Operating Systems
+            - Honors Numerical Analysis, Data Structures, Basic Algorithms
+            - Multivariable Calculus, Honors Linear Algebra, Analysis
 
-- title: Experience
+- title: Research Experience
+  type: time_table
+    - title: Research Assistant - Generative Retrieval for Recommendation System
+      institution: New York University Shanghai (Advisor Prof. Hongyi Wen)
+      year: 2024 - Present
+      description:
+        - Developed a multimodal framework to predict user behavioral patterns on Amazon datasets
+        - Designed and evaluated model architectures with quantization methods (VQ-VAE, RQ-VAE, OPQ), achieving 47.2% performance improvement
+        - Implemented BPE-inspired partitioning tokenization, improving sequence coherence and representation quality
+    
+    - title: Research Assistant - Efficient Driving Route Optimization
+      institution: New York University Shanghai (Advisor Prof. Zhibin Chen)
+      year: May 2024 - Aug 2024
+      description:
+        - Built a traffic-aware driving route optimization model on SUMO platform
+        - Simulated model on real traffic signal datasets, reducing travel time compared to baseline algorithms
+        - Applied energy consumption models for EV and gasoline vehicles, balancing efficiency and travel time
+
+- title: Work Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Data Engineer
+      institution: Data Strategy Department, McDonald's China
+      year: 2024 - Present
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
-      description:
-        - Description 1.
-        - Description 2.
+        - Developed and validated scalable database schemas and enterprise-level data maps
+        - Designed a similarity recommendation algorithm based on menu composition and user historical interactions
+        - Implemented an AI agent that significantly enhanced data panel classification and visualization
 
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
-      description:
-
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
+- title: Selected Projects
   type: time_table
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    - title: Finetuning Pretrained LM for Chemical Reaction Retrosynthesis
+      institution: Center for Data Science, New York University
+      year: Sep 2024 - Dec 2024
+      description:
+        - Developed predictive models for chemical reaction retrosynthesis using SMILES notation
+        - Applied LLM for dataset reconstruction and augmentation, improving Top-1 Accuracy by 26.2% (from 0.588 to 0.742)
+        - Employed fine-tuning strategies (encoder freezing, MLP adapters, LoRA) to optimize training efficiency
 
 - title: Honors and Awards
   type: time_table
   contents:
-    - year: 1921
+    - year: AY: 2022 - 2025
       items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
+        - Dean's List, New York University Shanghai
+    - year: 2023
       items:
-        - Max Planck Medal
+        - Mathematical Contest in Modeling, Honorable Mention
 
 - title: Academic Interests
   type: nested_list
   contents:
-    - title: Topic 1.
+    - title: Machine Learning & AI
       items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
+        - Generative models and recommendation systems
+        - Natural language processing and large language models
+        - Multimodal learning and representation learning
 
 - title: Other Interests
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - <u>Music:</u> Trombone Section Leader in NYU Shanghai Chamber Orchestra (2022-Present)
+    - <u>Leadership:</u> Former Treasurer of PEER-Pal Club, managed financial operations and educational initiatives
+    - <u>Technical Skills:</u> Python, Java, C, SQL, PyTorch, Git, LaTeX
