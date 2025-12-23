@@ -39,6 +39,19 @@
     },
 
     {
+      "name": "Center for Data Science, New York University",
+      "location": "New York City, NY, USA",
+      "startDate": "2024-09-15",
+      "endDate": "2024-12-15",
+      "summary": "Finetuning on Pretrained LM to Efficiently Perform Retrosynthesis of Chemical Reactions",
+      "highlights": [
+        "Developed predictive models for chemical reaction retrosynthesis using SMILES notation.",
+        "Applied an LLM for dataset reconstruction and augmentation, improving Top-1 Accuracy by 26.2% (from 0.588 to 0.742) while reducing reliance on expensive laboratory data.",
+        "Employed fine-tuning strategies (encoder freezing, MLP adapters, LoRA) to optimize training efficiency."
+      ]
+    },
+
+    {
       "name": "New York University Shanghai",
       "location": "Shanghai, China",
       "position": "Undergraduate Research Assistant",
