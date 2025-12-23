@@ -28,62 +28,77 @@
       ]
     }
   ],
-  "Research Experiences": [
+  "research": [
     {
       "name": "New York University Shanghai",
       "location": "Shanghai, China",
+      "position": "Undergraduate Research Assistant",
       "startDate": "2025-05-01",
       "summary": "Generative Retrieval for Recommendation System",
       "highlights": [
         "Advisor: Prof. Hongyi Wen (Department of Computer Science, Data Science and Engineering)",
-        "Developed models to predict user click sequences on Amazon dataset",
-        "Designed and evaluated model architectures, including RQ-VAE and VQ-VAE, to capture discrete behavior patterns",
-        "Applied different tokenization methods, including BPE partitioning to improve sequence representation",
-        "Adapted the model architecture to support multi-modal representation learning"
+        "Developed a multimodal framework to predict user behavioral patterns on Amazon datasets.",
+        "Designed and evaluated model architectures, implemented quantization methods of VQ-VAE, RQ-VAE, OPQ,to capture discrete behavior patterns, achieving 47.2% performance improvement (from 0.0339 to 0.0499).",
+        "Implemented BPE-inspired partitioning tokenization, improving sequence coherence and representation quality"
       ]
     },
 
     {
       "name": "New York University Shanghai",
       "location": "Shanghai, China",
+      "position": "Undergraduate Research Assistant",
       "startDate": "2024-05-01",
       "endDate": "2024-08-01",
       "summary": "Driving Route Optimization Considering Traffic Light Timings",
       "highlights": [
         "Advisor: Prof. Zhibin Chen (Department of Computer Science, Data Science and Engineering)",
-        "Developed an optimization system for traffic-aware route planning under real-world constraints",
-        "Applied several algorithms, including Dijkstra algorithm to compute the shortest path",
-        "Conducted simulations on real traffic signal records, showing preliminary improvements of speedup"
+        "Built a traffic-aware driving route optimization model under real-world map and constraints on SUMO platform.",
+        "Simulated model on real traffic signal datasets, reducing travel time compared to baseline routing algorithms.",
+        "Applied energy consumption models for EV and gasoline vehicles, balancing energy efficiency and travel time."
       ]
     }
   ],
-  "Leadership & Activities": [
+  "work": [
     {
-      "organization": "PEER-Pal Club, New York University Shanghai",
+      "name": "Data Strategy Department, McDonald's China ",
+      "location": "Shanghai, China",
+      "position": "Data Engineer",
+      "startDate": "2025-12-18",
+      "summary": "Worked on building and optimizing data infrastructure to support business intelligence and analytics for McDonald's China.",
+      "highlights": [
+        "Developed and validated scalable database schemas and enterprise-level data maps.",
+        "Designed a similarity recommendation algorithm based on menu composition and user historical interactions.",
+        "Implemented an AI agent that significantly enhanced data panel classification and visualization."
+      ]
+    }
+  ],
+  "leadership": [
+    {
+      "name": "PEER-Pal Club, New York University Shanghai",
       "position": "Treasurer",
       "startDate": "2023-05-01",
       "endDate": "2024-08-01",
       "summary": "Organized events and managed club financial operations.",
       "highlights": [
-        "Organized exhibitions and club fairs.",
+        "Managed financial operations and annual budgeting for student-led educational initiatives.",
         "Facilitated letter exchanges and Q&A sessions with high school students from Hunan Province."
       ]
     },
     {
-      "organization": "Chamber Orchestra, New York University Shanghai",
+      "name": "Chamber Orchestra, New York University Shanghai",
       "position": "Trombone Section Leader",
       "startDate": "2022-09-01",
-      "summary": "Led the trombone section and coordinated rehearsals and instrument logistics."
+      "summary": "Directed the trombone section, coordinated rehearsals, and oversaw instrument storage logistics."
     }
   ],
   "awards": [
     {
-      "title": "Dean's List (2022–2023, 2023–2024, 2024–2025)",
+      "title": "Dean's List (AY: 2022–2023, 2023–2024, 2024–2025)",
       "awarder": "New York University Shanghai",
       "summary": "Recognized for outstanding academic performance (GPA ≥ 3.7)."
     },
     {
-      "title": "Mathematical Contest in Modeling – Certificate of Achievement",
+      "title": "Mathematical Contest in Modeling – Certificate of Achievement - Honorable Mention",
       "awarder": "COMAP",
       "date": "2023-05-01",
       "summary": "Built predictive models and performed Bayesian regression for market analysis after data preprocessing."
