@@ -30,8 +30,8 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "news-successfully-completed-summer-research-project-on-traffic-aware-route-optimization-under-prof-zhibin-chen",
-          title: 'Successfully completed summer research project on traffic-aware route optimization under Prof. Zhibin Chen....',
+        },{id: "news-successfully-completed-summer-research-project-on-traffic-aware-route-optimization-under-prof-zhibin-chen-at-nyu-shanghai",
+          title: 'Successfully completed summer research project on traffic-aware route optimization under Prof. Zhibin Chen...',
           description: "",
           section: "News",},{id: "news-started-research-on-generative-retrieval-for-recommendation-systems-under-prof-hongyi-wen-at-nyu-shanghai",
           title: 'Started research on Generative Retrieval for Recommendation Systems under Prof. Hongyi Wen at...',
