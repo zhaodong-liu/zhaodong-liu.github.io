@@ -33,8 +33,8 @@
       "highlights": [
         "Advisor: Prof. Hongyi Wen (Department of Computer Science, Data Science and Engineering)",
         "Developed a multimodal framework to predict user behavioral patterns on Amazon datasets.",
-        "Designed and evaluated model architectures, implemented quantization methods of VQ-VAE, RQ-VAE, OPQ,to capture discrete behavior patterns, achieving 47.2% performance improvement (from 0.0339 to 0.0499).",
-        "Implemented BPE-inspired partitioning tokenization, improving sequence coherence and representation quality"
+        "Designed and evaluated model architectures, implemented quantization methods of VQ-VAE, RQ-VAE, OPQ, to capture discrete behavior patterns, achieving 47.2% performance improvement (from 0.0339 to 0.0499).",
+        "Implemented an BPE-inspired partitioning tokenization, improving sequence coherence and representation quality"
       ]
     },
 
