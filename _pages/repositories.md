@@ -9,8 +9,7 @@ nav_order: 4
 
 {% if site.data.repositories.github_users %}
 
-<span class="lang-en">## GitHub users</span>
-<span class="lang-zh">## GitHub 用户</span>
+<h2><span class="lang-en">GitHub users</span><span class="lang-zh">GitHub 用户</span></h2>
 
 <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
   {% for user in site.data.repositories.github_users %}
@@ -38,8 +37,7 @@ nav_order: 4
 
 {% if site.data.repositories.github_repos %}
 
-<span class="lang-en">## GitHub Repositories</span>
-<span class="lang-zh">## GitHub 仓库</span>
+<h2><span class="lang-en">GitHub Repositories</span><span class="lang-zh">GitHub 仓库</span></h2>
 
 <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
   {% for repo in site.data.repositories.github_repos %}
