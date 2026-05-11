@@ -14,16 +14,18 @@ html[data-lang="zh"] [lang="en"] {
 
 // Language toggle button (matches light-toggle styling)
 #lang-toggle {
-  padding: 0 8px;
-  margin-left: 4px;
+  padding: 0;
   border: 0;
   background-color: inherit;
   color: var(--global-text-color);
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
   cursor: pointer;
   &:hover {
-    color: var(--global-theme-color);
+    color: var(--global-hover-color);
   }
 }
 
