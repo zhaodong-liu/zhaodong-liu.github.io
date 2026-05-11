@@ -1,12 +1,43 @@
 ---
 layout: page
-title: Collaborative Piano
-description: A networked real-time piano application with recording, playback, and chat features
+title: '<span class="lang-en">Collaborative Piano</span><span class="lang-zh">协作钢琴</span>'
+description: '<span class="lang-en">A networked real-time piano application with recording, playback, and chat features</span><span class="lang-zh">支持联网实时演奏、录音、回放与聊天功能的钢琴应用</span>'
 img: assets/img/projects/collaborative_piano.jpg
 importance: 5
 category: projects
 related_publications: false
 ---
+
+<div class="lang-zh" markdown="1">
+
+## 项目概览
+
+完全使用 Java 实现的联网钢琴应用：两名用户可同步演奏并实时聊天，并支持录音与回放。项目融合了线程并发与同步、文件 I/O、Socket 网络通信、GUI 图形编程四个核心计算机科学主题。
+
+**课程：** Java 与 Web 设计（2025 春）  
+**所属机构：** 纽约大学坦登工学院  
+**指导教师：** [Daniel Katz-Braunschweig 教授](https://engineering.nyu.edu/faculty/daniel-katz-braunschweig)  
+**代码：** [GitHub - Cooperating-Piano](https://github.com/zhaodong-liu/Cooperating-Piano)  
+**报告：** [Project Report (PDF)](/assets/pdf/Java_Piano_Project_Report.pdf)  
+**用户手册：** [User Guide (PDF)](/assets/pdf/Cooperating Piano User Guide.pdf)
+
+## 主要功能
+
+- 🎹 **实时协同演奏**：通过 TCP Socket 实现多人同步演奏与内置聊天
+- 🎨 **图形界面与动画节拍器**：使用 Java Swing、Graphics2D 与 AffineTransform 绘制
+- 🎵 **音频系统**：基于 SourceDataLine 的多线程音频播放，支持真实钢琴采样与多种合成音色
+- 💾 **录音与回放**：精确时间戳记录，支持暂停 / 继续
+
+## 技术栈
+
+- Java Swing/AWT、ExecutorService 线程管理、ConcurrentHashMap 并发集合
+- TCP Socket 客户端 / 服务器架构，JSON 消息编码
+- Graphics2D + AffineTransform 实现节拍器旋转动画
+- BufferedReader/Writer 处理录音文件 I/O
+
+</div>
+
+<div class="lang-en" markdown="1">
 
 ## Overview
 
@@ -169,3 +200,5 @@ This project provided deep hands-on experience with:
 - Debugging multi-threaded race conditions and synchronization issues
 
 The collaborative piano demonstrates how fundamental CS concepts (threads, sockets, I/O, graphics) combine to create an interactive, real-time multimedia application.
+
+</div>

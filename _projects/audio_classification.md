@@ -1,11 +1,44 @@
 ---
 layout: page
-title: Music Snippet Classification
-description: Ensemble of ResNet34 models for classifying music audio snippets by singer gender
+title: '<span class="lang-en">Music Snippet Classification</span><span class="lang-zh">音乐片段分类</span>'
+description: '<span class="lang-en">Ensemble of ResNet34 models for classifying music audio snippets by singer gender</span><span class="lang-zh">基于 ResNet34 集成模型的音乐片段歌者性别分类</span>'
 img: assets/img/projects/audio_classification.jpg
 importance: 3
 category: projects
 ---
+
+<div class="lang-zh" markdown="1">
+
+## 项目概览
+
+本项目通过深度学习集成模型，将 3 秒长的音频片段分类为 4 个基于歌者性别的类别，最终准确率达到 **80.42%**。流水线结合了人声分离、自实现的梅尔频率特征提取与集成学习。
+
+**课程：** CSCI-SHU 360 机器学习  
+**所属机构：** 上海纽约大学  
+**最终准确率：** 80.42%  
+**代码：** [GitHub - Audio-Classification](https://github.com/zhaodong-liu/Audio-Classification)  
+**报告：** [Final Report (PDF)](/assets/pdf/audio_classification_report.pdf)
+
+## 方法要点
+
+- 使用 **Spleeter** 分离人声，提升约 5% 准确率
+- 从零实现梅尔滤波器组特征提取（299 × 40）
+- 以 **ResNet34** 为骨干，输入改为单通道频谱，加入 dropout
+- 训练 20 个独立 ResNet34 并对预测做平均，相对单模型再获 2-3% 提升
+- 使用 AdamW、CosineAnnealingWarmRestarts、批大小 32
+
+## 主要结果
+
+| 模型 | 准确率 |
+|------|--------|
+| 单层 CNN | ~65% |
+| 单个 ResNet34 | ~74% |
+| ResNet34 集成（4-5 个） | ~77-78% |
+| **ResNet34 集成（20 个）** | **80.42%** |
+
+</div>
+
+<div class="lang-en" markdown="1">
 
 ## Overview
 
@@ -215,3 +248,5 @@ The ensemble approach with 20 models provided the best performance. Key improvem
 - ResNet: [Deep Residual Learning for Image Recognition](https://arxiv.org/abs/1512.03385)
 - Spleeter: [Audio Source Separation](https://github.com/deezer/spleeter)
 - Mel-Frequency Filter Banks: Standard audio feature extraction technique for speech and music processing
+
+</div>

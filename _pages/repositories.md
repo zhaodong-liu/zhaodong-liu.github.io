@@ -1,15 +1,16 @@
 ---
 layout: page
 permalink: /repositories/
-title: repositories
-description: My open-source projects and research implementations.
+title: '<span class="lang-en">repositories</span><span class="lang-zh">代码仓库</span>'
+description: '<span class="lang-en">My open-source projects and research implementations.</span><span class="lang-zh">我的开源项目与科研代码实现。</span>'
 nav: true
 nav_order: 4
 ---
 
 {% if site.data.repositories.github_users %}
 
-## GitHub users
+<span class="lang-en">## GitHub users</span>
+<span class="lang-zh">## GitHub 用户</span>
 
 <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
   {% for user in site.data.repositories.github_users %}
@@ -37,7 +38,8 @@ nav_order: 4
 
 {% if site.data.repositories.github_repos %}
 
-## GitHub Repositories
+<span class="lang-en">## GitHub Repositories</span>
+<span class="lang-zh">## GitHub 仓库</span>
 
 <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
   {% for repo in site.data.repositories.github_repos %}

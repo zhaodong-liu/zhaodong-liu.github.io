@@ -2,6 +2,31 @@
  * Styles for the base elements of the theme.
  ******************************************************************************/
 
+// Bilingual content visibility (controlled by lang-toggle.js)
+html[data-lang="en"] .lang-zh,
+html[data-lang="en"] [lang="zh"] {
+  display: none !important;
+}
+html[data-lang="zh"] .lang-en,
+html[data-lang="zh"] [lang="en"] {
+  display: none !important;
+}
+
+// Language toggle button (matches light-toggle styling)
+#lang-toggle {
+  padding: 0 8px;
+  margin-left: 4px;
+  border: 0;
+  background-color: inherit;
+  color: var(--global-text-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  &:hover {
+    color: var(--global-theme-color);
+  }
+}
+
 // Typography
 
 p,

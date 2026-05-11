@@ -1,8 +1,8 @@
 ---
 layout: page
-title: projects
+title: '<span class="lang-en">projects</span><span class="lang-zh">项目</span>'
 permalink: /projects/
-description: My projects
+description: '<span class="lang-en">My projects</span><span class="lang-zh">我的项目</span>'
 nav: true
 nav_order: 3
 display_categories: [projects]
@@ -15,7 +15,10 @@ horizontal: false
   <!-- Display categorized projects -->
   {% for category in page.display_categories %}
   <a id="{{ category }}" href=".#{{ category }}">
-    <h2 class="category">{{ category }}</h2>
+    <h2 class="category">
+      <span class="lang-en">{{ category }}</span>
+      <span class="lang-zh">{% if category == 'projects' %}项目{% else %}{{ category }}{% endif %}</span>
+    </h2>
   </a>
   {% assign categorized_projects = site.projects | where: "category", category %}
   {% assign sorted_projects = categorized_projects | sort: "importance" %}

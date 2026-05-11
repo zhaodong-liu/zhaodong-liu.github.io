@@ -1,11 +1,38 @@
 ---
 layout: page
-title: LLM-based Chemical Retrosynthesis
-description: Fine-tuning pretrained language models for predicting chemical reaction pathways
+title: '<span class="lang-en">LLM-based Chemical Retrosynthesis</span><span class="lang-zh">基于大语言模型的化学逆合成</span>'
+description: '<span class="lang-en">Fine-tuning pretrained language models for predicting chemical reaction pathways</span><span class="lang-zh">微调预训练语言模型以预测化学反应路径</span>'
 img: assets/img/projects/chemical_retrosynthesis.jpg
 importance: 2
 category: projects
 ---
+
+<div class="lang-zh" markdown="1">
+
+## 项目概览
+
+本项目将大语言模型应用于化学逆合成预测这一关键问题——即给定目标分子，预测合成所需的反应物。该工作位于人工智能与化学的交叉领域，是 AI for Science（AI4S）的典型应用。
+
+**课程：** DS-GA-1011 自然语言处理与表示学习（研究生课程，2024 年秋）  
+**所属机构：** 纽约大学数据科学中心  
+**指导教师：** [何赫教授](https://hhexiy.github.io)  
+**团队成员：** 黄宏嘉、刘兆东、张昊祺  
+**代码：** [GitHub](https://github.com/zhaodong-liu/Chemical-Retrosynthesis)  
+**数据集：** [HuggingFace — USPTO-50K](https://huggingface.co/datasets/scaliaven/Ustop50k)  
+**报告：** [Final Report (PDF)](/assets/pdf/DS_GA_1011_Final_Report.pdf)
+
+## 主要贡献与结果
+
+- 提出基于 LLM 的数据增强：使用微调后的 GPT-3.5-turbo 重构数据集，构建 **USPTO-50K_γ**
+- 对预训练 BART 模型进行微调，Top-1 准确率由 58.8% 提升至 **74.2%**（+26.2%）
+- 应用 LoRA、MLP adapter、编码器冻结等参数高效微调方法，将可训练参数减少 90% 以上，保留 98% 以上的全参数微调精度
+- 实验证明高质量的表示空间对科学领域中的学习稳定性、效率与泛化具有显著影响
+
+完整方法与实验请见 [Final Report (PDF)](/assets/pdf/DS_GA_1011_Final_Report.pdf)。
+
+</div>
+
+<div class="lang-en" markdown="1">
 
 ## Overview
 
@@ -151,3 +178,5 @@ This research demonstrates several important contributions to AI for Science:
 - Extending to multi-step retrosynthesis
 - Incorporating 3D molecular structure information
 - Exploring other chemistry-related prediction tasks
+
+</div>

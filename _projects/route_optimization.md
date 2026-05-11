@@ -1,11 +1,44 @@
 ---
 layout: page
-title: Traffic-Aware Route Optimization
-description: Optimizing driving routes considering real-time traffic light timings
+title: '<span class="lang-en">Traffic-Aware Route Optimization</span><span class="lang-zh">考虑交通灯的路线优化</span>'
+description: '<span class="lang-en">Optimizing driving routes considering real-time traffic light timings</span><span class="lang-zh">结合实时交通信号时序的驾驶路线优化</span>'
 img: assets/img/projects/route_optimization.jpg
 importance: 3
 category: projects
 ---
+
+<div class="lang-zh" markdown="1">
+
+## 项目概览
+
+基于 SUMO（城市交通仿真平台）构建的考虑交通灯时序的路径优化系统：同时兼顾行驶时间与能耗，并对两类车辆进行差异化建模——传统汽油车（含 LICO 滑行策略）与电动车（含再生制动）。
+
+**时间：** 2024 年 5 月 — 2024 年 8 月  
+**所属机构：** 上海纽约大学  
+**指导教师：** [陈志斌 教授](https://shanghai.nyu.edu/academics/faculty/directory/zhibin-chen)  
+**仿真平台：** SUMO
+
+## 主要思路
+
+- 将路径规划建模为多目标图问题，节点为信号灯交叉口，边的代价随到达时间与信号相位变化
+- 扩展 **Dijkstra** 算法，针对两类车辆给出差异化的能耗代价：
+  - 汽油车：识别红灯前滑行（LICO）机会，降低急刹与怠速油耗
+  - 电动车：将再生制动能量回收纳入代价计算
+- 在 SUMO 中导入 OpenStreetMap 真实路网与真实信号配时进行验证
+
+## 主要结果
+
+- 汽油车：在牺牲 2-5% 行驶时间的情况下，节油 10-15%
+- 电动车：通过策略性停车与再生制动获得整体能效提升
+- 案例研究：上海纽约大学前滩校区到镜耀宿舍的班车路径，初步显示节油效果
+
+## 应用方向
+
+车队管理、能耗感知的导航、自动驾驶能量管理、城市规划、电动车充电基础设施布局等。
+
+</div>
+
+<div class="lang-en" markdown="1">
 
 ## Overview
 
@@ -213,3 +246,5 @@ This research has broad applications for sustainable transportation:
 - Regenerative braking systems and their impact on routing strategies
 - Trade-offs between travel time and energy efficiency
 - Real-world application of graph algorithms to sustainable transportation
+
+</div>

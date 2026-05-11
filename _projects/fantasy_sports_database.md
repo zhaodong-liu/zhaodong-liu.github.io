@@ -1,12 +1,48 @@
 ---
 layout: page
-title: Fantasy Sports League
-description: A comprehensive database system for managing fantasy sports leagues with real-time tracking
+title: '<span class="lang-en">Fantasy Sports League</span><span class="lang-zh">梦幻体育联盟</span>'
+description: '<span class="lang-en">A comprehensive database system for managing fantasy sports leagues with real-time tracking</span><span class="lang-zh">面向梦幻体育联盟的综合数据库系统，支持实时追踪</span>'
 img: assets/img/projects/fantasy_sports_database.jpg
 importance: 5
 category: projects
 related_publications: false
 ---
+
+<div class="lang-zh" markdown="1">
+
+## 项目概览
+
+面向梦幻体育联盟的完整数据库管理系统：支持创建并管理联盟、球员选秀、赛事统计、球员交易等核心场景。项目展示了数据库设计、复杂关系建模与体育数据管理的综合能力。
+
+**课程：** 数据库导论（2024 秋）  
+**所属机构：** 纽约大学坦登工学院  
+**指导教师：** [Salim Arfaoui 教授](https://engineering.nyu.edu/faculty/salim-arfaoui)  
+**团队：** DB Lovers（刘兆东、翁逸蕾、葛欣彦、张冬）  
+**数据库：** 本地 MySQL Server  
+**代码：** [GitHub - Fantasy_Sports_League](https://github.com/zhaodong-liu/Fantasy_Sports_League)  
+**演示：** [Project Presentation (PDF)](/assets/pdf/Fantasy_Sports_Database_Presentation.pdf)
+
+## 系统范围
+
+涵盖梦幻体育联盟的全部业务：用户管理、联盟管理（公开 / 私有）、球队管理、球员数据、比赛系统、交易系统与统计追踪。
+
+## 数据库架构
+
+- **13 张相互关联的表**，共计 390+ 行示例数据
+- 核心实体：User、League、Team、Player
+- 关系表：Draft、MatchDetail、MatchTeam、PlayerStats、MatchEvent
+- 交易表：Trade、PlayerTrade、TeamTrade、Waiver
+- 关键技巧：复合主键、外键约束、默认值、状态字段、触发器
+
+## 涉及技能
+
+- 关系建模与范式化（3NF）、ER 图设计
+- 高级 SQL（联接、子查询、聚合）、PL/SQL 触发器与存储过程
+- 事务一致性、引用完整性、索引策略
+
+</div>
+
+<div class="lang-en" markdown="1">
 
 ## Overview
 
@@ -264,3 +300,5 @@ Potential extensions to the system:
 ---
 
 This project demonstrates comprehensive understanding of relational database design, SQL programming, and real-world data management for complex sports analytics applications.
+
+</div>

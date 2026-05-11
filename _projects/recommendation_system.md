@@ -1,11 +1,48 @@
 ---
 layout: page
-title: Multimodal Gen Rec
-description: Collaborative Learning with Action-aware Image-text Representation Optimization (CLAIRO)
+title: '<span class="lang-en">Multimodal Gen Rec</span><span class="lang-zh">多模态生成式推荐</span>'
+description: '<span class="lang-en">Collaborative Learning with Action-aware Image-text Representation Optimization (CLAIRO)</span><span class="lang-zh">基于行为感知的图文表征协同学习与优化 (CLAIRO)</span>'
 img: assets/img/projects/recommendation_system.jpg
 importance: 1
 category: projects
 ---
+
+<div class="lang-zh" markdown="1">
+
+## 项目概览
+
+传统推荐系统面临两个核心挑战：**长尾物品**（很少被看见的商品）和**冷启动用户**（交互历史有限的用户）。现有方法多采用候选-排序流水线，偏向热门物品，难以挖掘海量长尾内容。
+
+我们提出 **CLAIRO**（基于行为感知的图文表征协同学习与优化），一种多模态生成式推荐系统，将推荐重新建模为自回归生成任务。CLAIRO 在 ActionPiece 上下文感知分词框架中引入视觉特征，学习共现的图文模式，构建更丰富的物品表征，在保持计算效率的同时显著提升推荐准确率。
+
+**时间：** 2025 年 5 月 — 至今  
+**所属机构：** 上海纽约大学  
+**指导教师：** [文宏毅 教授](https://whongyi.github.io)  
+**团队成员：** 刘兆东、胡宇泉、刘拓野  
+**[查看完整报告](/assets/pdf/CLAIRO_Final_Report.pdf)** 了解详细方法、实验结果与深入分析。
+
+## 核心创新
+
+CLAIRO 的核心创新是 **多模态 token 合并**——将 ActionPiece 受 BPE 启发的算法扩展到视觉与文本特征的联合学习。与现有将不同模态分开处理的方法不同，CLAIRO 在词表构建阶段就发现跨模态共现模式，使模型能够捕获视觉与文本描述对齐时所涌现的语义关系。
+
+## 主要结果
+
+- **CDs 与黑胶**：相对文本基线 ActionPiece 提升 **+45.1% NDCG@5**，相对多模态基线 MQL4GRec 提升 **+135.3% NDCG@5**
+- **体育**：相对文本基线 +47.2% NDCG@5  
+- 关键发现：在 OPQ 之前跳过最后一阶段 PCA 可获得 **37-42%** 的提升
+
+## 主要贡献
+
+1. 首个将 ActionPiece 协同 token 合并扩展至图文联合学习，捕获跨模态共现模式
+2. 发现跳过最终阶段 PCA 即可在保持效率的同时获得 37-42% 性能提升
+3. 提供视觉特征效果因品类而异的系统性实验证据
+4. 在视觉语义丰富的品类上相对现有多模态基线取得最高 135.3% 的提升
+
+完整方法、消融实验与结果请见 [完整技术报告](/assets/pdf/CLAIRO_Final_Report.pdf)。
+
+</div>
+
+<div class="lang-en" markdown="1">
 
 ## Overview
 
@@ -189,3 +226,5 @@ Our analysis reveals that visual features contribute differently depending on pr
 - [Full Technical Report](/assets/pdf/CLAIRO_Final_Report.pdf)
 - [ActionPiece Paper](/assets/pdf/ActionPiece.pdf)
 - [MQL4GRec Paper](/assets/pdf/MQL4GREC.pdf)
+
+</div>

@@ -1,0 +1,115 @@
+basics:
+  name: "刘兆东"
+  label: "本科生"
+  email: "zl4789@nyu.edu"
+  phone: "+86 131-5629-6623"
+  summary: "上海纽约大学计算机科学与数学双专业本科生，具有生成式检索与大语言模型方向的科研经历。"
+  location:
+    city: "上海"
+    countryCode: "CN"
+    region: "中国"
+
+education:
+  - institution: "上海纽约大学"
+    location: "上海，中国"
+    url: "https://shanghai.nyu.edu/"
+    area: "计算机科学与数学"
+    studyType: "理学学士"
+    startDate: "2022-09-01"
+    endDate: "2026-05-31"
+    score: "总体 GPA 3.811/4.0；计算机专业课 3.941；数学专业课 3.926"
+
+projects:
+  - name: "上海纽约大学"
+    location: "上海，中国"
+    position: "本科科研助理"
+    startDate: "2025-05-01"
+    summary: "推荐系统中的生成式检索"
+    highlights:
+      - "导师：文宏毅 教授（计算机科学、数据科学与工程系）"
+      - "构建多模态框架以预测亚马逊数据集上的用户行为序列。"
+      - "设计并评估模型架构，实现 VQ-VAE、RQ-VAE、OPQ 等量化方法，捕获离散行为模式，性能提升 47.2%（0.0339 → 0.0499）。"
+      - "实现 BPE 启发式分词，提升序列连贯性与表示质量。"
+
+  - name: "纽约大学数据科学中心"
+    location: "纽约市，美国"
+    startDate: "2024-09-15"
+    endDate: "2024-12-15"
+    summary: "预训练语言模型微调用于高效化学反应逆合成预测"
+    highlights:
+      - "基于 SMILES 表示构建化学反应逆合成预测模型。"
+      - "使用大语言模型完成数据集重构与增强，Top-1 准确率提升 26.2%（0.588 → 0.742），减少对昂贵实验数据的依赖。"
+      - "使用编码器冻结、MLP adapter、LoRA 等高效微调策略，优化训练效率。"
+
+  - name: "上海纽约大学"
+    location: "上海，中国"
+    position: "本科科研助理"
+    startDate: "2024-05-01"
+    endDate: "2024-08-01"
+    summary: "考虑交通灯时间的驾驶路线优化"
+    highlights:
+      - "导师：陈志斌 教授（计算机科学、数据科学与工程系）"
+      - "在 SUMO 平台上构建考虑真实路网与约束的交通感知驾驶路径优化模型。"
+      - "在真实交通信号数据上仿真，相较基线路径算法显著缩短行驶时间。"
+      - "针对汽油车与电动车分别构建能耗模型，平衡能效与时间。"
+
+work:
+  - name: "麦当劳中国 数据战略部门"
+    location: "上海，中国"
+    position: "数据工程师"
+    startDate: "2025-12-18"
+    summary: "为麦当劳中国的商业智能与数据分析构建并优化数据基础设施。"
+    highlights:
+      - "设计并验证可扩展的数据库结构与企业级数据地图。"
+      - "基于菜单组合与用户历史交互设计相似度推荐算法。"
+      - "实现 AI 智能体，显著提升数据面板的分类与可视化能力。"
+
+volunteer:
+  - name: "上海纽约大学 PEER-Pal 社团"
+    position: "财务官"
+    startDate: "2023-05-01"
+    endDate: "2024-08-01"
+    summary: "组织活动并管理社团财务运营。"
+    highlights:
+      - "负责由学生主导的教育类项目的财务运营与年度预算管理。"
+      - "协调与湖南省高中学生的书信往来与问答交流活动。"
+
+  - name: "上海纽约大学 室内乐团"
+    position: "长号声部首席"
+    startDate: "2022-09-01"
+    summary: "负责长号声部，协调排练，并负责乐器仓储管理。"
+
+awards:
+  - title: "优秀学生名单（学年：2022–2023, 2023–2024, 2024–2025）"
+    awarder: "上海纽约大学"
+    summary: "因优秀学业表现获得（GPA ≥ 3.7）。"
+  - title: "美国大学生数学建模竞赛 — Honorable Mention"
+    awarder: "COMAP"
+    date: "2023-05-01"
+    summary: "在数据预处理后，构建预测模型并使用贝叶斯回归进行市场分析。"
+  - title: "彭博交易挑战赛 — NYU 校内第 1 名，亚洲第 5 名"
+    awarder: "彭博 (Bloomberg L.P.)"
+    date: "2022-11-01"
+    summary: "通过团队讨论选取潜力股票，并操作彭博终端在美股市场进行交易（2022 年 9 月 – 11 月）。"
+
+skills:
+  - name: "编程语言"
+    keywords:
+      - "Python"
+      - "Java"
+      - "C"
+      - "SQL"
+      - "Stata"
+  - name: "工具与框架"
+    keywords:
+      - "Git"
+      - "PyTorch"
+      - "Pandas"
+      - "NumPy"
+      - "LaTeX"
+
+languages:
+  - language: "中文"
+    fluency: "母语"
+  - language: "英文"
+    fluency: "流利"

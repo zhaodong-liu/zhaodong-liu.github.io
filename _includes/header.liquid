@@ -49,7 +49,16 @@
           <!-- About -->
           <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
             <a class="nav-link" href="{{ '/' | relative_url }}">
-              {{- about_title }}
+              {%- assign zh_title = about_title -%}
+              {%- case about_title -%}
+                {%- when 'about' -%}{%- assign zh_title = '关于' -%}
+                {%- when 'projects' -%}{%- assign zh_title = '项目' -%}
+                {%- when 'news' -%}{%- assign zh_title = '动态' -%}
+                {%- when 'cv' -%}{%- assign zh_title = '简历' -%}
+                {%- when 'blog' -%}{%- assign zh_title = '博客' -%}
+                {%- when 'repositories' -%}{%- assign zh_title = '代码仓库' -%}
+              {%- endcase -%}
+              <span data-i18n-en="{{ about_title }}" data-i18n-zh="{{ zh_title }}">{{- about_title -}}</span>
               {% if page.permalink == '/' %}
                 <span class="sr-only">(current)</span>
               {% endif %}
@@ -108,7 +117,17 @@
                     {%- assign url = p.url -%}
                   {%- endif %}
                   <a class="nav-link" href="{{ url | relative_url }}">
-                    {{- p.title }}
+                    {%- assign p_zh = p.title -%}
+                    {%- case p.title -%}
+                      {%- when 'about' -%}{%- assign p_zh = '关于' -%}
+                      {%- when 'projects' -%}{%- assign p_zh = '项目' -%}
+                      {%- when 'news' -%}{%- assign p_zh = '动态' -%}
+                      {%- when 'cv' -%}{%- assign p_zh = '简历' -%}
+                      {%- when 'blog' -%}{%- assign p_zh = '博客' -%}
+                      {%- when 'repositories' -%}{%- assign p_zh = '代码仓库' -%}
+                      {%- when 'publications' -%}{%- assign p_zh = '论文' -%}
+                    {%- endcase -%}
+                    <span data-i18n-en="{{ p.title }}" data-i18n-zh="{{ p_zh }}">{{- p.title -}}</span>
                     {% if page.url contains p.url %}
                       <span class="sr-only">(current)</span>
                     {% endif %}
@@ -135,6 +154,12 @@
               </button>
             </li>
           {% endif %}
+          <!-- Language toggle -->
+          <li class="toggle-container">
+            <button id="lang-toggle" title="Switch language / 切换语言" aria-label="Switch language">
+              <span data-i18n-en="中" data-i18n-zh="EN">中</span>
+            </button>
+          </li>
         </ul>
       </div>
     </div>
