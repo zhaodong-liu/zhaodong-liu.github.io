@@ -39,6 +39,7 @@ category: projects
 ### SUMO 仿真搭建
 
 构建了一个全面的交通仿真环境，包含车辆特定建模：
+
 - **路网：** 含交叉口拓扑的真实路网
 - **交通信号：** 配置真实的交通灯时序与同步模式
 - **车辆模型：** 在 SUMO 中实现两类不同的车辆类型：
@@ -49,6 +50,7 @@ category: projects
 ### 问题建模
 
 将路径优化建模为多目标图问题：
+
 - **节点：** 含交通信号与时序信息的交叉口
 - **边：** 带车辆类型特定代价函数的道路段
   - **汽油车代价：** 行驶时间 + 燃油消耗（考虑 LICO 机会）
@@ -62,12 +64,14 @@ category: projects
 扩展 **Dijkstra** 算法，加入车辆特定的能源建模：
 
 **汽油车：**
+
 - 检测红灯前 LICO 的机会（降低刹车带来的燃油浪费）
 - 基于交通信号时序计算最优减速点
 - 最小化交叉口怠速时间（高燃油消耗、零位移）
 - 即便稍长也优先选择停车次数较少的路线
 
 **电动车：**
+
 - 将再生制动能量回收纳入代价计算
 - 建模路径中的电池状态变化
 - 考虑某些停车在能量上是有益的（能量回收机会）
@@ -94,6 +98,7 @@ category: projects
 ### SUMO 仿真框架
 
 实现了一套完整的基于 SUMO 的仿真环境：
+
 - **路网导入：** 将 OSM 数据转换为含高程数据的 SUMO 路网格式
 - **交通灯配置：** 编程实现真实的信号时序与相位模式
 - **车辆类型定义：**
@@ -107,11 +112,13 @@ category: projects
 为两类车辆比较路径策略：
 
 **汽油车路径：**
+
 1. **时间最优：** 忽略能耗的最快路径
 2. **LICO 优化：** 最大化红灯前 LICO 机会的路径
 3. **混合：** 平衡时间与燃油效率
 
 **电动车路径：**
+
 1. **时间最优：** 忽略能耗的最快路径
 2. **再生感知：** 考虑再生制动机会的路径
 3. **电池最优：** 最小化净能耗
@@ -121,16 +128,19 @@ category: projects
 车辆特定的交通感知优化展现了：
 
 **汽油车：**
+
 - **节油：** 通过策略性 LICO 降低燃油消耗
 - **怠速时间减少：** 减少红灯停车降低了怠速燃油浪费
 - **权衡：** 牺牲少量行驶时间（2-5%）换来显著节油（10-15%）
 
 **电动车：**
+
 - **能源效率：** 通过利用再生制动提升整体能源效率
 - **电池管理：** 通过可预测的能量回收实现更优的电池状态管理
 - **最优停车：** 一些带策略性停车的路径表现优于纯时间最优路径
 
 **对比分析：**
+
 - 车辆类型显著影响最优路径选择
 - 整合交通灯时序对两类车辆均至关重要
 - 能源感知路径在不显著牺牲时间的前提下带来可衡量的效益
@@ -146,12 +156,14 @@ category: projects
 **分析路线：** 上海纽约大学前滩校区 → 镜耀宿舍
 
 **关键参数：**
+
 - 路线距离：约 3 公里
 - 交通灯数量：7 个主要交叉口
 - 高峰时段运营：早班（7:30-9:00）与晚班（17:00-19:00）
 - 平均行程时间：随交通约 15 分钟
 
 **SUMO 配置：**
+
 - 从 OpenStreetMap 导入浦东地区实际路网
 - 配置主要交叉口的真实交通信号时序
 - 使用真实燃油消耗参数建模柴油班车
@@ -160,16 +172,19 @@ category: projects
 ### 优化结果
 
 **主要发现：**
+
 - 由于距离较短、涉及的交通灯数量较少，该策略对燃油效率的提升并不显著。但初步结果显示出节油效果，证明了该方法的实用性。
 
 ### 实施考量
 
 **可行性：**
+
 - 路线调整对现有班次表改动极小
 - 2-3 分钟的发车时间调整可改善交通灯同步
 - LICO 驾驶行为可通过司机培训实施
 
 **局限性：**
+
 - 必须在乘客便利与能源效率之间取得平衡
 - 仿真未能完全捕捉实时交通变化
 - 班次可靠性仍是实际实施的首要约束
@@ -200,6 +215,7 @@ category: projects
 ## 应用
 
 本研究在可持续交通领域有广泛应用：
+
 - **车队管理：** 混合汽油/电动车队的最优路径规划
 - **导航系统：** 面向消费者车辆的能源感知路径
 - **自动驾驶：** 与自动驾驶汽车能量管理的集成
@@ -238,7 +254,7 @@ Traditional routing systems optimize primarily for distance or travel time, negl
 
 - **Traffic Light Impact**: Frequent stops at red lights increase fuel consumption and reduce efficiency
 - **Vehicle-Specific Dynamics**: Gasoline and electric vehicles have fundamentally different energy profiles
-  - **Gasoline Vehicles**: Benefit from LICO --  lifting and coasting to reduce fuel consumption before stops
+  - **Gasoline Vehicles**: Benefit from LICO -- lifting and coasting to reduce fuel consumption before stops
   - **Electric Vehicles**: Utilize regenerative braking to recover energy during deceleration
 - **Energy Optimization**: Route planning should consider both travel time and energy efficiency
 - **Real-World Constraints**: Traffic signal timings create time-dependent optimization opportunities
@@ -250,6 +266,7 @@ By modeling vehicle-specific energy consumption patterns and traffic light inter
 ### SUMO Simulation Setup
 
 Built a comprehensive traffic simulation environment with vehicle-specific modeling:
+
 - **Road Network**: Real-world road network with intersection topology
 - **Traffic Signals**: Configured realistic traffic light timings and synchronization patterns
 - **Vehicle Models**: Implemented two distinct vehicle types in SUMO:
@@ -260,6 +277,7 @@ Built a comprehensive traffic simulation environment with vehicle-specific model
 ### Problem Formulation
 
 Formulated the route optimization as a multi-objective graph problem:
+
 - **Nodes**: Intersections with traffic signals and timing information
 - **Edges**: Road segments with vehicle-type-specific cost functions
   - **Gasoline Vehicle Costs**: Travel time + fuel consumption (accounting for LICO opportunities)
@@ -273,12 +291,14 @@ Formulated the route optimization as a multi-objective graph problem:
 Extended **Dijkstra**'s algorithm with vehicle-specific energy modeling:
 
 **For Gasoline Vehicles:**
+
 - Detects opportunities to LICO before red lights (reducing fuel waste from braking)
 - Calculates optimal deceleration points based on traffic signal timing
 - Minimizes idle time at intersections (high fuel consumption, zero distance)
 - Prefers routes with fewer stops even if slightly longer
 
 **For Electric Vehicles:**
+
 - Incorporates regenerative braking energy recovery in cost calculation
 - Models battery state changes throughout the route
 - Considers that some stops can be energetically beneficial (energy recovery opportunity)
@@ -305,6 +325,7 @@ Extended **Dijkstra**'s algorithm with vehicle-specific energy modeling:
 ### SUMO Simulation Framework
 
 Implemented a complete SUMO-based simulation environment:
+
 - **Network Import**: Converted OSM data to SUMO road network format with elevation data
 - **Traffic Light Configuration**: Programmed realistic signal timing and phase patterns
 - **Vehicle Type Definitions**:
@@ -318,11 +339,13 @@ Implemented a complete SUMO-based simulation environment:
 Compared routing strategies for both vehicle types:
 
 **Gasoline Vehicle Routes:**
+
 1. **Time-Optimal**: Fastest route ignoring energy
 2. **LICO-Optimized**: Route maximizing LICO opportunities before red lights
 3. **Hybrid**: Balanced time and fuel efficiency
 
 **Electric Vehicle Routes:**
+
 1. **Time-Optimal**: Fastest route ignoring energy
 2. **Regeneration-Aware**: Route considering regenerative braking opportunities
 3. **Battery-Optimal**: Minimizing net energy consumption
@@ -332,16 +355,19 @@ Compared routing strategies for both vehicle types:
 The vehicle-specific traffic-aware optimization demonstrated:
 
 **Gasoline Vehicles:**
+
 - **Fuel Savings**: Reduced fuel consumption through strategic LICO
 - **Idle Time Reduction**: Fewer stops at red lights decreased idle fuel waste
 - **Trade-offs**: Small increases in travel time (2-5%) achieved significant fuel savings (10-15%)
 
 **Electric Vehicles:**
+
 - **Energy Efficiency**: Improved overall energy efficiency through regenerative braking utilization
 - **Battery Management**: Better battery state management with predictable energy recovery
 - **Optimal Stopping**: Some routes with more strategic stops outperformed purely time-optimal routes
 
 **Comparative Analysis:**
+
 - Vehicle type significantly affects optimal route selection
 - Traffic light timing integration crucial for both vehicle types
 - Energy-aware routing provides measurable benefits without major time penalties
@@ -357,12 +383,14 @@ The NYU Shanghai shuttle service operates on the route connecting the campus in 
 **Route Analyzed:** NYU Shanghai Qiantan Campus → Jingyao Residence Hall
 
 **Key Parameters:**
+
 - Route distance: Approximately 3 km
 - Number of traffic lights: 7 major intersections
 - Peak hour operation: Morning (7:30-9:00 AM) and Evening (5:00-7:00 PM)
 - Average trip time: 15 minutes depending on traffic
 
 **SUMO Configuration:**
+
 - Imported actual road network of Pudong area from OpenStreetMap
 - Configured real traffic signal timings from major intersections
 - Modeled diesel shuttle bus with realistic fuel consumption parameters
@@ -371,16 +399,19 @@ The NYU Shanghai shuttle service operates on the route connecting the campus in 
 ### Optimization Results
 
 **Key Findings:**
+
 - The strategy does not show significant improvement on fuel efficiency due to rather short distance, and low number of traffic lights involved. However, it shows preliminary results of fuel saving, demonstrating its usefulness.
 
 ### Implementation Considerations
 
 **Feasibility:**
+
 - Route modifications require minimal changes to existing schedule
 - Departure time adjustments of 2-3 minutes improve traffic light synchronization
 - LICO driving behavior can be implemented through driver training
 
 **Limitations:**
+
 - Passenger convenience must be balanced with energy efficiency
 - Real-time traffic variations not fully captured in simulation
 - Schedule reliability remains the primary constraint for actual implementation
@@ -411,6 +442,7 @@ This case study demonstrates the practical applicability of traffic-aware, energ
 ## Applications
 
 This research has broad applications for sustainable transportation:
+
 - **Fleet Management**: Optimal routing for mixed gasoline/electric vehicle fleets
 - **Navigation Systems**: Energy-aware routing for consumer vehicles
 - **Autonomous Vehicles**: Integration with self-driving car energy management

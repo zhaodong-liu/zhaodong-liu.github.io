@@ -34,6 +34,7 @@ category: projects
 核心研究问题是：**鉴于 SMILES 表示缺乏原子位置编码，我们如何有效学习复杂分子转化的鲁棒表征？**
 
 该挑战因以下因素而加剧：
+
 - **数据稀缺：** 原始化学反应数据获取成本高、易出错，且规模不足以支撑鲁棒训练
 - **表示局限：** SMILES 是离散表示，缺乏显式的三维结构信息
 - **数据质量问题：** 与典型 NLP 任务相比训练数据有限，错误或不完整条目比例较高
@@ -88,6 +89,7 @@ category: projects
 基于 LLM 的数据增强方法在所有指标上均取得显著提升：
 
 **数据增强效果：**
+
 - **Top-1 准确率：** 58.8%（基线）→ 74.2%（使用 USPTO-50K_γ）—— **提升 26.2%**
 - **Top-3 准确率：** 73.9%（基线）→ 85.2%（使用 USPTO-50K_γ）
 - **Top-5 准确率：** 79.4%（基线）→ 88.6%（使用 USPTO-50K_γ）
@@ -95,11 +97,13 @@ category: projects
 **Top-1 准确率 26.2% 的提升**表明，LLM 生成的数据提供了更可学习、更具泛化能力的分子模式，为模型创建了更高质量的表征空间。增强后的数据集让模型能够更好地理解分子转化模式，尤其是样本不足的反应类型。
 
 **参数高效微调结果：**
+
 - **LoRA 性能：** 仅用 0.17% 的可训练参数即达到完整微调 98% 的准确率
 - **MLP Adapter：** 在最小架构改动下取得有竞争力的性能
 - **冻结层：** 在保留预训练知识的同时有效进行领域适配
 
 **计算效率：**
+
 - 使用 LoRA 可训练参数减少 90% 以上
 - GPU 显存需求显著降低
 - 增强数据带来更快的训练收敛
@@ -128,6 +132,7 @@ category: projects
 ## 技术栈与工具
 
 **机器学习与 NLP：**
+
 - BART（双向自回归 Transformer）架构
 - 参数高效微调（LoRA、adapter、冻结层）
 - 序列到序列建模
@@ -135,12 +140,14 @@ category: projects
 - 基于 LLM 的数据增强（GPT-3.5-turbo）
 
 **化学信息学：**
+
 - SMILES（简化分子线性输入规范）表示法
 - 化学反应表示
 - 逆合成预测
 - 分子结构校验
 
 **开发与工具：**
+
 - PyTorch 深度学习框架
 - Hugging Face Transformers 库
 - Python 科学计算（NumPy、Pandas）
@@ -183,6 +190,7 @@ Chemical retrosynthesis is crucial for drug discovery but traditionally requires
 The core research question is: **how can we effectively learn robust representations of complex molecular transformations, given that SMILES notation lacks atomic positional encoding?**
 
 The challenge is compounded by:
+
 - **Data scarcity**: Raw chemical reaction data is expensive to obtain, error-prone, and insufficient in scale for robust training
 - **Representation limitations**: SMILES notation is a discrete representation without explicit 3D structural information
 - **Data quality issues**: Limited training data compared to typical NLP tasks, with high rates of incorrect or incomplete entries
@@ -237,6 +245,7 @@ Each approach was evaluated on both the original USPTO-50K dataset and our augme
 The LLM-based data augmentation approach achieved remarkable improvements across all metrics:
 
 **Data Augmentation Impact:**
+
 - **Top-1 Accuracy**: 58.8% (baseline) → 74.2% (with USPTO-50K_γ) — **26.2% improvement**
 - **Top-3 Accuracy**: 73.9% (baseline) → 85.2% (with USPTO-50K_γ)
 - **Top-5 Accuracy**: 79.4% (baseline) → 88.6% (with USPTO-50K_γ)
@@ -244,11 +253,13 @@ The LLM-based data augmentation approach achieved remarkable improvements across
 This **26.2% improvement in Top-1 Accuracy** indicated that LLM-generated data provided more learnable and generalizable molecular patterns, creating a higher-quality representation space for the model to learn from. The augmented dataset enabled the model to better understand molecular transformation patterns, especially for underrepresented reaction types.
 
 **Parameter-Efficient Fine-tuning Results:**
+
 - **LoRA Performance**: Achieved 98% of full fine-tuning accuracy with only 0.17% trainable parameters
 - **MLP Adapters**: Competitive performance with minimal architectural changes
 - **Frozen Layers**: Effective for domain adaptation while preserving pre-trained knowledge
 
 **Computational Efficiency:**
+
 - Over 90% reduction in trainable parameters using LoRA
 - Significant reduction in GPU memory requirements
 - Faster training convergence with augmented data
@@ -277,6 +288,7 @@ This research demonstrates several important contributions to AI for Science:
 ## Technical Skills & Tools
 
 **Machine Learning & NLP:**
+
 - BART (Bidirectional and Auto-Regressive Transformers) architecture
 - Parameter-efficient fine-tuning (LoRA, adapters, frozen layers)
 - Sequence-to-sequence modeling
@@ -284,12 +296,14 @@ This research demonstrates several important contributions to AI for Science:
 - LLM-based data augmentation (GPT-3.5-turbo)
 
 **Chemical Informatics:**
+
 - SMILES (Simplified Molecular Input Line Entry System) notation
 - Chemical reaction representation
 - Retrosynthesis prediction
 - Molecular structure validation
 
 **Development & Tools:**
+
 - PyTorch deep learning framework
 - Hugging Face Transformers library
 - Python scientific computing (NumPy, Pandas)

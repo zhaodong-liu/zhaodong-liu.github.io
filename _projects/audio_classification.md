@@ -26,6 +26,7 @@ category: projects
 ## 问题描述
 
 任务挑战是基于歌者性别将短音乐片段（3 秒）分类为 4 个类别。该任务需要在以下条件下区分人声特征：
+
 - 背景伴奏对人声特征的遮蔽
 - 时间上下文有限（每个样本仅 3 秒）
 - 各类别间人声特征高度相似
@@ -36,6 +37,7 @@ category: projects
 ### 1. 预处理流水线
 
 #### 人声分离
+
 - 利用 **Spleeter** 从背景音乐中分离出人声轨道
 - 准确率提升约 5%
 - 让模型聚焦于歌者特征而非伴奏
@@ -58,6 +60,7 @@ FFT 大小: 1024
 ```
 
 相比使用现成的 MFCC 函数，我从零实现了梅尔频率滤波器组计算，从而带来：
+
 - 对音频表示的精细控制
 - 针对 3 秒片段的自定义优化
 - 对特征提取过程更深入的理解
@@ -87,6 +90,7 @@ FFT 大小: 1024
 </div>
 
 架构修改：
+
 - 修改输入层以接受单通道频谱图（299×40）
 - 在最终分类层之前加入 dropout 层（p=0.2）
 - 4 类输出层
@@ -111,6 +115,7 @@ FFT 大小: 1024
 ### 3. 训练配置
 
 **优化器与损失函数：**
+
 - 优化器：AdamW（lr=3e-4，weight_decay=1e-5）
 - 损失函数：CrossEntropyLoss
 - 学习率调度器：CosineAnnealingWarmRestarts
@@ -125,12 +130,14 @@ FFT 大小: 1024
 </div>
 
 **训练细节：**
+
 - 批大小：32
 - 训练轮数：10-20
 - 训练/验证集划分：70/30（random_state=8）
 - 平台：Kaggle（GPU 加速）
 
 **高级技术：**
+
 - Dropout（rate=0.2）防止过拟合
 - 带热重启的余弦退火学习率调度
 - 20 模型集成以获得鲁棒预测
@@ -145,14 +152,15 @@ FFT 大小: 1024
 
 ## 结果
 
-| 模型 | 准确率 |
-|------|--------|
-| 单层 CNN（3 个卷积层） | ~65% |
-| 单个 ResNet34 | ~74% |
-| ResNet34 集成（4-5 个模型） | ~77-78% |
+| 模型                           | 准确率     |
+| ------------------------------ | ---------- |
+| 单层 CNN（3 个卷积层）         | ~65%       |
+| 单个 ResNet34                  | ~74%       |
+| ResNet34 集成（4-5 个模型）    | ~77-78%    |
 | **ResNet34 集成（20 个模型）** | **80.42%** |
 
 20 个模型的集成方法表现最佳。主要提升来自：
+
 1. 人声分离预处理：约 5% 提升
 2. 自定义梅尔频率特征：比标准 MFCC 提供更好的表示
 3. 集成学习：相比单模型提升 2-3%
@@ -171,12 +179,14 @@ FFT 大小: 1024
 ## 挑战与经验
 
 **挑战：**
+
 - 由于计算资源限制，超参数探索有限
 - 训练受 Kaggle 平台限制（随机断连）
 - 在集成规模与计算成本之间需要权衡
 - 数据增强实验受时间所限
 
 **主要收获：**
+
 - 预处理（人声分离）对模型性能影响巨大
 - 集成方法带来稳定提升，但存在边际递减
 - 自定义特征提取带来更好的理解与控制
@@ -185,6 +195,7 @@ FFT 大小: 1024
 ## 技术栈与工具
 
 **机器学习与深度学习：**
+
 - ResNet34 架构与卷积神经网络
 - 集成学习技术
 - 迁移学习概念（将视觉模型适配于音频）
@@ -192,12 +203,14 @@ FFT 大小: 1024
 - 学习率调度（余弦退火）
 
 **音频处理：**
+
 - 梅尔频率滤波器组实现
 - STFT（短时傅里叶变换）
 - 音频特征提取（MFCC、频谱图）
 - 使用 Spleeter 进行人声分离
 
 **开发与工具：**
+
 - PyTorch 深度学习框架
 - Librosa 音频处理库
 - NumPy 数值计算
@@ -239,6 +252,7 @@ This project implements an ensemble of deep learning models to classify 3-second
 ## Problem Statement
 
 The challenge was to classify short music snippets (3 seconds) into 4 categories based on singer gender. This task required distinguishing vocal characteristics while handling:
+
 - Background instrumentation that obscures vocal features
 - Limited temporal context (only 3 seconds per sample)
 - High inter-class similarity in vocal characteristics
@@ -249,6 +263,7 @@ The challenge was to classify short music snippets (3 seconds) into 4 categories
 ### 1. Preprocessing Pipeline
 
 #### Vocal Separation
+
 - Utilized **Spleeter** to isolate vocal tracks from background music
 - Achieved approximately 5% accuracy improvement
 - Focused model attention on singer characteristics rather than instrumentation
@@ -271,6 +286,7 @@ Output shape: (299, 40) per sample
 ```
 
 Rather than using pre-built MFCC functions, I implemented the mel-frequency filter bank computation from scratch, providing:
+
 - Fine-grained control over audio representation
 - Custom optimization for 3-second snippets
 - Better understanding of the feature extraction process
@@ -300,6 +316,7 @@ Features are saved as individual `.npz` files for efficient loading during train
 </div>
 
 Architecture modifications:
+
 - Modified input layer to accept 1-channel spectrograms (299×40)
 - Added dropout layer (p=0.2) before final classification
 - 4-class output layer
@@ -324,6 +341,7 @@ Architecture modifications:
 ### 3. Training Configuration
 
 **Optimizer & Loss:**
+
 - Optimizer: AdamW (lr=3e-4, weight_decay=1e-5)
 - Loss Function: CrossEntropyLoss
 - Learning Rate Scheduler: CosineAnnealingWarmRestarts
@@ -338,12 +356,14 @@ Architecture modifications:
 </div>
 
 **Training Details:**
+
 - Batch Size: 32
 - Epochs: 10-20
 - Train/Validation Split: 70/30 (random_state=8)
 - Platform: Kaggle (GPU acceleration)
 
 **Advanced Techniques:**
+
 - Dropout (rate=0.2) to prevent overfitting
 - Cosine annealing with warm restarts for learning rate scheduling
 - 20-model ensemble for robust predictions
@@ -358,14 +378,15 @@ Architecture modifications:
 
 ## Results
 
-| Model | Accuracy |
-|-------|----------|
-| Single CNN (3 conv layers) | ~65% |
-| Single ResNet34 | ~74% |
-| ResNet34 Ensemble (4-5 models) | ~77-78% |
+| Model                             | Accuracy   |
+| --------------------------------- | ---------- |
+| Single CNN (3 conv layers)        | ~65%       |
+| Single ResNet34                   | ~74%       |
+| ResNet34 Ensemble (4-5 models)    | ~77-78%    |
 | **ResNet34 Ensemble (20 models)** | **80.42%** |
 
 The ensemble approach with 20 models provided the best performance. Key improvements came from:
+
 1. Vocal separation preprocessing: ~5% improvement
 2. Custom mel-frequency features: Better representation than standard MFCCs
 3. Ensemble learning: 2-3% improvement over single models
@@ -384,12 +405,14 @@ The ensemble approach with 20 models provided the best performance. Key improvem
 ## Challenges & Lessons Learned
 
 **Challenges:**
+
 - Limited hyperparameter exploration due to computational constraints
 - Training constrained by Kaggle platform limitations (random disconnections)
 - Balancing ensemble size with computational cost
 - Data augmentation experimentation limited by time constraints
 
 **Key Learnings:**
+
 - Preprocessing (vocal separation) can have major impact on model performance
 - Ensemble methods provide consistent improvements with diminishing returns
 - Custom feature extraction provides better understanding and control
@@ -398,6 +421,7 @@ The ensemble approach with 20 models provided the best performance. Key improvem
 ## Technical Skills & Tools
 
 **Machine Learning & Deep Learning:**
+
 - ResNet34 architecture and convolutional neural networks
 - Ensemble learning techniques
 - Transfer learning concepts (adapting vision models for audio)
@@ -405,12 +429,14 @@ The ensemble approach with 20 models provided the best performance. Key improvem
 - Learning rate scheduling (cosine annealing)
 
 **Audio Processing:**
+
 - Mel-frequency filter banks implementation
 - STFT (Short-Time Fourier Transform)
 - Audio feature extraction (MFCCs, spectrograms)
 - Vocal separation using Spleeter
 
 **Development & Tools:**
+
 - PyTorch deep learning framework
 - Librosa for audio processing
 - NumPy for numerical computing

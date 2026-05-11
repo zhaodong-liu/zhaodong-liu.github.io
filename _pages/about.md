@@ -42,4 +42,3 @@ My research interests lie at the intersection of **machine learning**, **natural
 我的研究兴趣集中在 **机器学习**、**自然语言处理**、**推荐系统** 与 **多模态学习** 的交叉领域。我尤其着迷于大语言模型如何理解并预测人类行为模式，以及如何运用这些模型来解决不同领域中的复杂问题。
 
 </div>
-

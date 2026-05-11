@@ -56,12 +56,14 @@ related_publications: false
 </div>
 
 **核心实体：**
+
 - **User**：带身份认证与个人资料设置的平台用户
 - **League**：具有多种配置的梦幻联盟（足球、篮球、足球）
 - **Team**：用户所拥有的梦幻球队，含排名与积分
 - **Player**：真实的体育选手，含位置、所属队与梦幻数据
 
 **关系表：**
+
 - **Draft**：选秀排程与球员选择跟踪
 - **MatchDetail**：含日期、比分与胜方的比赛结果
 - **MatchTeam**：球队在比赛中的参与（主/客）
@@ -69,6 +71,7 @@ related_publications: false
 - **MatchEvent**：比赛中的事件（达阵、进球、助攻等）
 
 **交易表：**
+
 - **Trade**：带时间戳的交易记录
 - **PlayerTrade**：球队间的球员流动
 - **TeamTrade**：多球员的球队对球队交易
@@ -79,11 +82,13 @@ related_publications: false
 #### 复杂关系
 
 **多对多关系：**
+
 - 用户 ↔ 联盟（通过球队管理）
 - 球员 ↔ 球队（通过选秀与交易）
 - 球队 ↔ 比赛（通过 MatchTeam 参与）
 
 **一对多关系：**
+
 - 联盟 → 多支球队
 - 球队 → 多名球员
 - 比赛 → 多个事件
@@ -92,14 +97,17 @@ related_publications: false
 #### 关键设计特性
 
 1. **复合主键：**
+
    - `MatchTeam`（MatchID + TeamID）
    - `PlayerTrade`（TradeID + PlayerID）
 
 2. **外键约束：**
+
    - 所有相关表间的引用完整性
    - 级联更新以保持数据一致性
 
 3. **默认值：**
+
    - `Team.TotalPoints` 默认为 0
    - `Player.FantasyPoints` 默认为 0
    - `MatchDetail.Winner` 默认为 "Draw"
@@ -114,42 +122,49 @@ related_publications: false
 ## 主要功能
 
 ### 1. **联盟管理**
+
 - 创建公开或私有联盟
 - 设置最大球队数与选秀日期
 - 分配带管理权限的专员角色
 - 同时支持多种体育联盟
 
 ### 2. **选秀系统**
+
 - 带状态追踪的排程选秀事件
 - 选秀顺序随机化
 - 实时球员可用性检查
 - 选秀后阵容自动更新
 
 ### 3. **球队运营**
+
 - 基于总积分的动态排名
 - 活跃/非活跃状态管理
 - 阵容上限强制执行
 - 经理分配与转让
 
 ### 4. **球员统计**
+
 - 逐场比赛表现追踪
 - 伤病状态监控
 - 梦幻积分计算
 - 历史统计聚合
 
 ### 5. **交易机制**
+
 - 球员对球员交易
 - 多球员球队交易
 - 交易验证（阵容上限、球员可用性）
 - 交易历史追踪
 
 ### 6. **豁免名单**
+
 - 自由球员拾取系统
 - 豁免优先级管理
 - 批准/驳回工作流
 - 拾取日期追踪
 
 ### 7. **比赛追踪**
+
 - 实时比分更新
 - 事件记录（达阵、进球、助攻等）
 - 主客队指定
@@ -158,23 +173,28 @@ related_publications: false
 ## 已应对的技术挑战
 
 ### 1. **数据一致性**
+
 - 实现触发器，在球员得分时自动更新球队积分
 - 外键约束防止孤立记录
 - 交易操作的事务管理
 
 ### 2. **复杂查询**
+
 为以下场景开发了复杂查询：
+
 - 含平局规则的联盟排名
 - 跨多联盟的球员可用性
 - 交易历史与影响分析
 - 表现统计聚合
 
 ### 3. **可扩展性考虑**
+
 - 为外键建立索引以提升联接性能
 - 范式化模式以最小化数据冗余
 - 针对常见操作的高效查询模式
 
 ### 4. **数据完整性**
+
 - 约束强制执行（如选秀日期须早于联盟开始日期）
 - 状态校验（如不能交易受伤球员）
 - 所有关系间的引用完整性
@@ -183,49 +203,54 @@ related_publications: false
 
 **总记录数：** 13 张表中共 390+ 条
 
-| 表 | 记录数 | 用途 |
-|------|---------|---------|
-| User | 25 | 平台用户 |
-| League | 25 | 梦幻联盟 |
-| Team | 25 | 用户球队 |
-| Draft | 25 | 选秀会议 |
-| Player | 60 | 体育选手 |
-| MatchDetail | 12 | 比赛结果 |
-| MatchTeam | 24 | 比赛参与方 |
-| PlayerStats | 25 | 表现数据 |
-| MatchEvent | 25 | 比赛事件 |
-| Trade | 25 | 交易记录 |
-| PlayerTrade | 30 | 球员流动 |
-| TeamTrade | 24 | 多球员交易 |
-| Waiver | 11 | 自由球员拾取 |
+| 表          | 记录数 | 用途         |
+| ----------- | ------ | ------------ |
+| User        | 25     | 平台用户     |
+| League      | 25     | 梦幻联盟     |
+| Team        | 25     | 用户球队     |
+| Draft       | 25     | 选秀会议     |
+| Player      | 60     | 体育选手     |
+| MatchDetail | 12     | 比赛结果     |
+| MatchTeam   | 24     | 比赛参与方   |
+| PlayerStats | 25     | 表现数据     |
+| MatchEvent  | 25     | 比赛事件     |
+| Trade       | 25     | 交易记录     |
+| PlayerTrade | 30     | 球员流动     |
+| TeamTrade   | 24     | 多球员交易   |
+| Waiver      | 11     | 自由球员拾取 |
 
 ## 展示的技能
 
 **数据库设计：**
+
 - ER 建模与范式化（3NF）
 - 复杂关系映射
 - 约束定义与执行
 - 用于查询优化的索引策略
 
 **SQL 编程：**
+
 - 用于模式创建的 DDL
 - 用于数据操作的 DML
 - 高级联接与子查询
 - 聚合函数与分组
 
 **PL/SQL 开发：**
+
 - 用于自动化工作流的触发器
 - 用于业务逻辑的存储过程
 - 事务管理
 - 错误处理
 
 **数据管理：**
+
 - 示例数据生成与校验
 - 数据完整性验证
 - 使用真实数据集进行性能测试
 - 备份与恢复规划
 
 **系统集成：**
+
 - 多表事务协调
 - 实时数据更新
 - 跨实体状态追踪
@@ -277,7 +302,7 @@ A fully-featured database management system designed for fantasy sports leagues,
 
 **Course:** Introduction to Databases (Fall 2024)
 
-**Institution:** NYU Tandon School of Engineering 
+**Institution:** NYU Tandon School of Engineering
 
 **Advisor:** [Prof. Salim Arfaoui](https://engineering.nyu.edu/faculty/salim-arfaoui)
 
@@ -317,12 +342,14 @@ The system comprises 13 interconnected tables modeling the complete fantasy spor
 </div>
 
 **Core Entities:**
+
 - **User**: Platform users with authentication and profile settings
 - **League**: Fantasy leagues with various configurations (Football, Basketball, Soccer)
 - **Team**: User-owned fantasy teams with rankings and points
 - **Player**: Real sports players with positions, teams, and fantasy stats
 
 **Relational Tables:**
+
 - **Draft**: Draft scheduling and player selection tracking
 - **MatchDetail**: Game results with dates, scores, and winners
 - **MatchTeam**: Team participation in matches (home/away)
@@ -330,6 +357,7 @@ The system comprises 13 interconnected tables modeling the complete fantasy spor
 - **MatchEvent**: In-game events (touchdowns, goals, assists, etc.)
 
 **Transaction Tables:**
+
 - **Trade**: Trade transaction records with timestamps
 - **PlayerTrade**: Player movements between teams
 - **TeamTrade**: Multi-player team-to-team transactions
@@ -340,11 +368,13 @@ The system comprises 13 interconnected tables modeling the complete fantasy spor
 #### Complex Relationships
 
 **Many-to-Many Relationships:**
+
 - Users ↔ Leagues (through Team management)
 - Players ↔ Teams (through draft picks and trades)
 - Teams ↔ Matches (through MatchTeam participation)
 
 **One-to-Many Relationships:**
+
 - League → Multiple Teams
 - Team → Multiple Players
 - Match → Multiple Events
@@ -353,14 +383,17 @@ The system comprises 13 interconnected tables modeling the complete fantasy spor
 #### Key Design Features
 
 1. **Composite Primary Keys:**
+
    - `MatchTeam` (MatchID + TeamID)
    - `PlayerTrade` (TradeID + PlayerID)
 
 2. **Foreign Key Constraints:**
+
    - Referential integrity across all related tables
    - Cascading updates for maintaining data consistency
 
 3. **Default Values:**
+
    - `Team.TotalPoints` defaults to 0
    - `Player.FantasyPoints` defaults to 0
    - `MatchDetail.Winner` defaults to "Draw"
@@ -375,42 +408,49 @@ The system comprises 13 interconnected tables modeling the complete fantasy spor
 ## Key Features & Functionality
 
 ### 1. **League Management**
+
 - Create public or private leagues
 - Set maximum team limits and draft dates
 - Assign commissioner roles with administrative privileges
 - Support for multiple sports leagues simultaneously
 
 ### 2. **Draft System**
+
 - Scheduled draft events with status tracking
 - Draft order randomization
 - Real-time player availability checking
 - Automatic roster updates post-draft
 
 ### 3. **Team Operations**
+
 - Dynamic ranking based on total points
 - Active/Inactive status management
 - Roster limits enforcement
 - Manager assignment and transfers
 
 ### 4. **Player Statistics**
+
 - Game-by-game performance tracking
 - Injury status monitoring
 - Fantasy point calculation
 - Historical stat aggregation
 
 ### 5. **Trading Mechanism**
+
 - Player-for-player trades
 - Multi-player team trades
 - Trade validation (roster limits, player availability)
 - Transaction history tracking
 
 ### 6. **Waiver Wire**
+
 - Free agent pickup system
 - Waiver priority management
 - Approval/denial workflow
 - Pickup date tracking
 
 ### 7. **Match Tracking**
+
 - Live score updates
 - Event recording (touchdowns, goals, assists, etc.)
 - Home/away team designation
@@ -419,23 +459,28 @@ The system comprises 13 interconnected tables modeling the complete fantasy spor
 ## Technical Challenges Addressed
 
 ### 1. **Data Consistency**
+
 - Implemented triggers to automatically update team points when players score
 - Foreign key constraints prevent orphaned records
 - Transaction management for trade operations
 
 ### 2. **Complex Queries**
+
 Developed sophisticated queries for:
+
 - League standings with tie-breaking rules
 - Player availability across multiple leagues
 - Trade history and impact analysis
 - Performance statistics aggregation
 
 ### 3. **Scalability Considerations**
+
 - Indexed foreign keys for join performance
 - Normalized schema to minimize data redundancy
 - Efficient query patterns for common operations
 
 ### 4. **Data Integrity**
+
 - Constraint enforcement (e.g., draft dates must precede league start)
 - Status validation (e.g., can't trade injured players)
 - Referential integrity across all relationships
@@ -444,49 +489,54 @@ Developed sophisticated queries for:
 
 **Total Records:** 390+ across 13 tables
 
-| Table | Records | Purpose |
-|-------|---------|---------|
-| User | 25 | Platform users |
-| League | 25 | Fantasy leagues |
-| Team | 25 | User teams |
-| Draft | 25 | Draft sessions |
-| Player | 60 | Sports athletes |
-| MatchDetail | 12 | Game results |
-| MatchTeam | 24 | Match participants |
-| PlayerStats | 25 | Performance data |
-| MatchEvent | 25 | In-game events |
-| Trade | 25 | Trade transactions |
-| PlayerTrade | 30 | Player movements |
-| TeamTrade | 24 | Multi-player trades |
-| Waiver | 11 | Free agent pickups |
+| Table       | Records | Purpose             |
+| ----------- | ------- | ------------------- |
+| User        | 25      | Platform users      |
+| League      | 25      | Fantasy leagues     |
+| Team        | 25      | User teams          |
+| Draft       | 25      | Draft sessions      |
+| Player      | 60      | Sports athletes     |
+| MatchDetail | 12      | Game results        |
+| MatchTeam   | 24      | Match participants  |
+| PlayerStats | 25      | Performance data    |
+| MatchEvent  | 25      | In-game events      |
+| Trade       | 25      | Trade transactions  |
+| PlayerTrade | 30      | Player movements    |
+| TeamTrade   | 24      | Multi-player trades |
+| Waiver      | 11      | Free agent pickups  |
 
 ## Skills Demonstrated
 
 **Database Design:**
+
 - ER modeling and normalization (3NF)
 - Complex relationship mapping
 - Constraint definition and enforcement
 - Index strategy for query optimization
 
 **SQL Programming:**
+
 - DDL for schema creation
 - DML for data manipulation
 - Advanced joins and subqueries
 - Aggregate functions and grouping
 
 **PL/SQL Development:**
+
 - Trigger creation for automated workflows
 - Stored procedures for business logic
 - Transaction management
 - Error handling
 
 **Data Management:**
+
 - Sample data generation and validation
 - Data integrity verification
 - Performance testing with realistic datasets
 - Backup and recovery planning
 
 **System Integration:**
+
 - Multi-table transaction coordination
 - Real-time data updates
 - Status tracking across entities

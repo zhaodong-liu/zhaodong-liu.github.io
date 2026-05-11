@@ -33,7 +33,7 @@
         - Developed a multimodal framework to predict user behavioral patterns on Amazon datasets
         - Designed and evaluated model architectures with quantization methods (VQ-VAE, RQ-VAE, OPQ), achieving 47.2% performance improvement
         - Implemented BPE-inspired partitioning tokenization, improving sequence coherence and representation quality
-    
+
     - title: Research Assistant - Efficient Driving Route Optimization
       institution: New York University Shanghai (Advisor Prof. Zhibin Chen)
       year: May 2024 - Aug 2024

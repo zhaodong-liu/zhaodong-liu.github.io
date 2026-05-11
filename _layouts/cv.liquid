@@ -66,7 +66,21 @@ layout: default
             {% endif %}
             target="_blank"
             rel="noopener noreferrer"
-            class="float-right"
+            class="float-right lang-en"
+          >
+            <i class="fa-solid fa-file-pdf"></i>
+          </a>
+        {% endif %}
+        {% if page.cv_pdf_zh %}
+          <a
+            {% if page.cv_pdf_zh contains '://' %}
+              href="{{ page.cv_pdf_zh }}"
+            {% else %}
+              href="{{ page.cv_pdf_zh | prepend: 'assets/pdf/' | relative_url }}"
+            {% endif %}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="float-right lang-zh"
           >
             <i class="fa-solid fa-file-pdf"></i>
           </a>
@@ -124,7 +138,9 @@ layout: default
       </div>
       {% if site.data.resume_zh %}
         <div class="cv lang-zh">
-          {%- assign zh_section_titles = "basics:基本信息|education:教育背景|work:工作经历|volunteer:学生组织与活动|projects:科研经历|awards:荣誉奖励|skills:技能|publications:论文|languages:语言|interests:兴趣|certificates:证书|references:推荐人" | split: "|" -%}
+          {%- assign zh_section_titles = 'basics:基本信息|education:教育背景|work:工作经历|volunteer:学生组织与活动|projects:科研经历|awards:荣誉奖励|skills:技能|publications:论文|languages:语言|interests:兴趣|certificates:证书|references:推荐人'
+            | split: '|'
+          -%}
           {% for data in site.data.resume_zh %}
             {% if site.jsonresume and site.jsonresume.size > 0 %}
               {% unless site.jsonresume contains data[0] %}
@@ -134,7 +150,7 @@ layout: default
             {% if data[0] == 'meta' or data[1].size == 0 %} {% continue %} {% endif %}
             {%- assign zh_title = data[0] | capitalize -%}
             {%- for pair in zh_section_titles -%}
-              {%- assign kv = pair | split: ":" -%}
+              {%- assign kv = pair | split: ':' -%}
               {%- if kv[0] == data[0] -%}{%- assign zh_title = kv[1] -%}{%- endif -%}
             {%- endfor -%}
             <a class="anchor" id="{{ data[0] }}-zh"></a>

@@ -54,12 +54,18 @@
               {%- else -%}
                 {%- assign zh_title = about_title -%}
                 {%- case about_title -%}
-                  {%- when 'about' -%}{%- assign zh_title = '关于' -%}
-                  {%- when 'projects' -%}{%- assign zh_title = '项目' -%}
-                  {%- when 'news' -%}{%- assign zh_title = '动态' -%}
-                  {%- when 'cv' -%}{%- assign zh_title = '简历' -%}
-                  {%- when 'blog' -%}{%- assign zh_title = '博客' -%}
-                  {%- when 'repositories' -%}{%- assign zh_title = '代码仓库' -%}
+                  {%- when 'about' -%}
+                    {%- assign zh_title = '关于' -%}
+                  {%- when 'projects' -%}
+                    {%- assign zh_title = '项目' -%}
+                  {%- when 'news' -%}
+                    {%- assign zh_title = '动态' -%}
+                  {%- when 'cv' -%}
+                    {%- assign zh_title = '简历' -%}
+                  {%- when 'blog' -%}
+                    {%- assign zh_title = '博客' -%}
+                  {%- when 'repositories' -%}
+                    {%- assign zh_title = '代码仓库' -%}
                 {%- endcase -%}
                 <span class="lang-en">{{- about_title -}}</span><span class="lang-zh">{{- zh_title -}}</span>
               {%- endif -%}
@@ -126,13 +132,20 @@
                     {%- else -%}
                       {%- assign p_zh = p.title -%}
                       {%- case p.title -%}
-                        {%- when 'about' -%}{%- assign p_zh = '关于' -%}
-                        {%- when 'projects' -%}{%- assign p_zh = '项目' -%}
-                        {%- when 'news' -%}{%- assign p_zh = '动态' -%}
-                        {%- when 'cv' -%}{%- assign p_zh = '简历' -%}
-                        {%- when 'blog' -%}{%- assign p_zh = '博客' -%}
-                        {%- when 'repositories' -%}{%- assign p_zh = '代码仓库' -%}
-                        {%- when 'publications' -%}{%- assign p_zh = '论文' -%}
+                        {%- when 'about' -%}
+                          {%- assign p_zh = '关于' -%}
+                        {%- when 'projects' -%}
+                          {%- assign p_zh = '项目' -%}
+                        {%- when 'news' -%}
+                          {%- assign p_zh = '动态' -%}
+                        {%- when 'cv' -%}
+                          {%- assign p_zh = '简历' -%}
+                        {%- when 'blog' -%}
+                          {%- assign p_zh = '博客' -%}
+                        {%- when 'repositories' -%}
+                          {%- assign p_zh = '代码仓库' -%}
+                        {%- when 'publications' -%}
+                          {%- assign p_zh = '论文' -%}
                       {%- endcase -%}
                       <span class="lang-en">{{- p.title -}}</span><span class="lang-zh">{{- p_zh -}}</span>
                     {%- endif -%}

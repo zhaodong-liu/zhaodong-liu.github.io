@@ -34,12 +34,12 @@ CLAIRO 的核心创新是 **多模态 token 合并**——将 ActionPiece 受 BP
 我们将 CLAIRO 与两类最先进的模型进行对比：
 
 **仅文本基线：**
+
 - **[ActionPiece](/assets/pdf/ActionPiece.pdf)**：使用协同 token 合并的上下文感知分词，用于序列推荐
 
 **多模态基线：**
+
 - **[MQL4GRec](/assets/pdf/MQL4GREC.pdf)**：使用 RQ-VAE 将多模态特征离散化为独立的 token 序列
-
-
 
 ## 方法
 
@@ -57,11 +57,13 @@ CLAIRO 的核心创新是 **多模态 token 合并**——将 ActionPiece 受 BP
 CLAIRO 通过一条精简的流水线扩展了 ActionPiece 的分词框架：
 
 **1. 多模态特征提取**
+
 - **视觉：** CLIP ViT-L/14 提取图像嵌入
 - **文本：** SentenceT5 生成句子嵌入
 - PCA 压缩统一维度（各 384 维 → 融合后 768 维）
 
 **2. 优化乘积量化（OPQ）**
+
 - 基于 FAISS 的量化将融合嵌入分解为离散语义编码
 - 关键洞见：在 OPQ 之前跳过最终阶段 PCA 可获得 **37-42% 的提升**，通过保留细粒度的检索信息
 
@@ -81,6 +83,7 @@ CLAIRO 通过一条精简的流水线扩展了 ActionPiece 的分词框架：
 ### 数据集
 
 我们在 **Amazon Review Data (2018)** 上跨四个不同品类进行评估：
+
 - Arts、Crafts and Sewing（艺术、手工与缝纫）
 - CDs and Vinyl（CD 与黑胶）
 - Musical Instruments（乐器）
@@ -94,12 +97,12 @@ CLAIRO 通过一条精简的流水线扩展了 ActionPiece 的分词框架：
 
 CLAIRO 在多个数据集上相对纯文本与多模态基线均取得显著提升：
 
-| 品类 | vs ActionPiece（纯文本） | vs MQL4GRec（多模态） |
-|----------|---------------------------|--------------------------|
-| **CDs and Vinyl** | +45.1% NDCG@5 | **+135.3% NDCG@5** |
-| **Sports** | +47.2% NDCG@5 | -22.5% NDCG@5 |
-| **Arts** | +2.2% NDCG@5 | +43.5% NDCG@5 |
-| **Instruments** | +1.7% NDCG@5 | +10.9% NDCG@5 |
+| 品类              | vs ActionPiece（纯文本） | vs MQL4GRec（多模态） |
+| ----------------- | ------------------------ | --------------------- |
+| **CDs and Vinyl** | +45.1% NDCG@5            | **+135.3% NDCG@5**    |
+| **Sports**        | +47.2% NDCG@5            | -22.5% NDCG@5         |
+| **Arts**          | +2.2% NDCG@5             | +43.5% NDCG@5         |
+| **Instruments**   | +1.7% NDCG@5             | +10.9% NDCG@5         |
 
 **[查看完整结果](/assets/pdf/CLAIRO_Final_Report.pdf)**，包含详细指标（Recall@5/10、NDCG@5/10）与统计分析。
 
@@ -123,12 +126,14 @@ CLAIRO 在多个数据集上相对纯文本与多模态基线均取得显著提�
 - 视觉模式为文本描述提供高度互补的信号
 
 **⚽ Sports and Outdoors**（结果不一）
+
 - 复杂的上下文信息（运动员、场景、使用环境）
 - 丰富的视觉多样性相比纯文本基线带来提升（+47.2%）
 - 但与文本描述的不对齐相比多模态基线表现下降（-22.5%）
 - 凸显恰当的多模态对齐的重要性
 
 **🎨 Arts 与 🎸 Instruments**（边际提升：约 2-3%）
+
 - 视觉上异质的产品（原材料、工具、单调背景）
 - 视觉特征起补充而非主导作用
 - 说明仅添加视觉数据不足以解决问题
@@ -136,10 +141,12 @@ CLAIRO 在多个数据集上相对纯文本与多模态基线均取得显著提�
 ### 关键技术洞见
 
 **1. 跳过最终阶段 PCA** → 37-42% 提升
+
 - PCA 的全局降维丢弃了细粒度的检索信息
 - OPQ 已针对量化误差进行了优化；额外的 PCA 是有害的
 
 **2. 视觉特征是互补的，非主导的**
+
 - 纯文本变体性能与完整模型相近
 - 纯视觉变体因嵌入多样性有限而失败
 - 最佳结果来自两种模态的恰当对齐
@@ -157,22 +164,27 @@ CLAIRO 在多个数据集上相对纯文本与多模态基线均取得显著提�
 ## 未来方向
 
 **1. 更多模态**
+
 - 加入视频与音频特征（尤其对音乐与电子游戏推荐有前景）
 - 利用时序动态与声学模式丰富物品表征
 
 **2. 自适应模态加权**
+
 - 基于品类特性动态调整视觉/文本贡献
 - 强调信息丰富的模态，同时抑制噪声较大的模态
 
 **3. 增强的编码器**
+
 - 探索超越 CLIP ViT-L/14 的更强大视觉编码器
 - 研究领域特定微调以提升视觉嵌入的区分度
 
 **4. 跨域泛化**
+
 - 在多样化数据集上评估：MovieLens（电影）、Steam（游戏）、Yelp（餐厅）
 - 研究视觉语义丰富度如何在不同领域影响跨模态学习
 
 **5. 动态词表扩展**
+
 - 实现新 token 模式的增量学习，无需完整重训练
 - 随时间适配用户行为与物品属性的演变
 
@@ -188,6 +200,7 @@ CLAIRO 在多个数据集上相对纯文本与多模态基线均取得显著提�
 ---
 
 📄 **资源：**
+
 - [完整技术报告](/assets/pdf/CLAIRO_Final_Report.pdf)
 - [ActionPiece 论文](/assets/pdf/ActionPiece.pdf)
 - [MQL4GRec 论文](/assets/pdf/MQL4GREC.pdf)
@@ -221,12 +234,12 @@ CLAIRO's core innovation is **multimodal token merging** - extending ActionPiece
 We compare CLAIRO against two categories of state-of-the-art models:
 
 **Text-only Baseline:**
+
 - **[ActionPiece](/assets/pdf/ActionPiece.pdf)**: Context-aware tokenization using collaborative token merging for sequential recommendation
 
 **Multimodal Baseline:**
+
 - **[MQL4GRec](/assets/pdf/MQL4GREC.pdf)**: Uses RQ-VAE to discretize multimodal features into separate token sequences
-
-
 
 ## Methodology
 
@@ -244,11 +257,13 @@ We compare CLAIRO against two categories of state-of-the-art models:
 CLAIRO extends ActionPiece's tokenization framework through a streamlined pipeline:
 
 **1. Multimodal Feature Extraction**
+
 - **Visual**: CLIP ViT-L/14 extracts image embeddings
 - **Textual**: SentenceT5 generates sentence embeddings
 - PCA compression unifies dimensionality (384-dim each → 768-dim fused)
 
 **2. Optimized Product Quantization (OPQ)**
+
 - FAISS-based quantization decomposes fused embeddings into discrete semantic codes
 - Key insight: Skipping final-stage PCA before OPQ yields **37-42% improvement** by preserving fine-grained retrieval information
 
@@ -268,6 +283,7 @@ Unlike traditional approaches that process modalities separately, CLAIRO's token
 ### Dataset
 
 We evaluate on **Amazon Review Data (2018)** across four diverse categories:
+
 - Arts, Crafts and Sewing
 - CDs and Vinyl
 - Musical Instruments
@@ -281,12 +297,12 @@ The dataset provides 233.1M reviews with rich multimodal information (product im
 
 CLAIRO achieves significant improvements over both text-only and multimodal baselines across multiple datasets:
 
-| Category | vs ActionPiece (text-only) | vs MQL4GRec (multimodal) |
-|----------|---------------------------|--------------------------|
-| **CDs and Vinyl** | +45.1% NDCG@5 | **+135.3% NDCG@5** |
-| **Sports** | +47.2% NDCG@5 | -22.5% NDCG@5 |
-| **Arts** | +2.2% NDCG@5 | +43.5% NDCG@5 |
-| **Instruments** | +1.7% NDCG@5 | +10.9% NDCG@5 |
+| Category          | vs ActionPiece (text-only) | vs MQL4GRec (multimodal) |
+| ----------------- | -------------------------- | ------------------------ |
+| **CDs and Vinyl** | +45.1% NDCG@5              | **+135.3% NDCG@5**       |
+| **Sports**        | +47.2% NDCG@5              | -22.5% NDCG@5            |
+| **Arts**          | +2.2% NDCG@5               | +43.5% NDCG@5            |
+| **Instruments**   | +1.7% NDCG@5               | +10.9% NDCG@5            |
 
 **[View Full Results](/assets/pdf/CLAIRO_Final_Report.pdf)** with detailed metrics (Recall@5/10, NDCG@5/10) and statistical analysis.
 
@@ -310,12 +326,14 @@ Our analysis reveals that visual features contribute differently depending on pr
 - Visual patterns provide highly complementary signals to text descriptions
 
 **⚽ Sports and Outdoors** (Mixed results)
+
 - Complex contextual information (athletes, scenes, usage environments)
 - Rich visual diversity helps vs text-only baseline (+47.2%)
 - But misalignment with text descriptions harms vs multimodal baseline (-22.5%)
 - Highlights the importance of proper multimodal alignment
 
 **🎨 Arts and 🎸 Instruments** (Marginal gains: ~2-3%)
+
 - Visually heterogeneous products (raw materials, tools, plain backgrounds)
 - Visual features play complementary rather than dominant role
 - Demonstrates that adding visual data alone isn't sufficient
@@ -323,10 +341,12 @@ Our analysis reveals that visual features contribute differently depending on pr
 ### Key Technical Insights
 
 **1. Skip Final-stage PCA** → +37-42% improvement
+
 - PCA's global dimensionality reduction discards fine-grained retrieval information
 - OPQ already optimizes for quantization error; additional PCA is detrimental
 
 **2. Visual Features are Complementary, Not Dominant**
+
 - Text-only variant performs similarly to full model
 - Visual-only variant fails due to limited embedding diversity
 - Best results come from proper alignment of both modalities
@@ -344,22 +364,27 @@ Our analysis reveals that visual features contribute differently depending on pr
 ## Future Directions
 
 **1. Additional Modalities**
+
 - Incorporate video and audio features (especially promising for music and video game recommendations)
 - Leverage temporal dynamics and acoustic patterns to enrich item representations
 
 **2. Adaptive Modality Weighting**
+
 - Dynamically adjust visual/textual contribution based on category characteristics
 - Emphasize informative modalities while suppressing noisy ones
 
 **3. Enhanced Encoders**
+
 - Explore more powerful visual encoders beyond CLIP ViT-L/14
 - Investigate domain-specific fine-tuning to improve visual embedding discriminability
 
 **4. Cross-domain Generalization**
+
 - Evaluate on diverse datasets: MovieLens (films), Steam (games), Yelp (restaurants)
 - Study how visual semantic richness affects cross-modal learning across different domains
 
 **5. Dynamic Vocabulary Expansion**
+
 - Enable incremental learning of new token patterns without full retraining
 - Adapt to evolving user behaviors and item attributes over time
 
@@ -375,6 +400,7 @@ Our analysis reveals that visual features contribute differently depending on pr
 ---
 
 📄 **Resources:**
+
 - [Full Technical Report](/assets/pdf/CLAIRO_Final_Report.pdf)
 - [ActionPiece Paper](/assets/pdf/ActionPiece.pdf)
 - [MQL4GRec Paper](/assets/pdf/MQL4GREC.pdf)
