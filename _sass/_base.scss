@@ -28,10 +28,9 @@ html[data-lang="zh"] [lang="en"] {
     color: var(--global-hover-color);
   }
   span {
-    // CJK glyph sits high in its em-box; nudge down to match icon baseline.
-    display: inline-block;
-    position: relative;
-    top: 2px;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
   }
 }
 
@@ -333,8 +332,25 @@ ul.task-list input[type="checkbox"] {
     font-weight: bolder;
     color: var(--global-theme-color);
 
+    span {
+      color: inherit;
+    }
+
     &:hover {
       color: var(--global-hover-color);
+    }
+  }
+
+  .navbar-nav .toggle-container {
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+
+    button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
     }
   }
 
