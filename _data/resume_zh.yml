@@ -16,15 +16,15 @@ education:
     area: "计算机科学、数学（双主修），Cum Laude（荣誉毕业）"
     studyType: "理学学士"
     startDate: "2022-09-01"
-    endDate: "2026-05-31"
-    score: "累计 GPA: 3.803/4.0 | 计算机科学专业 GPA: 3.946/4.0 | 数学专业 GPA: 3.818/4.0"
+    endDate: "2026-05-17"
+    score: "累计 GPA: 3.79/4.0 | 计算机科学专业 GPA: 3.95/4.0 | 数学专业 GPA: 3.79/4.0"
     courses:
       - "海外学习经历：纽约大学纽约校区，2024 年 9 月 - 2025 年 5 月"
       - "相关课程：多元微积分、荣誉线性代数、概率与统计、荣誉数值分析、离散数学、数学分析、常微分方程、随机过程、数据结构、算法、操作系统、数据库、机器学习、自然语言处理"
       - "荣誉：Dean's List 院长名单（学年：2022–2025）、Founders' Day Award（年度杰出学生荣誉奖）"
 
   - institution: "卡耐基梅隆大学"
-    location: "匹兹堡，宾夕法尼亚州，美国"
+    location: "匹兹堡，宾州，美国"
     url: "https://www.cmu.edu/"
     area: "计算数据科学（Master of Computational Data Science）"
     studyType: "理学硕士"
