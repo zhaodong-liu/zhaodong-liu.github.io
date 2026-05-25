@@ -3,7 +3,7 @@ layout: page
 title: '<span class="lang-en">Traffic-Aware Route Optimization</span><span class="lang-zh">考虑交通灯的路线优化</span>'
 description: '<span class="lang-en">Optimizing driving routes considering real-time traffic light timings</span><span class="lang-zh">结合实时交通信号时序的驾驶路线优化</span>'
 img: assets/img/projects/route_optimization.jpg
-importance: 3
+importance: 4
 category: projects
 ---
 

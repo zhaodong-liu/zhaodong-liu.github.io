@@ -3,7 +3,7 @@ layout: page
 title: '<span class="lang-en">Music Snippet Classification</span><span class="lang-zh">音乐片段分类</span>'
 description: '<span class="lang-en">Ensemble of ResNet34 models for classifying music audio snippets by singer gender</span><span class="lang-zh">基于 ResNet34 集成模型的音乐片段歌者性别分类</span>'
 img: assets/img/projects/audio_classification.jpg
-importance: 3
+importance: 4
 category: projects
 ---
 

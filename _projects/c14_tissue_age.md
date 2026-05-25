@@ -3,7 +3,7 @@ layout: page
 title: '<span class="lang-en">Carbon-14 Bomb-Pulse Modeling for Tissue Age</span><span class="lang-zh">基于碳-14 弹丸脉冲模型的组织年龄分析</span>'
 description: '<span class="lang-en">From deterministic PDEs to stochastic agent-based models for inferring tissue and cell age from atmospheric Carbon-14</span><span class="lang-zh">从确定性 PDE 到随机粒子模型，基于大气碳-14 推断组织与细胞年龄</span>'
 img: assets/img/projects/c14_tissue_age.jpg
-importance: 2
+importance: 3
 category: projects
 ---
 
