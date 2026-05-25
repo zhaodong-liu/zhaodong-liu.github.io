@@ -47,6 +47,11 @@ ninja.data = [{
           description: "Ensemble of ResNet34 models for classifying music audio snippets by singer gender基于 ResNet34 集成模型的音乐片段歌者性别分类",
           section: "Projects",handler: () => {
               window.location.href = "/projects/audio_classification/";
+            },},{id: "projects-carbon-14-bomb-pulse-modeling-for-tissue-age基于碳-14-弹丸脉冲模型的组织年龄分析",
+          title: 'Carbon-14 Bomb-Pulse Modeling for Tissue Age基于碳-14 弹丸脉冲模型的组织年龄分析',
+          description: "From deterministic PDEs to stochastic agent-based models for inferring tissue and cell age from atmospheric Carbon-14从确定性 PDE 到随机粒子模型，基于大气碳-14 推断组织与细胞年龄",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/c14_tissue_age/";
             },},{id: "projects-llm-based-chemical-retrosynthesis基于大语言模型的化学逆合成",
           title: 'LLM-based Chemical Retrosynthesis基于大语言模型的化学逆合成',
           description: "Fine-tuning pretrained language models for predicting chemical reaction pathways微调预训练语言模型以预测化学反应路径",
