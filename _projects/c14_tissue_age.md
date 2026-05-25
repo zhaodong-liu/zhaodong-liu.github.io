@@ -37,7 +37,7 @@ category: projects
 
 ### 1. 确定性 PDE 模型
 
-以年龄 *a* 与时间 *t* 为变量，对细胞密度 *n(a, t)* 建立 McKendrick–von Foerster 型输运方程，并结合 ¹⁴C 衰变与组织形成时间的卷积公式，得到组织 ¹⁴C 含量的解析表达式：
+以年龄 _a_ 与时间 _t_ 为变量，对细胞密度 _n(a, t)_ 建立 McKendrick–von Foerster 型输运方程，并结合 ¹⁴C 衰变与组织形成时间的卷积公式，得到组织 ¹⁴C 含量的解析表达式：
 
 - 通过特征线法（Method of Characteristics）求解一阶 PDE
 - 引入参数 `γ`（细胞死亡率）与 `b`（细胞增殖率）
