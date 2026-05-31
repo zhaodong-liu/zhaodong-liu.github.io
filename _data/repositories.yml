@@ -4,6 +4,7 @@ github_users:
 repo_description_lines_max: 2
 
 github_repos:
+  - zhaodong-liu/Carbon-14-Bomb-Pulse-Modeling
   - zhaodong-liu/CLAIRO
   - zhaodong-liu/Chemical-Retrosynthesis
   - zhaodong-liu/Audio-Classification
