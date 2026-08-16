@@ -4,16 +4,22 @@
     - name: Full Name
       value: Zhaodong Liu
     - name: Email
-      value: zl4789@nyu.edu
+      value: zhaodonl@andrew.cmu.edu
+    - name: Phone
+      value: +1 412 390 6409
     - name: Languages
       value: Chinese (Mandarin), English
 
 - title: Education
   type: time_table
   contents:
+    - title: Master of Computational Data Science (MCDS)
+      institution: Carnegie Mellon University, Pittsburgh, PA, USA
+      year: 2026 - Present
+
     - title: Bachelor of Science (Double Major in Computer Science and Mathematics)
       institution: New York University Shanghai, Shanghai, China
-      year: 2022 - 2026(expected)
+      year: 2022 - 2026
       description:
         - "Cumulative GPA: 3.79/4.0 | CS GPA: 3.95/4.0 | Math GPA: 3.79/4.0"
         - "Study-away Experience: NYU New York (Fall 2024 and Spring 2025)"

@@ -1,14 +1,14 @@
 {
   "basics": {
     "name": "Zhaodong Liu",
-    "label": "Undergraduate Student",
-    "email": "zl4789@nyu.edu",
-    "phone": "+86 131-5629-6623",
-    "summary": "A Computer Science and Mathematics double major student at New York University Shanghai with research experience in generative retrieval and large language models.",
+    "label": "Graduate Student",
+    "email": "zhaodonl@andrew.cmu.edu",
+    "phone": "+1 412 390 6409",
+    "summary": "A graduate student in the Master of Computational Data Science (MCDS) program at Carnegie Mellon University with research experience in generative retrieval and large language models.",
     "location": {
-      "city": "Shanghai",
-      "countryCode": "CN",
-      "region": "China"
+      "city": "Pittsburgh",
+      "countryCode": "US",
+      "region": "Pennsylvania"
     }
   },
   "education": [

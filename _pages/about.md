@@ -2,16 +2,16 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='https://shanghai.nyu.edu/'><span class="lang-en">New York University Shanghai</span><span class="lang-zh">上海纽约大学</span></a>
+subtitle: <a href='https://www.cmu.edu/'><span class="lang-en">Carnegie Mellon University</span><span class="lang-zh">卡内基梅隆大学</span></a>
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p><span class="lang-en">NYU Shanghai</span><span class="lang-zh">上海纽约大学</span></p>
-    <p><span class="lang-en">Contact: zl4789@nyu.edu</span><span class="lang-zh">邮箱：zl4789@nyu.edu</span></p>
-    <p><span class="lang-en">Phone: +86 131-5629-6623</span><span class="lang-zh">电话：+86 131-5629-6623</span></p>
+    <p><span class="lang-en">CMU MCDS</span><span class="lang-zh">卡内基梅隆大学 MCDS</span></p>
+    <p><span class="lang-en">Contact: zhaodonl@andrew.cmu.edu</span><span class="lang-zh">邮箱：zhaodonl@andrew.cmu.edu</span></p>
+    <p><span class="lang-en">Phone: +1 412 390 6409</span><span class="lang-zh">电话：+1 412 390 6409</span></p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -29,7 +29,7 @@ latest_posts:
 
 <div class="lang-en" markdown="1">
 
-My name is 刘兆东 (Zhaodong Liu), a senior student at New York University Shanghai, double majoring in **Computer Science** and **Mathematics**.
+My name is 刘兆东 (Zhaodong Liu), a graduate student in the **Master of Computational Data Science (MCDS)** program at **Carnegie Mellon University**.
 
 My research interests lie at the intersection of **machine learning**, **natural language processing**, **recommendation systems**, and **multimodal learning**. I am particularly fascinated by how large language models can understand and predict human behavior patterns, and how they can be applied to solve complex problems across diverse domains.
 
@@ -37,7 +37,7 @@ My research interests lie at the intersection of **machine learning**, **natural
 
 <div class="lang-zh" markdown="1">
 
-我是刘兆东，上海纽约大学大四学生，**计算机科学**与**数学**双专业。
+我是刘兆东，卡内基梅隆大学**计算数据科学硕士（MCDS）**项目的研究生。
 
 我的研究兴趣集中在 **机器学习**、**自然语言处理**、**推荐系统** 与 **多模态学习** 的交叉领域。我尤其着迷于大语言模型如何理解并预测人类行为模式，以及如何运用这些模型来解决不同领域中的复杂问题。
 

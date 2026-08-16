@@ -1,13 +1,13 @@
 basics:
   name: "刘兆东"
-  label: "本科生"
-  email: "zl4789@nyu.edu"
-  phone: "+86 131-5629-6623"
-  summary: "上海纽约大学计算机科学与数学双专业本科生，具有生成式检索与大语言模型方向的科研经历。"
+  label: "研究生"
+  email: "zhaodonl@andrew.cmu.edu"
+  phone: "+1 412 390 6409"
+  summary: "卡内基梅隆大学计算数据科学硕士（MCDS）项目研究生，具有生成式检索与大语言模型方向的科研经历。"
   location:
-    city: "上海"
-    countryCode: "CN"
-    region: "中国"
+    city: "匹兹堡"
+    countryCode: "US"
+    region: "美国"
 
 education:
   - institution: "上海纽约大学"
