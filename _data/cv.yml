@@ -13,51 +13,51 @@
 - title: Education
   type: time_table
   contents:
-    - title: Master of Computational Data Science (MCDS)
+    - title: Master of Computational Data Science (MCDS), Analytics Track
       institution: Carnegie Mellon University, Pittsburgh, PA, USA
-      year: 2026 - Present
+      year: 2026 - 2027 (Expected)
 
     - title: Bachelor of Science (Double Major in Computer Science and Mathematics)
       institution: New York University Shanghai, Shanghai, China
       year: 2022 - 2026
       description:
-        - "Cumulative GPA: 3.79/4.0 | CS GPA: 3.95/4.0 | Math GPA: 3.79/4.0"
+        - "Cumulative GPA: 3.793/4.0 | CS Major GPA: 3.946/4.0 | Math Major GPA: 3.786/4.0"
         - "Study-away Experience: NYU New York (Fall 2024 and Spring 2025)"
         - title: Relevant Coursework
           contents:
             - Machine Learning, Natural Language Processing, Operating Systems
-            - Honors Numerical Analysis, Data Structures, Basic Algorithms
-            - Multivariable Calculus, Honors Linear Algebra, Analysis
+            - Probability & Statistics, Data Structures, Basic Algorithms
+            - Honors Linear Algebra, Databases
 
 - title: Research Experience
   type: time_table
   contents:
-    - title: Research Assistant - Generative Retrieval for Recommendation System
+    - title: Research Assistant - Generative Retrieval for Multimodal Recommendation System
       institution: New York University Shanghai (Advisor Prof. Hongyi Wen)
-      year: May 2025 - Present
+      year: May 2025 - Jan 2026
       description:
-        - Developed a multimodal framework to predict user behavioral patterns on Amazon datasets
-        - Designed and evaluated model architectures with quantization methods (VQ-VAE, RQ-VAE, OPQ), achieving 47.2% performance improvement
-        - Implemented BPE-inspired partitioning tokenization, improving sequence coherence and representation quality
+        - Developed a multimodal framework for sequential recommendation on Amazon datasets
+        - Identified and applied VQ-VAE, RQ-VAE, OPQ to capture discrete behavior patterns, achieving a 47.2% improvement in NDCG@10 (from 0.0339 to 0.0499)
+        - Implemented BPE-inspired partitioning tokenization, enhancing sequence coherence and representation quality
 
-    - title: Research Assistant - Efficient Driving Route Optimization
+    - title: Research Assistant - Energy-Aware Route Optimization Under Traffic-Light Timing
       institution: New York University Shanghai (Advisor Prof. Zhibin Chen)
       year: May 2024 - Aug 2024
       description:
-        - Built a traffic-aware driving route optimization model on SUMO platform
-        - Simulated model on real traffic signal datasets, reducing travel time compared to baseline algorithms
-        - Applied energy consumption models for EV and gasoline vehicles, balancing efficiency and travel time
+        - Proposed and designed a traffic-aware routing system under real-world map constraints, minimizing energy consumption
+        - Built an OSM, SUMO, TraCI pipeline and extended Dijkstra's algorithm to multi-objective (time, energy) shortest paths, achieving 10-15% fuel savings at 2-5% time cost
 
 - title: Work Experience
   type: time_table
   contents:
-    - title: Data Engineer
+    - title: Data Engineer Intern
       institution: Data Strategy Department, McDonald's China
-      year: Dec 2025 - Present
+      year: Dec 2025 - Apr 2026
       description:
-        - Developed and validated scalable database schemas and enterprise-level data maps
-        - Designed a similarity recommendation algorithm based on menu composition and user historical interactions
-        - Implemented an AI agent that significantly enhanced data panel classification and visualization
+        - Engineered an internal AI agent for self-service data access, routing natural-language queries to constraint-aware SQL over a catalog spanning 14 business domains, or RAG over internal data maps and documents
+        - Developed a similarity-based sales forecasting function over a combo master-data set normalized across 4 ID levels, quantifying menu composition to forecast new-combo launch sales
+        - Managed and validated enterprise database schemas, governing a 203-scenario and 54-interface data map
+        - Redesigned data dashboards, organizing 500+ financial metrics with structured drill-down paths
 
 - title: Selected Projects
   type: time_table
@@ -70,9 +70,26 @@
         - Applied LLM for dataset reconstruction and augmentation, improving Top-1 Accuracy by 26.2% (from 0.588 to 0.742)
         - Employed fine-tuning strategies (encoder freezing, MLP adapters, LoRA) to optimize training efficiency
 
+    - title: Fantasy Sports League Database
+      institution: Tandon School of Engineering, New York University
+      year: Sep 2024 - Dec 2024
+      description:
+        - Designed a 13-table relational database in MySQL supporting multi-league sports with user authentication, draft scheduling, roster management, and trading systems
+        - Built a Python backend and HTML/CSS frontend with ACID-compliant transactions, triggers, and stored procedures
+
+- title: Skills
+  type: list
+  contents:
+    - <u>Programming:</u> Python, Java, C, SQL, R
+    - <u>ML & AI:</u> PyTorch, LoRA/PEFT, Hugging Face, Transformers
+    - <u>Data & Tools:</u> NumPy, Pandas, MySQL, Git
+
 - title: Honors and Awards
   type: time_table
   contents:
+    - year: 2026
+      items:
+        - Founders' Day Award, New York University Shanghai
     - year: AY 2022 - 2025
       items:
         - Dean's List, New York University Shanghai
@@ -92,6 +109,5 @@
 - title: Other Interests
   type: list
   contents:
-    - <u>Music:</u> Trombone Section Leader in NYU Shanghai Chamber Orchestra (2022-Present)
+    - <u>Music:</u> Trombone Section Leader in NYU Shanghai Chamber Orchestra (2022-2026)
     - <u>Leadership:</u> Former Treasurer of PEER-Pal Club, managed financial operations and educational initiatives
-    - <u>Technical Skills:</u> Python, Java, C, SQL, PyTorch, Git, LaTeX
