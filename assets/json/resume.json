@@ -24,7 +24,7 @@
       "courses": [
         "Study-away: NYU New York, Fall 2024 and Spring 2025",
         "Relevant Coursework: Multivariable Calculus, Honors Linear Algebra, Probability & Statistics, Honors Numerical Analysis, Discrete Mathematics, Analysis, Ordinary Differential Equations, Data Structures, Basic Algorithms, Operating Systems, Introduction to Databases, Machine Learning, Natural Language Processing, Stochastic Processes",
-        "Honors: Dean's List (Academic Years: 2022-2025), Founders' Day Award (Annual Distinguished Student Award)"
+        "Honors: Dean's List (Academic Years: 2022-2025), Founders' Day Award (Distinguished Graduate Award)"
       ]
     },
     {
@@ -37,7 +37,7 @@
       "endDate": "2027-12-31"
     }
   ],
-  "projects": [
+  "research": [
     {
       "name": "New York University Shanghai",
       "location": "Shanghai, China",
@@ -53,6 +53,18 @@
       ]
     },
     {
+      "name": "Center for Data Science, New York University",
+      "location": "New York City, NY, USA",
+      "startDate": "2024-09-15",
+      "endDate": "2024-12-15",
+      "summary": "Finetuning on Pretrained LM for Efficient Retrosynthesis of Chemical Reactions",
+      "highlights": [
+        "Developed predictive models for chemical reaction retrosynthesis using SMILES notation.",
+        "Applied an LLM (LlaSMol-Llama2) for dataset reconstruction and augmentation, improving Top-1 Accuracy by 26.2% (from 0.588 to 0.742) while reducing reliance on expensive laboratory data.",
+        "Employed fine-tuning strategies (encoder freezing, MLP adapters, LoRA) to optimize training efficiency."
+      ]
+    },
+    {
       "name": "New York University Shanghai",
       "location": "Shanghai, China",
       "position": "Undergraduate Research Assistant",
@@ -64,17 +76,19 @@
         "Proposed and designed a traffic-aware routing system under real-world map constraints, minimizing energy consumption.",
         "Built an OSM, SUMO, TraCI pipeline and independently extended Dijkstra's algorithm to multi-objective (time, energy) shortest paths, integrating electric and gasoline vehicle energy models. Achieved 10–15% fuel savings at 2–5% time cost."
       ]
-    },
+    }
+  ],
+  "projects": [
     {
-      "name": "Center for Data Science, New York University",
+      "name": "Tandon School of Engineering, New York University",
       "location": "New York City, NY, USA",
-      "startDate": "2024-09-15",
-      "endDate": "2024-12-15",
-      "summary": "Finetuning on Pretrained LM for Efficient Retrosynthesis of Chemical Reactions",
+      "startDate": "2025-03-01",
+      "endDate": "2025-05-15",
+      "summary": "Collaborative Piano",
       "highlights": [
-        "Developed predictive models for chemical reaction retrosynthesis using SMILES notation.",
-        "Applied an LLM (LlaSMol-Llama2) for dataset reconstruction and augmentation, improving Top-1 Accuracy by 26.2% (from 0.588 to 0.742) while reducing reliance on expensive laboratory data.",
-        "Employed fine-tuning strategies (encoder freezing, MLP adapters, LoRA) to optimize training efficiency."
+        "Built a networked real-time piano application in Java enabling two users to perform together, featuring synchronized audio playback, integrated chat, and session recording with precise timestamps.",
+        "Implemented TCP socket networking with thread concurrency and Java Sound API supporting multiple instrument timbres including synthesized waveforms and sampled piano audio.",
+        "Applied Graphics2D and AffineTransform for an animated metronome, integrating GUI graphics, file I/O, and socket networking into a cohesive real-time multimedia system."
       ]
     },
     {
@@ -88,18 +102,6 @@
         "Implemented ACID-compliant transaction management, automated triggers, and stored procedures to enforce referential integrity and achieve efficient query performance through proper indexing.",
         "Built a Python backend for user authentication, data querying, and business logic; developed an HTML/CSS frontend for visual operations, integrating the full stack with the MySQL database."
       ]
-    },
-    {
-      "name": "Tandon School of Engineering, New York University",
-      "location": "New York City, NY, USA",
-      "startDate": "2025-03-01",
-      "endDate": "2025-05-15",
-      "summary": "Collaborative Piano",
-      "highlights": [
-        "Built a networked real-time piano application in Java enabling two users to perform together, featuring synchronized audio playback, integrated chat, and session recording with precise timestamps.",
-        "Implemented TCP socket networking with thread concurrency and Java Sound API supporting multiple instrument timbres including synthesized waveforms and sampled piano audio.",
-        "Applied Graphics2D and AffineTransform for an animated metronome, integrating GUI graphics, file I/O, and socket networking into a cohesive real-time multimedia system."
-      ]
     }
   ],
   "work": [
@@ -108,7 +110,7 @@
       "location": "Shanghai, China",
       "position": "Data Engineer Intern",
       "startDate": "2025-12-18",
-      "endDate": "2026-04-30",
+      "endDate": "2026-04-02",
       "summary": "Worked on building and optimizing data infrastructure to support business intelligence and analytics for McDonald's China.",
       "highlights": [
         "Engineered an internal AI agent for self-service data access, routing natural-language queries to constraint-aware SQL over a catalog spanning 14 business domains, or RAG over internal data maps and documents to generate cited answers.",
@@ -148,7 +150,7 @@
       "title": "Founders' Day Award",
       "awarder": "New York University Shanghai",
       "date": "2026-05-01",
-      "summary": "Annual Distinguished Student Award."
+      "summary": "Distinguished Graduate Award."
     },
     {
       "title": "Mathematical Contest in Modeling – Certificate of Achievement - Honorable Mention",

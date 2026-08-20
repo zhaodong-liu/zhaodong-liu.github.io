@@ -21,7 +21,7 @@ education:
     courses:
       - "海外学习经历：纽约大学纽约校区，2024 年 9 月 - 2025 年 5 月"
       - "相关课程：多元微积分、荣誉线性代数、概率与统计、荣誉数值分析、离散数学、数学分析、常微分方程、随机过程、数据结构、算法、操作系统、数据库、机器学习、自然语言处理"
-      - "荣誉：Dean's List 院长名单（学年：2022–2025）、Founders' Day Award（年度杰出学生荣誉奖）"
+      - "荣誉：Dean's List 院长名单（学年：2022–2025）、Founders' Day Award（杰出毕业生荣誉奖）"
 
   - institution: "卡耐基梅隆大学"
     location: "匹兹堡，宾州，美国"
@@ -31,7 +31,7 @@ education:
     startDate: "2026-08-01"
     endDate: "2027-12-31"
 
-projects:
+research:
   - name: "上海纽约大学"
     location: "上海，中国"
     position: "本科科研助理"
@@ -44,6 +44,17 @@ projects:
       - "识别并应用 VQ-VAE、RQ-VAE、OPQ 来捕捉离散行为模式，在 NDCG@10 指标上实现了 47.2% 的提升（从 0.0339 提升至 0.0499）。"
       - "采用了受 BPE（字节对编码）启发的分区分词技术，从而提高了序列的连贯性和表示质量。"
 
+  - name: "纽约大学数据科学中心"
+    location: "纽约市，美国"
+    startDate: "2024-09-15"
+    endDate: "2024-12-15"
+    summary: "微调预训练语言模型，完成化学反应的逆合成高效预测"
+    highlights:
+      - "导师：何河教授（纽约大学数据科学中心）"
+      - "利用 SMILES 标记法开发了用于化学反应逆合成的预测模型。"
+      - "应用了大语言模型（LlaSMol-Llama2）对数据集进行重建和扩充，使 Top-1 准确率提高了 26.2%（从 0.588 提升至 0.742），同时减少了对实验室数据的依赖。"
+      - "采用了精细的调优策略（Encoder 参数冻结、MLP 适配器、LoRA）以优化训练效率。"
+
   - name: "上海纽约大学"
     location: "上海，中国"
     position: "本科科研助理"
@@ -55,16 +66,17 @@ projects:
       - "提出并设计了真实地图约束下的交通感知路由系统，最小化能源消耗。"
       - "构建了 OSM、SUMO、TraCI 流程，并独立扩展 Dijkstra 算法至多目标（时间、能源）最短路径，整合了电动车和汽油车的能源模型。实现了 10-15% 的燃油节省，时间成本增加 2-5%。"
 
-  - name: "纽约大学数据科学中心"
+projects:
+  - name: "纽约大学坦顿工程学院"
     location: "纽约市，美国"
-    startDate: "2024-09-15"
-    endDate: "2024-12-15"
-    summary: "微调预训练语言模型，完成化学反应的逆合成高效预测"
+    startDate: "2025-03-01"
+    endDate: "2025-05-15"
+    summary: "多人协作钢琴应用"
     highlights:
-      - "导师：何河教授（纽约大学数据科学中心）"
-      - "利用 SMILES 标记法开发了用于化学反应逆合成的预测模型。"
-      - "应用了大语言模型（LlaSMol-Llama2）对数据集进行重建和扩充，使 Top-1 准确率提高了 26.2%（从 0.588 提升至 0.742），同时减少了对实验室数据的依赖。"
-      - "采用了精细的调优策略（Encoder 参数冻结、MLP 适配器、LoRA）以优化训练效率。"
+      - "导师：Daniel Katz-Braunschweig 教授"
+      - "采用 Java 全栈开发，以 Java Swing/AWT 构建图形化钢琴键盘前端界面，以 Java Socket 服务端处理多客户端连接，实现实时音频同步、在线聊天及精确时间戳的录音回放功能。"
+      - "基于 TCP 套接字网络与线程并发（ExecutorService、ConcurrentHashMap）实现服务端多客户端并发管理，通过 Java Sound API 支持合成波形与真实钢琴采样等多种音色。"
+      - "利用 Graphics2D 与 AffineTransform 实现动态节拍器动画，将前端 GUI、服务端网络通信、文件 I/O 整合为一个完整的实时多媒体全栈系统。"
 
   - name: "纽约大学坦顿工程学院"
     location: "纽约市，美国"
@@ -77,23 +89,12 @@ projects:
       - "实现了符合 ACID 规范的事务管理、自动化触发器与存储过程，通过索引优化查询性能，并强制保证所有关系间的参照完整性；构建了排名算法、赛程编排与积分系统及免签机制。"
       - "以 Python 构建后端服务，实现用户认证、数据查询与业务逻辑处理；以 HTML/CSS 开发前端交互界面，支持可视化阵容管理、实时积分展示及交易操作，实现前后端与 MySQL 数据库的全链路集成。"
 
-  - name: "纽约大学坦顿工程学院"
-    location: "纽约市，美国"
-    startDate: "2025-03-01"
-    endDate: "2025-05-15"
-    summary: "多人协作钢琴应用"
-    highlights:
-      - "导师：Daniel Katz-Braunschweig 教授"
-      - "采用 Java 全栈开发，以 Java Swing/AWT 构建图形化钢琴键盘前端界面，以 Java Socket 服务端处理多客户端连接，实现实时音频同步、在线聊天及精确时间戳的录音回放功能。"
-      - "基于 TCP 套接字网络与线程并发（ExecutorService、ConcurrentHashMap）实现服务端多客户端并发管理，通过 Java Sound API 支持合成波形与真实钢琴采样等多种音色。"
-      - "利用 Graphics2D 与 AffineTransform 实现动态节拍器动画，将前端 GUI、服务端网络通信、文件 I/O 整合为一个完整的实时多媒体全栈系统。"
-
 work:
   - name: "麦当劳中国 数据战略部"
     location: "上海，中国"
     position: "数据工程师实习"
     startDate: "2025-12-18"
-    endDate: "2026-04-30"
+    endDate: "2026-04-02"
     summary: "为麦当劳中国的商业智能与数据分析构建并优化数据基础设施。"
     highlights:
       - "开发了内部 AI 智能体用于自助数据访问，将自然语言查询路由到覆盖 14 个业务领域的约束感知 SQL，或通过 RAG（检索增强生成）在内部数据地图和文档上生成带引用的答案。"
@@ -121,10 +122,10 @@ awards:
   - title: "Dean's List 院长名单（学年：2022–2023, 2023–2024, 2024–2025）"
     awarder: "上海纽约大学"
     summary: "因优秀学业表现获得（GPA ≥ 3.7）。"
-  - title: "Founders' Day Award（年度杰出学生荣誉奖）"
+  - title: "Founders' Day Award（杰出毕业生荣誉奖）"
     awarder: "上海纽约大学"
     date: "2026-05-01"
-    summary: "年度杰出学生荣誉奖。"
+    summary: "杰出毕业生荣誉奖。"
   - title: "美国大学生数学建模竞赛（Mathematical Contest in Modeling）— Honorable Mention"
     awarder: "COMAP"
     date: "2023-05-01"

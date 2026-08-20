@@ -40,6 +40,14 @@
         - Identified and applied VQ-VAE, RQ-VAE, OPQ to capture discrete behavior patterns, achieving a 47.2% improvement in NDCG@10 (from 0.0339 to 0.0499)
         - Implemented BPE-inspired partitioning tokenization, enhancing sequence coherence and representation quality
 
+    - title: Research Assistant - Finetuning Pretrained LM for Chemical Reaction Retrosynthesis
+      institution: Center for Data Science, New York University (Advisor Prof. He He)
+      year: Sep 2024 - Dec 2024
+      description:
+        - Developed predictive models for chemical reaction retrosynthesis using SMILES notation
+        - Applied LLM for dataset reconstruction and augmentation, improving Top-1 Accuracy by 26.2% (from 0.588 to 0.742)
+        - Employed fine-tuning strategies (encoder freezing, MLP adapters, LoRA) to optimize training efficiency
+
     - title: Research Assistant - Energy-Aware Route Optimization Under Traffic-Light Timing
       institution: New York University Shanghai (Advisor Prof. Zhibin Chen)
       year: May 2024 - Aug 2024
@@ -62,13 +70,12 @@
 - title: Selected Projects
   type: time_table
   contents:
-    - title: Finetuning Pretrained LM for Chemical Reaction Retrosynthesis
-      institution: Center for Data Science, New York University
-      year: Sep 2024 - Dec 2024
+    - title: Collaborative Piano
+      institution: Tandon School of Engineering, New York University
+      year: Mar 2025 - May 2025
       description:
-        - Developed predictive models for chemical reaction retrosynthesis using SMILES notation
-        - Applied LLM for dataset reconstruction and augmentation, improving Top-1 Accuracy by 26.2% (from 0.588 to 0.742)
-        - Employed fine-tuning strategies (encoder freezing, MLP adapters, LoRA) to optimize training efficiency
+        - Built a networked real-time piano application in Java enabling two users to perform together with synchronized audio playback, integrated chat, and session recording
+        - Implemented TCP socket networking with thread concurrency and Java Sound API supporting multiple instrument timbres
 
     - title: Fantasy Sports League Database
       institution: Tandon School of Engineering, New York University

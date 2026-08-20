@@ -113,6 +113,8 @@ layout: default
                   {% include resume/work.liquid %}
                 {% when 'volunteer' %}
                   {% include resume/volunteer.liquid %}
+                {% when 'research' %}
+                  {% include resume/research.liquid %}
                 {% when 'projects' %}
                   {% include resume/projects.liquid %}
                 {% when 'awards' %}
@@ -138,7 +140,7 @@ layout: default
       </div>
       {% if site.data.resume_zh %}
         <div class="cv lang-zh">
-          {%- assign zh_section_titles = 'basics:基本信息|education:教育背景|work:工作经历|volunteer:学生组织与活动|projects:科研经历|awards:荣誉奖励|skills:技能|publications:论文|languages:语言|interests:兴趣|certificates:证书|references:推荐人'
+          {%- assign zh_section_titles = 'basics:基本信息|education:教育背景|work:工作经历|volunteer:学生组织与活动|research:科研经历|projects:项目经历|awards:荣誉奖励|skills:技能|publications:论文|languages:语言|interests:兴趣|certificates:证书|references:推荐人'
             | split: '|'
           -%}
           {% for data in site.data.resume_zh %}
@@ -166,6 +168,8 @@ layout: default
                     {% include resume/work.liquid %}
                   {% when 'volunteer' %}
                     {% include resume/volunteer.liquid %}
+                  {% when 'research' %}
+                    {% include resume/research.liquid %}
                   {% when 'projects' %}
                     {% include resume/projects.liquid %}
                   {% when 'awards' %}
