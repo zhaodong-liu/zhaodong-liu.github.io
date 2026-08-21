@@ -53,18 +53,6 @@
       ]
     },
     {
-      "name": "Center for Data Science, New York University",
-      "location": "New York City, NY, USA",
-      "startDate": "2024-09-15",
-      "endDate": "2024-12-15",
-      "summary": "Finetuning on Pretrained LM for Efficient Retrosynthesis of Chemical Reactions",
-      "highlights": [
-        "Developed predictive models for chemical reaction retrosynthesis using SMILES notation.",
-        "Applied an LLM (LlaSMol-Llama2) for dataset reconstruction and augmentation, improving Top-1 Accuracy by 26.2% (from 0.588 to 0.742) while reducing reliance on expensive laboratory data.",
-        "Employed fine-tuning strategies (encoder freezing, MLP adapters, LoRA) to optimize training efficiency."
-      ]
-    },
-    {
       "name": "New York University Shanghai",
       "location": "Shanghai, China",
       "position": "Undergraduate Research Assistant",
@@ -79,6 +67,18 @@
     }
   ],
   "projects": [
+    {
+      "name": "New York University Shanghai",
+      "location": "Shanghai, China",
+      "startDate": "2026-01-19",
+      "endDate": "2026-05-17",
+      "summary": "Tissue Age Modeling on Carbon-14",
+      "highlights": [
+        "Advisor: Prof. Roberto Fernandez (MATH-SHU 997 Independent Study, Spring 2026)",
+        "Built and compared three families of models — deterministic PDE, stochastic ODE, and stochastic PDE — to infer cell age in arterial tissues from atmospheric Carbon-14 bomb-pulse data.",
+        "Implemented a unified fitting pipeline (Nelder–Mead optimization + 2D grid search, scored by RMSE/AIC) across three vascular tissues, including a regularized joint τ-fit for AVM lesions."
+      ]
+    },
     {
       "name": "Tandon School of Engineering, New York University",
       "location": "New York City, NY, USA",
@@ -101,6 +101,18 @@
         "Designed a 13-table relational database in MySQL supporting multi-league sports (Football, Basketball, Soccer) with user authentication, draft scheduling, roster management, trading systems, and 390+ sample records.",
         "Implemented ACID-compliant transaction management, automated triggers, and stored procedures to enforce referential integrity and achieve efficient query performance through proper indexing.",
         "Built a Python backend for user authentication, data querying, and business logic; developed an HTML/CSS frontend for visual operations, integrating the full stack with the MySQL database."
+      ]
+    },
+    {
+      "name": "Center for Data Science, New York University",
+      "location": "New York City, NY, USA",
+      "startDate": "2024-09-15",
+      "endDate": "2024-12-15",
+      "summary": "Finetuning on Pretrained LM for Efficient Retrosynthesis of Chemical Reactions",
+      "highlights": [
+        "Developed predictive models for chemical reaction retrosynthesis using SMILES notation.",
+        "Applied an LLM (LlaSMol-Llama2) for dataset reconstruction and augmentation, improving Top-1 Accuracy by 26.2% (from 0.588 to 0.742) while reducing reliance on expensive laboratory data.",
+        "Employed fine-tuning strategies (encoder freezing, MLP adapters, LoRA) to optimize training efficiency."
       ]
     }
   ],
