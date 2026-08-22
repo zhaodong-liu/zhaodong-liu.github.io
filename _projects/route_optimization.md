@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '<span class="lang-en">Traffic-Aware Route Optimization</span><span class="lang-zh">考虑交通灯的路线优化</span>'
+title: '<span class="lang-en">Energy-Aware Route Optimization Under Traffic-Light Timing</span><span class="lang-zh">考虑交通信号灯时长的能耗感知路线优化</span>'
 description: '<span class="lang-en">Optimizing driving routes considering real-time traffic light timings</span><span class="lang-zh">结合实时交通信号时序的驾驶路线优化</span>'
 img: assets/img/projects/route_optimization.jpg
 importance: 4
@@ -12,6 +12,11 @@ category: projects
 ## 项目概览
 
 本项目基于 SUMO（城市交通仿真平台，Simulation of Urban MObility）开发了一套考虑交通灯时序的路径优化系统，同时兼顾行驶时间与能源效率。通过模拟真实交通条件与交通灯时序，系统优化驾驶路线以最小化行驶时间并提升能源效率。项目针对两类车辆给出差异化的建模方法：传统汽油车（含 LICO——抬升与滑行策略）与电动车（含再生制动）。
+
+**亮点：**
+
+- 提出并设计了真实地图约束下的交通感知路由系统，最小化能源消耗。
+- 构建了 OSM、SUMO、TraCI 流程，并扩展 Dijkstra 算法至多目标（时间、能源）最短路径，整合电动车与汽油车能源模型——**节油 10–15%，时间成本增加 2–5%**。
 
 **时间：** 2024 年 5 月 — 2024 年 8 月
 
@@ -274,6 +279,11 @@ category: projects
 ## Overview
 
 This project develops a traffic-aware routing optimization system using SUMO (Simulation of Urban MObility) that considers both travel time and energy efficiency. By simulating real-world traffic conditions and traffic light timings, the system optimizes driving routes to minimize travel time and improve energy efficiency. The project features distinct modeling approaches for two vehicle types: traditional gasoline vehicles (with LICO -- lifting and coasting) and electric vehicles (with regenerative braking).
+
+**Highlights:**
+
+- Proposed and designed a traffic-aware routing system under real-world map constraints, minimizing energy consumption.
+- Built an OSM, SUMO, TraCI pipeline and extended Dijkstra's algorithm to multi-objective (time, energy) shortest paths, integrating electric and gasoline vehicle energy models — **10–15% fuel savings at 2–5% time cost**.
 
 **Duration:** May 2024 - August 2024
 

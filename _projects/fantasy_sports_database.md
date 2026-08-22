@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '<span class="lang-en">Fantasy Sports League</span><span class="lang-zh">梦幻体育联盟</span>'
+title: '<span class="lang-en">Fantasy Sports League Database</span><span class="lang-zh">梦幻体育联赛数据库</span>'
 description: '<span class="lang-en">A comprehensive database system for managing fantasy sports leagues with real-time tracking</span><span class="lang-zh">面向梦幻体育联盟的综合数据库系统，支持实时追踪</span>'
 img: assets/img/projects/fantasy_sports_database.jpg
 importance: 5
@@ -13,6 +13,11 @@ related_publications: false
 ## 项目概览
 
 为梦幻体育联盟设计的功能完整的数据库管理系统，使用户能够创建并管理联盟、选秀球员、追踪比赛统计与执行交易。项目展示了先进的数据库设计原则、复杂的关系模式以及面向体育分析应用的真实数据管理。
+
+**亮点：**
+
+- 自主设计了一个包含 13 张数据表的 MySQL 数据库，录入 390+ 条记录，支持多联赛虚拟体育的用户认证、选秀调度、阵容管理与交易系统。
+- 以 Python 构建后端、HTML/CSS 构建前端，实现符合 ACID 规范的事务、触发器与存储过程，完成全栈功能。
 
 **课程：** 数据库导论（2024 秋）
 
@@ -299,6 +304,11 @@ related_publications: false
 ## Overview
 
 A fully-featured database management system designed for fantasy sports leagues, enabling users to create and manage leagues, draft players, track game statistics, and execute trades. This project demonstrates advanced database design principles, complex relational schemas, and real-world data management for sports analytics applications.
+
+**Highlights:**
+
+- Self-directed a 13-table MySQL database populated with 390+ records, supporting multi-league sports with user authentication, draft scheduling, roster management, and trading systems.
+- Engineered a Python backend and HTML/CSS frontend with ACID-compliant transactions, triggers, and stored procedures for full-stack functionality.
 
 **Course:** Introduction to Databases (Fall 2024)
 

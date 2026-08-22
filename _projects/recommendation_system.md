@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '<span class="lang-en">Multimodal Gen Rec</span><span class="lang-zh">多模态生成式推荐</span>'
+title: '<span class="lang-en">Generative Retrieval for Multimodal Recommendation System</span><span class="lang-zh">多模态推荐系统的生成式检索</span>'
 description: '<span class="lang-en">Collaborative Learning with Action-aware Image-text Representation Optimization (CLAIRO)</span><span class="lang-zh">基于行为感知的图文表征协同学习与优化 (CLAIRO)</span>'
 img: assets/img/projects/recommendation_system.jpg
 importance: 1
@@ -14,6 +14,11 @@ category: projects
 传统推荐系统面临两个根本性挑战：**长尾物品**（很少被看见的商品）和**冷启动用户**（交互历史有限的用户）。这些系统通常依赖于候选-排序流水线，偏向热门物品，无法触达绝大多数可用内容。
 
 我们提出 **CLAIRO**（基于行为感知的图文表征协同学习与优化，Collaborative Learning with Action-aware Image-text Representation Optimization），一种多模态生成式推荐系统，将推荐重新建模为自回归生成任务。通过用视觉特征扩展 ActionPiece 的上下文感知分词框架，CLAIRO 学习合并共现的文本与视觉模式，创建更丰富的物品表征，在保持计算效率的同时提升推荐准确率。
+
+**亮点：**
+
+- 基于 Amazon 数据集开发了序列推荐的多模态框架，应用 VQ-VAE、RQ-VAE、OPQ 捕捉离散行为模式，**NDCG@10 提升 47.2%**（0.0339 → 0.0499）。
+- 与 2 名队友合作，实现了受 BPE 启发的分区分词技术，跨物品序列合并频繁子序列，以增强上下文连贯性与表示质量。
 
 **时间：** 2025 年 5 月 — 至今
 
@@ -214,6 +219,11 @@ CLAIRO 在多个数据集上相对纯文本与多模态基线均取得显著提�
 Traditional recommendation systems struggle with two fundamental challenges: **long-tail items** (rarely seen products) and **cold-start users** (users with limited interaction history). These systems typically rely on candidate-ranking pipelines that favor popular items, failing to surface the vast majority of available content.
 
 We introduce **CLAIRO** (Collaborative Learning with Action-aware Image-text Representation Optimization), a multimodal generative recommendation system that reformulates recommendation as an autoregressive generation task. By extending ActionPiece's context-aware tokenization framework with visual features, CLAIRO learns to merge co-occurring textual and visual patterns, creating richer item representations that improve recommendation accuracy while maintaining computational efficiency.
+
+**Highlights:**
+
+- Developed a multimodal framework for sequential recommendation on Amazon datasets, applying VQ-VAE, RQ-VAE, and OPQ to capture discrete behavior patterns — a **47.2% improvement in NDCG@10** (0.0339 → 0.0499).
+- Collaborated with 2 teammates to implement BPE-inspired partitioning tokenization across item sequences, merging frequent sub-sequences to enhance contextual coherence and representation quality.
 
 **Duration:** May 2025 - present
 

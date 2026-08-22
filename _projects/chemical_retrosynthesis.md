@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '<span class="lang-en">LLM-based Chemical Retrosynthesis</span><span class="lang-zh">基于大语言模型的化学逆合成</span>'
+title: '<span class="lang-en">Efficient Retrosynthesis with Pretrained LM Fine-Tuning</span><span class="lang-zh">基于预训练语言模型微调的高效化学逆合成</span>'
 description: '<span class="lang-en">Fine-tuning pretrained language models for predicting chemical reaction pathways</span><span class="lang-zh">微调预训练语言模型以预测化学反应路径</span>'
 img: assets/img/projects/chemical_retrosynthesis.jpg
 importance: 2
@@ -12,6 +12,11 @@ category: projects
 ## 项目概览
 
 本项目将大语言模型应用于化学逆合成预测这一关键挑战——即给定目标分子，确定合成所需的反应物。该工作位于人工智能与化学的交叉领域，是 AI for Science（AI4S）的重要应用。
+
+**亮点：**
+
+- 利用 SMILES 标记法训练化学反应逆合成预测模型，应用大语言模型（LlaSMol-Llama2）进行数据集重建与扩充，**Top-1 准确率提升 26.2%**（0.588 → 0.742）。
+- 探索并采用多种参数高效微调策略（编码器冻结、MLP 适配器、LoRA），确定准确率与效率最优的权衡方案。
 
 **课程：** DS-GA-1011 自然语言处理与表示学习（研究生课程，2024 年秋）
 
@@ -56,7 +61,7 @@ category: projects
 
 1. **错误分析：** 系统性地检查错误预测，识别不同反应类型间的失败模式
 2. **过滤：** 基于错误分析结果，从原始 USPTO-50K 数据集中识别并剔除错误或不完整的反应数据
-3. **基于 LLM 的生成：** 使用微调后的 GPT-3.5-turbo 生成有效、化学合理的样本，重点关注样本不足的反应类型
+3. **基于 LLM 的生成：** 使用 LlaSMol-Llama2 与 GPT-3.5-turbo 生成有效、化学合理的样本，重点关注样本不足的反应类型，其中 **LlaSMol-Llama2 生成质量更优**
 4. **校验：** 确保生成的数据符合 SMILES 表示法规则与化学原理
 5. **整合：** 构建 **USPTO-50K_γ**，将原始数据与生成数据精心平衡
 
@@ -137,7 +142,7 @@ category: projects
 - 参数高效微调（LoRA、adapter、冻结层）
 - 序列到序列建模
 - 迁移学习与领域适配
-- 基于 LLM 的数据增强（GPT-3.5-turbo）
+- 基于 LLM 的数据增强（LlaSMol-Llama2、GPT-3.5-turbo）
 
 **化学信息学：**
 
@@ -168,6 +173,11 @@ category: projects
 ## Overview
 
 This project applies Large Language Models to the critical challenge of chemical retrosynthesis prediction—determining the reactants needed to synthesize a target molecule. This work sits at the intersection of AI and chemistry, representing a significant application of AI for Science (AI4S).
+
+**Highlights:**
+
+- Trained predictive models for chemical reaction retrosynthesis using SMILES notation, applying an LLM (LlaSMol-Llama2) for dataset reconstruction and augmentation — a **26.2% improvement in Top-1 accuracy** (0.588 → 0.742).
+- Explored and employed multiple fine-tuning strategies (encoder freezing, MLP adapters, LoRA) to identify the optimal accuracy-efficiency trade-off.
 
 **Course:** DS-GA-1011 NLP with Representation Learning (Grad Level)(Fall 2024)
 
@@ -212,7 +222,7 @@ I designed the experimental pipeline and oversaw both dataset engineering and mo
 
 1. **Error Analysis**: Systematically examined incorrect predictions to identify patterns of failure across different reaction types
 2. **Filtering**: Identified and removed incorrect or incomplete reaction data from the original USPTO-50K dataset based on error analysis findings
-3. **LLM-based Generation**: Used fine-tuned GPT-3.5-turbo to generate valid, chemically sound examples, focusing on underrepresented reaction types
+3. **LLM-based Generation**: Used LlaSMol-Llama2 and GPT-3.5-turbo to generate valid, chemically sound examples, focusing on underrepresented reaction types, with LlaSMol-Llama2 producing higher-quality generations
 4. **Validation**: Ensured generated data followed SMILES notation rules and chemical principles
 5. **Integration**: Created **USPTO-50K_γ** with carefully balanced original and generated data
 
@@ -293,7 +303,7 @@ This research demonstrates several important contributions to AI for Science:
 - Parameter-efficient fine-tuning (LoRA, adapters, frozen layers)
 - Sequence-to-sequence modeling
 - Transfer learning and domain adaptation
-- LLM-based data augmentation (GPT-3.5-turbo)
+- LLM-based data augmentation (LlaSMol-Llama2, GPT-3.5-turbo)
 
 **Chemical Informatics:**
 
