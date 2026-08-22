@@ -145,6 +145,41 @@ category: projects
 - 整合交通灯时序对两类车辆均至关重要
 - 能源感知路径在不显著牺牲时间的前提下带来可衡量的效益
 
+### 合成基准测试（可复现仿真）
+
+为量化上述权衡，本项目在 **5 个合成路网**（8×8、9×9、横向 8×12、纵向 12×8、以及 10×10 市中心网格）上运行了完整的可复现仿真；每个路网均含主干道 / 次干道 / 支路三级道路、交叉绿波与错峰信号。下表为跨 5 个路网的平均结果：
+
+| 车辆类型 | 节能（能耗最优 vs 时间最优） | 时间代价 | 权衡比（%E / %T） |
+|---|---|---|---|
+| 汽油车（无 LICO） | 14.9% | 45.9% | 0.33 |
+| 汽油车（LICO） | 19.4% | 54.6% | 0.38 |
+| 电动车（再生制动） | 20.9% | 50.4% | **0.44** |
+
+**LICO 的收益（汽油车）：**
+
+- 在**同一条最快路线**上，LICO 平均省油 **2.5%**，且平均快约 **1.3%** —— 在快路线上 LICO 是「免费的午餐」。
+- 在**能耗最优路线**上，LICO 平均省油 **6.5%**（停车密集的路线为 LICO 提供了更多滑行机会）。
+
+**关键观察：**
+
+- 电动车取得最高的权衡比（**0.44**）：再生制动使停车代价很低，因此其能耗最优路线能以更小的时间代价换得能耗节省。
+- LICO 的收益集中在停车密集的路线；最快路线因已对准绿波，留给 LICO 的优化空间有限。
+- 最优路线因车而异 —— 电动车能承受停车密集的街道，而汽油车需要主动避开。
+
+> 注：上表为合成网格上的**量级级（order-of-magnitude）**基准结果；合成网格会**夸大**节能路径的时间代价（单图范围为 30–80%）。校准后的真实 SUMO 研究才是 10–15% 节油 / 2–5% 时间代价这一结论的来源。
+
+**Pareto 前沿（时间 vs 能耗）：** 每行为一类车辆，每列为一个路网，点为时间-能耗 Pareto 前沿。
+
+{% include figure.liquid path="assets/img/projects/route_opt_pareto.png" caption="Pareto 前沿 —— 5 个路网" class="img-fluid rounded z-depth-1" %}
+
+**各地路网的轨迹分析：** 速度曲线（左）、累计油耗（中，仅汽油车）、网格上的路线（右）。
+
+{% include figure.liquid path="assets/img/projects/route_opt_trajectory_8x8.png" caption="8×8 路网" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/projects/route_opt_trajectory_9x9.png" caption="9×9 路网" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/projects/route_opt_trajectory_wide_8x12.png" caption="横向 8×12 路网" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/projects/route_opt_trajectory_tall_12x8.png" caption="纵向 12×8 路网" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/projects/route_opt_trajectory_downtown_10x10.png" caption="10×10 市中心路网" class="img-fluid rounded z-depth-1" %}
+
 ## 案例研究：上海纽约大学班车优化
 
 ### 背景
@@ -371,6 +406,41 @@ The vehicle-specific traffic-aware optimization demonstrated:
 - Vehicle type significantly affects optimal route selection
 - Traffic light timing integration crucial for both vehicle types
 - Energy-aware routing provides measurable benefits without major time penalties
+
+### Synthetic Benchmark (Reproducible Simulation)
+
+To quantify the trade-offs above, the project runs a reproducible simulation over **5 synthetic networks** (8×8, 9×9, wide 8×12, tall 12×8, and a 10×10 downtown grid), each with arterial / collector / local road tiers, crossing green waves, and staggered signals. Averaged across the 5 maps:
+
+| Vehicle | Energy saved (energy-optimal vs time-optimal) | Time cost | Trade-off ratio (%E / %T) |
+|---|---|---|---|
+| gasoline (no LICO) | 14.9% | 45.9% | 0.33 |
+| gasoline (LICO) | 19.4% | 54.6% | 0.38 |
+| electric (regen) | 20.9% | 50.4% | **0.44** |
+
+**LICO benefit (gasoline):**
+
+- On the **same fastest route**, LICO saves **2.5%** fuel on average while also being ~**1.3%** faster — a "free lunch" on the fast route.
+- On the **energy-optimal route**, LICO saves **6.5%** fuel on average (stop-heavy routes offer more coasting opportunities).
+
+**Key observations:**
+
+- Electric vehicles achieve the best trade-off ratio (**0.44**): regenerative braking makes stops cheap, so their energy-optimal route buys more energy per unit of time.
+- LICO's gains concentrate on stop-heavy routes; the fastest route is already green-wave timed, leaving little to save.
+- The optimal route is vehicle-dependent — electric vehicles can afford stop-heavy streets that gasoline cars must avoid.
+
+> Note: the table above is an **order-of-magnitude** benchmark on synthetic grids, which **exaggerate** the time premium of energy-aware routing (30–80% per map). The calibrated SUMO study is the source of the 10–15% fuel / 2–5% time headline.
+
+**Pareto frontiers (time vs energy):** one row per vehicle, one column per map; points are the Pareto frontier.
+
+{% include figure.liquid path="assets/img/projects/route_opt_pareto.png" caption="Pareto frontiers — 5 maps" class="img-fluid rounded z-depth-1" %}
+
+**Per-map trajectory analysis:** speed profile (left), cumulative fuel (middle, gasoline only), and the routes on the grid (right).
+
+{% include figure.liquid path="assets/img/projects/route_opt_trajectory_8x8.png" caption="8×8 network" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/projects/route_opt_trajectory_9x9.png" caption="9×9 network" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/projects/route_opt_trajectory_wide_8x12.png" caption="Wide 8×12 network" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/projects/route_opt_trajectory_tall_12x8.png" caption="Tall 12×8 network" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/projects/route_opt_trajectory_downtown_10x10.png" caption="10×10 downtown network" class="img-fluid rounded z-depth-1" %}
 
 ## Case Study: NYU Shanghai Shuttle Optimization
 
