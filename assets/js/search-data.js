@@ -52,8 +52,8 @@ ninja.data = [{
           description: "Inferring tissue and cell age from atmospheric Carbon-14 using deterministic and stochastic DEs.基于确定性与随机微分方程，从大气碳-14 推断组织与细胞年龄。",
           section: "Projects",handler: () => {
               window.location.href = "/projects/c14_tissue_age/";
-            },},{id: "projects-llm-based-chemical-retrosynthesis基于大语言模型的化学逆合成",
-          title: 'LLM-based Chemical Retrosynthesis基于大语言模型的化学逆合成',
+            },},{id: "projects-efficient-retrosynthesis-with-pretrained-lm-fine-tuning基于预训练语言模型微调的高效化学逆合成",
+          title: 'Efficient Retrosynthesis with Pretrained LM Fine-Tuning基于预训练语言模型微调的高效化学逆合成',
           description: "Fine-tuning pretrained language models for predicting chemical reaction pathways微调预训练语言模型以预测化学反应路径",
           section: "Projects",handler: () => {
               window.location.href = "/projects/chemical_retrosynthesis/";
@@ -62,18 +62,18 @@ ninja.data = [{
           description: "A networked real-time piano application with recording, playback, and chat features支持联网实时演奏、录音、回放与聊天功能的钢琴应用",
           section: "Projects",handler: () => {
               window.location.href = "/projects/collaborative_piano/";
-            },},{id: "projects-fantasy-sports-league梦幻体育联盟",
-          title: 'Fantasy Sports League梦幻体育联盟',
+            },},{id: "projects-fantasy-sports-league-database梦幻体育联赛数据库",
+          title: 'Fantasy Sports League Database梦幻体育联赛数据库',
           description: "A comprehensive database system for managing fantasy sports leagues with real-time tracking面向梦幻体育联盟的综合数据库系统，支持实时追踪",
           section: "Projects",handler: () => {
               window.location.href = "/projects/fantasy_sports_database/";
-            },},{id: "projects-multimodal-gen-rec多模态生成式推荐",
-          title: 'Multimodal Gen Rec多模态生成式推荐',
+            },},{id: "projects-generative-retrieval-for-multimodal-recommendation-system多模态推荐系统的生成式检索",
+          title: 'Generative Retrieval for Multimodal Recommendation System多模态推荐系统的生成式检索',
           description: "Collaborative Learning with Action-aware Image-text Representation Optimization (CLAIRO)基于行为感知的图文表征协同学习与优化 (CLAIRO)",
           section: "Projects",handler: () => {
               window.location.href = "/projects/recommendation_system/";
-            },},{id: "projects-traffic-aware-route-optimization考虑交通灯的路线优化",
-          title: 'Traffic-Aware Route Optimization考虑交通灯的路线优化',
+            },},{id: "projects-energy-aware-route-optimization-under-traffic-light-timing考虑交通信号灯时长的能耗感知路线优化",
+          title: 'Energy-Aware Route Optimization Under Traffic-Light Timing考虑交通信号灯时长的能耗感知路线优化',
           description: "Optimizing driving routes considering real-time traffic light timings结合实时交通信号时序的驾驶路线优化",
           section: "Projects",handler: () => {
               window.location.href = "/projects/route_optimization/";
