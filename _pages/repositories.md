@@ -11,7 +11,7 @@ nav_order: 4
 
 <h2><span class="lang-en">GitHub users</span><span class="lang-zh">GitHub 用户</span></h2>
 
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
+<div class="repositories repository-grid">
   {% for user in site.data.repositories.github_users %}
     {% include repository/repo_user.liquid username=user %}
   {% endfor %}
@@ -39,7 +39,7 @@ nav_order: 4
 
 <h2><span class="lang-en">GitHub Repositories</span><span class="lang-zh">GitHub 仓库</span></h2>
 
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
+<div class="repositories repository-grid">
   {% for repo in site.data.repositories.github_repos %}
     {% include repository/repo.liquid repository=repo %}
   {% endfor %}

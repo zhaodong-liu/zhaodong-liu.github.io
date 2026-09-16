@@ -1,8 +1,6 @@
 github_users:
   - zhaodong-liu
 
-repo_description_lines_max: 2
-
 github_repos:
   - zhaodong-liu/Carbon-14-Bomb-Pulse-Modeling
   - zhaodong-liu/CLAIRO
@@ -10,3 +8,24 @@ github_repos:
   - zhaodong-liu/Audio-Classification
   - zhaodong-liu/Cooperating-Piano
   - zhaodong-liu/Fantasy_Sports_League
+
+# Rendered locally so the page does not depend on a third-party stats image service.
+repo_details:
+  zhaodong-liu/Carbon-14-Bomb-Pulse-Modeling:
+    description_en: Infer tissue and cell age from atmospheric carbon-14 using differential equations.
+    description_zh: 基于微分方程，从大气碳-14 推断组织与细胞年龄。
+  zhaodong-liu/CLAIRO:
+    description_en: Collaborative learning with action-aware image-text representations for multimodal recommendation.
+    description_zh: 基于行为感知图文表征的协同学习，用于多模态推荐。
+  zhaodong-liu/Chemical-Retrosynthesis:
+    description_en: Fine-tune pretrained language models to predict chemical reaction pathways.
+    description_zh: 微调预训练语言模型以预测化学反应路径。
+  zhaodong-liu/Audio-Classification:
+    description_en: Classify music snippets by singer gender with an ensemble of ResNet34 models.
+    description_zh: 基于 ResNet34 集成模型的音乐片段歌者性别分类。
+  zhaodong-liu/Cooperating-Piano:
+    description_en: A networked real-time piano application with recording, playback, and chat.
+    description_zh: 支持联网实时演奏、录音、回放与聊天的钢琴应用。
+  zhaodong-liu/Fantasy_Sports_League:
+    description_en: A database system for managing fantasy sports leagues with real-time tracking.
+    description_zh: 面向梦幻体育联赛的数据库系统，支持实时追踪。
